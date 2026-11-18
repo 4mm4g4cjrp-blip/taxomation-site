@@ -21,7 +21,7 @@ pakete:
   - key: epu
     name: "EPU"
     tagline: "Einnahmen-Ausgaben-Rechnung"
-    price: "99"
+    price: "149"
     unit: "€ / Monat"
     for: "Einzelunternehmer:innen und freie Berufe mit E/A-Rechnung"
     featured: true
@@ -34,7 +34,7 @@ pakete:
   - key: bilanz
     name: "Bilanz"
     tagline: "Doppelte Buchhaltung"
-    price: "390"
+    price: "290"
     unit: "€ / Monat"
     for: "GmbHs, OG und KG sowie alle bilanzierenden Unternehmen"
     items:

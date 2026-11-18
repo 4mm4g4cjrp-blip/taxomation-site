@@ -17,7 +17,7 @@
         <a class="btn ghost" href="#paketfinder">Passendes Paket finden</a>
       </div>
       <p class="mailnote">oder direkt an <a href="mailto:{{ $d.contactEmail }}">{{ $d.contactEmail }}</a></p>
-      <p class="note">{{ if $d.showServicePromise }}{{ $d.servicePromise }} · {{ end }}Fixpreis{{ if $d.showPrices }} ab 99 €/Monat{{ end }} · Sitz in {{ $d.operator.city }}, tätig in ganz Österreich</p>
+      <p class="note">{{ if $d.showServicePromise }}{{ $d.servicePromise }} · {{ end }}Fixpreis{{ if $d.showPrices }}{{ with index (where $L.pakete "key" "epu") 0 }} ab {{ .price }} €/Monat{{ end }}{{ end }} · Sitz in {{ $d.operator.city }}, tätig in ganz Österreich</p>
       {{- if and $d.showPerson $d.person.name }}
       <div class="person">
         {{- with $d.person.photo }}<img src="{{ . | relURL }}" alt="" width="56" height="56">{{ end }}
