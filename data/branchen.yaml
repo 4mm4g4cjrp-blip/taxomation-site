@@ -1,727 +1,931 @@
 # ─────────────────────────────────────────────────────────────
-# Berufsgruppen-Landingpages. Jede Zeile unter „branchen“ erzeugt
+# Berufsgruppen-Landingpages. Jeder Eintrag unter „branchen“ erzeugt
 # automatisch die Seite taxomation.at/<slug>/ (content/_content.gotmpl).
-# Fachinhalte sind allgemein gehalten; vor Livegang fachlich prüfen.
 # switch: Name eines Schalters in site.yaml → switches (optional)
-# paket: start | epu | gmbh | lohn (Empfehlung, verweist auf leistungen.yaml)
+# zielgruppe_dativ: „für …“ in Überschriften · faq_title: Überschrift der FAQ
+# geprueft_am: Datum der letzten Fachkontrolle (JJJJ-MM-TT); halbjährlich
+#   (Jänner/Juli) prüfen, check-links.py warnt ab 183 Tagen.
+# pakete: Liste aus start | epu | bilanz | lohn (leistungen.yaml)
+# preisHinweis: optionaler Zusatz unter der Paketempfehlung
+# detail: 1–2 Absätze Fachtext je Seite
 # ─────────────────────────────────────────────────────────────
 
 gruppen:
-  - key: gesundheit
-    name: "Gesundheit"
-  - key: freieberufe
-    name: "Freie Berufe"
-  - key: handel
-    name: "Handel und Dienstleistung"
-  - key: handwerk
-    name: "Handwerk"
-
+- key: gesundheit
+  name: Gesundheit
+- key: freieberufe
+  name: "Recht und Planung"
+- key: handel
+  name: "Handel, Gewerbe und Dienstleistung"
+- key: handwerk
+  name: Handwerk
 branchen:
-
-# ── Gesundheit ──────────────────────────────────────────────
-  - slug: aerzte
-    name: "Ärzt:innen"
-    gruppe: gesundheit
-    short: "Ordination, Kassen- und Wahlarztpraxis"
-    title: "Steuerberatung für Ärzt:innen – digital"
-    description: "Digitale Steuerberatung für Ärzt:innen in Österreich: Ordinationsbuchhaltung, Umsatzsteuer, Wohlfahrtsfonds und Lohn für das Ordinationsteam. Fixpreis, geprüft von unseren Mitarbeiter:innen."
-    h1: "Steuerberatung für Ärzt:innen"
-    lead: "Ordinationsbuchhaltung, die neben dem Praxisalltag einfach mitläuft: Belege hochladen, wir erledigen Buchhaltung, Erklärungen und Lohn – digital und mit persönlicher Prüfung."
-    topics:
-      - t: "Kassen- und Wahlarztpraxis"
-        d: "Kassenhonorare, Privathonorare und Nebeneinkünfte, etwa aus einer Spitalstätigkeit, werden übersichtlich getrennt erfasst und in der Einkommensteuer zusammengeführt."
-      - t: "Umsatzsteuer"
-        d: "Heilbehandlungen sind nach § 6 Abs 1 Z 19 UStG unecht steuerbefreit – ohne Vorsteuerabzug. Andere Leistungen, etwa bestimmte Gutachten oder ästhetische Behandlungen ohne therapeutisches Ziel, können steuerpflichtig sein. Wir grenzen das für Sie ab."
-      - t: "Ärztekammer und Wohlfahrtsfonds"
-        d: "Kammerumlagen und Beiträge zum Wohlfahrtsfonds werden laufend erfasst und steuerlich berücksichtigt."
-      - t: "Ordinationsgründung und -übernahme"
-        d: "Von der Investitionsplanung über die Abschreibung der Ausstattung bis zur Lohnverrechnung für Ordinationsassistenz."
-    paket: epu
-    paketText: "Für die Einzelordination mit Einnahmen-Ausgaben-Rechnung, auf Wunsch mit Lohn digital für Ihr Team. Gruppenpraxis als GmbH: Paket GmbH."
-    faq:
-      - q: "Kann ich als Ärztin oder Arzt Vorsteuer abziehen?"
-        a: "Für unecht steuerbefreite Heilbehandlungen grundsätzlich nicht. Erbringen Sie auch steuerpflichtige Leistungen, kann ein anteiliger Vorsteuerabzug möglich sein. Das klären wir im Einzelfall."
-      - q: "Betreuen Sie auch Wahlärzt:innen mit wenigen Ordinationstagen?"
-        a: "Ja. Gerade bei einer Wahlarztpraxis neben einer Anstellung lohnt sich eine schlanke, digitale Lösung."
-      - q: "Wie kommen meine Belege zu Ihnen?"
-        a: "Über das Upload-Portal, per Foto oder als PDF. Kontoauszüge können über eine Bankanbindung übernommen werden."
-
-  - slug: zahnaerzte
-    name: "Zahnärzt:innen"
-    gruppe: gesundheit
-    short: "Praxis, Labor, Investitionen"
-    title: "Steuerberatung für Zahnärzt:innen – digital"
-    description: "Digitale Steuerberatung für Zahnärzt:innen: Praxisbuchhaltung, Umsatzsteuer, Investitionen und Lohnverrechnung für das Praxisteam. Fixpreis, geprüft von unseren Mitarbeiter:innen."
-    h1: "Steuerberatung für Zahnärzt:innen"
-    lead: "Hohe Investitionen, ein eingespieltes Team und viele Zahlungsflüsse: Wir halten Ihre Praxiszahlen digital aktuell und geprüft."
-    topics:
-      - t: "Investitionen und Abschreibung"
-        d: "Behandlungseinheiten, Röntgen und Praxiseinrichtung: Wir planen Anschaffungen mit Ihnen und berücksichtigen Abschreibung und Gewinnfreibetrag."
-      - t: "Umsatzsteuer"
-        d: "Zahnärztliche Heilbehandlungen sind unecht steuerbefreit. Rein ästhetische Leistungen können anders zu beurteilen sein – wir grenzen das ab."
-      - t: "Labor- und Fremdleistungen"
-        d: "Rechnungen von Dentallaboren und Materialeinkauf werden automatisiert erfasst und den Behandlungen zugeordnet."
-      - t: "Praxisteam"
-        d: "Lohnverrechnung für Assistenz und Prophylaxe, inklusive Teilzeit und Sonderzahlungen."
-    paket: epu
-    paketText: "Für die Einzelpraxis mit Einnahmen-Ausgaben-Rechnung plus Lohn digital. Für Gruppenpraxen als GmbH: Paket GmbH."
-    faq:
-      - q: "Helfen Sie bei der Finanzierung einer neuen Behandlungseinheit?"
-        a: "Wir rechnen die steuerlichen Auswirkungen durch und bereiten die Zahlen für Ihr Bankgespräch auf."
-      - q: "Übernehmen Sie auch die Lohnverrechnung für mein Team?"
-        a: "Ja, mit Lohn digital – vom ersten Dienstverhältnis an."
-      - q: "Kann ich während des Jahres meine Zahlen sehen?"
-        a: "Ja. Sie erhalten laufende Auswertungen online."
-
-  - slug: tieraerzte
-    name: "Tierärzt:innen"
-    gruppe: gesundheit
-    short: "Kleintier- und Großtierpraxis"
-    title: "Steuerberatung für Tierärzt:innen – digital"
-    description: "Digitale Steuerberatung für Tierärzt:innen: Umsatzsteuer, Medikamentenlager, Praxisfahrzeuge und Lohnverrechnung. Fixpreis, geprüft von unseren Mitarbeiter:innen."
-    h1: "Steuerberatung für Tierärzt:innen"
-    lead: "Praxis, Hausbesuche, Medikamente: Wir sorgen dafür, dass Ihre Buchhaltung und Umsatzsteuer stimmen – digital und ohne Papierstapel."
-    topics:
-      - t: "Umsatzsteuer"
-        d: "Tierärztliche Leistungen sind – anders als Heilbehandlungen am Menschen – grundsätzlich umsatzsteuerpflichtig. Dafür ist der Vorsteuerabzug aus Einkäufen möglich."
-      - t: "Medikamente und Lager"
-        d: "Einkauf und Abgabe von Tierarzneimitteln werden erfasst, der Lagerbestand zum Jahresende berücksichtigt."
-      - t: "Fahrzeuge und Hausbesuche"
-        d: "Fahrtenbuch, Kilometergeld oder betriebliches Fahrzeug: Wir wählen mit Ihnen die passende Lösung."
-      - t: "Registrierkasse"
-        d: "Bei Barzahlungen in der Praxis prüfen wir die Registrierkassen- und Belegerteilungspflicht."
-    paket: epu
-    paketText: "Für die Einzelpraxis mit Einnahmen-Ausgaben-Rechnung; bei angestelltem Team mit Lohn digital."
-    faq:
-      - q: "Muss ich als Tierärztin Umsatzsteuer verrechnen?"
-        a: "In der Regel ja. Ausnahmen, etwa die Kleinunternehmerregelung, prüfen wir für Ihre Situation."
-      - q: "Wie gehe ich mit Barzahlungen um?"
-        a: "Wir prüfen, ob eine Registrierkassenpflicht besteht, und sorgen für eine saubere Übernahme der Kassendaten."
-      - q: "Betreuen Sie auch Großtierpraxen?"
-        a: "Ja. Hohe Fahrleistungen und Medikamentenlager berücksichtigen wir in der laufenden Buchhaltung."
-
-  - slug: gesundheitsberufe
-    name: "Gesundheitsberufe"
-    gruppe: gesundheit
-    short: "Physio-, Ergotherapie, Logopädie, Pflege, Hebammen"
-    title: "Steuerberatung für Gesundheitsberufe – digital"
-    description: "Digitale Steuerberatung für Physiotherapeut:innen, Ergotherapeut:innen, Logopäd:innen, Pflege und Hebammen: Umsatzsteuer, Sozialversicherung und E/A-Rechnung zum Fixpreis."
-    h1: "Steuerberatung für Gesundheitsberufe"
-    lead: "Für freiberufliche Therapeut:innen, Pflegepersonen und Hebammen: einfache Buchhaltung, klare Umsatzsteuer, pünktliche Erklärungen."
-    topics:
-      - t: "Umsatzsteuer"
-        d: "Heilbehandlungen im Rahmen der gesetzlich geregelten Gesundheitsberufe sind unecht steuerbefreit. Kurse oder Trainings ohne therapeutisches Ziel können steuerpflichtig sein – wir grenzen das ab."
-      - t: "Anstellung und Selbständigkeit"
-        d: "Viele arbeiten angestellt und zusätzlich selbständig. Wir führen beide Einkünfte in der Einkommensteuer zusammen."
-      - t: "Sozialversicherung"
-        d: "Wir behalten Vorauszahlungen und Nachbemessungen der Sozialversicherung im Blick."
-      - t: "Praxisgemeinschaft"
-        d: "Gemeinsame Räume, geteilte Kosten: Wir sorgen für eine nachvollziehbare Aufteilung."
-    paket: epu
-    paketText: "Paket EPU mit Einnahmen-Ausgaben-Rechnung und Einkommensteuererklärung."
-    faq:
-      - q: "Brauche ich eine Steuerberatung, wenn ich nur nebenbei selbständig bin?"
-        a: "Nicht zwingend. Sie spart aber Zeit, und Fehler bei Umsatzsteuer und Sozialversicherung lassen sich vermeiden."
-      - q: "Wie hoch sind meine Sozialversicherungs-Nachzahlungen?"
-        a: "Wir schätzen sie anhand Ihrer laufenden Zahlen und informieren Sie rechtzeitig."
-      - q: "Kann ich alles digital erledigen?"
-        a: "Ja, Belege, Auftrag und Besprechungen laufen online."
-
-  - slug: psychotherapie
-    name: "Psychotherapie und Psychologie"
-    gruppe: gesundheit
-    short: "Psychotherapeut:innen, klinische und Gesundheitspsycholog:innen"
-    title: "Steuerberatung für Psychotherapeut:innen und Psycholog:innen"
-    description: "Digitale Steuerberatung für Psychotherapeut:innen sowie klinische und Gesundheitspsycholog:innen: Umsatzsteuer, E/A-Rechnung, Sozialversicherung. Diskret und digital."
-    h1: "Steuerberatung für Psychotherapie und Psychologie"
-    lead: "Diskret, digital und unkompliziert: Wir erledigen Buchhaltung und Erklärungen, damit Sie sich auf Ihre Klient:innen konzentrieren können."
-    topics:
-      - t: "Umsatzsteuer"
-        d: "Psychotherapie und Leistungen klinischer und Gesundheitspsycholog:innen sind als Heilbehandlung unecht steuerbefreit. Coaching, Supervision oder Seminare können anders zu beurteilen sein."
-      - t: "Praxis und Raumkosten"
-        d: "Eigene Praxis, Untermiete oder Arbeitszimmer: Wir berücksichtigen Ihre Kosten korrekt."
-      - t: "Aus- und Fortbildung"
-        d: "Kosten für Fortbildungen und Supervision können steuerlich relevant sein – wir erfassen sie laufend."
-      - t: "Vertraulichkeit"
-        d: "Für Belege genügen Rechnungsdaten; Inhalte aus Ihren Sitzungen brauchen wir nicht."
-    paket: epu
-    paketText: "Paket EPU mit Einnahmen-Ausgaben-Rechnung und Einkommensteuererklärung."
-    faq:
-      - q: "Ist Supervision umsatzsteuerfrei?"
-        a: "Das hängt vom Inhalt der Leistung ab. Wir prüfen, ob eine Heilbehandlung vorliegt oder nicht."
-      - q: "Ich bin in Ausbildung unter Supervision. Betreuen Sie mich schon?"
-        a: "Ja. Gerade am Anfang hilft eine klare Struktur bei Belegen und Erklärungen."
-      - q: "Wie vertraulich ist der Upload?"
-        a: "Wir unterliegen der beruflichen Verschwiegenheitspflicht. Hochgeladen werden nur Rechnungen und Zahlungsbelege."
-
-  - slug: apotheker
-    name: "Apotheker:innen"
-    gruppe: gesundheit
-    switch: showApotheker
-    short: "Öffentliche Apotheke, Warenlager, Team"
-    title: "Steuerberatung für Apotheker:innen – digital"
-    description: "Digitale Steuerberatung für Apotheken in Österreich: Warenlager und Inventur, Wareneinsatz, Umsatzsteuer, Lohnverrechnung und Jahresabschluss."
-    h1: "Steuerberatung für Apotheker:innen"
-    lead: "Viele Artikel, viele Zahlungen, ein großes Team: Wir bringen Warenwirtschaft, Buchhaltung und Lohn in einen klaren, digitalen Ablauf."
-    topics:
-      - t: "Warenlager und Inventur"
-        d: "Wareneinsatz, Lagerbewertung und Inventur zum Stichtag – abgestimmt mit den Daten aus Ihrer Warenwirtschaft."
-      - t: "Umsatzsteuer"
-        d: "Arzneimittel und Drogeriewaren unterliegen unterschiedlichen Steuersätzen. Wir sorgen für die richtige Zuordnung."
-      - t: "Lohnverrechnung"
-        d: "Pharmazeut:innen, PKA und Teilzeitkräfte – inklusive der Besonderheiten bei der Abrechnung über die Pharmazeutische Gehaltskasse."
-      - t: "Konzession und Übernahme"
-        d: "Bei Gründung, Übernahme oder Beteiligung begleiten wir die steuerlichen Fragen und die Wahl der Rechtsform."
-    paket: gmbh
-    paketText: "Für Apotheken mit Bilanzierung: Paket GmbH bzw. doppelte Buchhaltung nach Belegvolumen, ergänzt um Lohn digital. Fixpreis nach individuellem Angebot."
-    faq:
-      - q: "Übernehmen Sie die Daten aus unserer Warenwirtschaft?"
-        a: "Wir stimmen mit Ihnen ab, welche Auswertungen wir benötigen, und übernehmen sie digital."
-      - q: "Betreuen Sie auch die Übernahme einer Apotheke?"
-        a: "Ja, mit einem individuellen Angebot für Planung, Finanzierungsunterlagen und steuerliche Struktur."
-      - q: "Wie wird die Lohnverrechnung abgerechnet?"
-        a: "Lohn digital wird je Dienstnehmer:in und Monat abgerechnet. Für größere Teams erstellen wir ein eigenes Angebot."
-
-# ── Recht, Planung, Beratung ────────────────────────────────
-  - slug: rechtsanwaelte
-    name: "Rechtsanwält:innen"
-    gruppe: freieberufe
-    short: "Kanzlei, Treuhandgelder, Versorgung"
-    title: "Steuerberatung für Rechtsanwält:innen – digital"
-    description: "Digitale Steuerberatung für Rechtsanwält:innen: Trennung von Treuhandgeldern, Versorgungseinrichtung, Umsatzsteuer und Kanzleibuchhaltung. Vertraulich, Fixpreis."
-    h1: "Steuerberatung für Rechtsanwält:innen"
-    lead: "Vertraulich, präzise, digital: Wir führen Ihre Kanzleibuchhaltung so, dass Honorare, Barauslagen und Treuhandgelder sauber getrennt bleiben."
-    topics:
-      - t: "Treuhand- und Anderkonten"
-        d: "Fremdgelder gehören nicht in die eigene Buchhaltung. Wir halten Treuhandkonten klar von Ihren Betriebseinnahmen getrennt."
-      - t: "Versorgungseinrichtung der Kammer"
-        d: "Beiträge zur Versorgungseinrichtung der Rechtsanwaltskammer werden laufend erfasst und steuerlich berücksichtigt."
-      - t: "Honorare und Barauslagen"
-        d: "Durchlaufende Posten, Gerichtsgebühren und Honorare werden richtig behandelt – auch in der Umsatzsteuer."
-      - t: "Kanzleigründung und Partnerschaft"
-        d: "Einzelkanzlei, Partnerschaft oder Rechtsanwalts-GmbH: Wir rechnen die steuerlichen Unterschiede durch."
-    paket: epu
-    paketText: "Für die Einzelkanzlei mit Einnahmen-Ausgaben-Rechnung. Rechtsanwalts-GmbH oder größere Kanzlei: Paket GmbH, jeweils mit Lohn digital."
-    faq:
-      - q: "Wie gehen Sie mit Treuhandgeldern um?"
-        a: "Treuhandkonten werden getrennt geführt und nicht als Betriebseinnahmen erfasst. Wir stimmen die Kontenzuordnung zu Beginn mit Ihnen ab."
-      - q: "Muss ich Umsatzsteuer nach Zahlungseingang abführen?"
-        a: "Freiberufler:innen versteuern grundsätzlich nach vereinnahmten Entgelten (§ 17 UStG). Wir berücksichtigen das in Ihren Voranmeldungen."
-      - q: "Sind meine Mandantendaten beim Upload geschützt?"
-        a: "Wir benötigen nur Rechnungs- und Zahlungsbelege. Für alle Daten gilt unsere berufliche Verschwiegenheitspflicht."
-
-  - slug: notare
-    name: "Notar:innen"
-    gruppe: freieberufe
-    short: "Notariat, Treuhandschaften, Team"
-    title: "Steuerberatung für Notar:innen – digital"
-    description: "Digitale Steuerberatung für Notariate: Treuhandabwicklung getrennt von der Kanzleibuchhaltung, Versorgung, Umsatzsteuer und Lohnverrechnung. Vertraulich und digital."
-    h1: "Steuerberatung für Notar:innen"
-    lead: "Ein Notariat bewegt viele Gelder, die nicht die eigenen sind. Wir sorgen für eine klare Trennung und eine Kanzleibuchhaltung, die digital mitläuft."
-    topics:
-      - t: "Treuhandschaften"
-        d: "Treuhandgelder werden getrennt von der eigenen Buchhaltung geführt. Wir stimmen die Kontenstruktur mit Ihnen ab."
-      - t: "Gebühren und Barauslagen"
-        d: "Durchlaufende Posten wie Eintragungsgebühren werden korrekt behandelt und nicht als Umsatz erfasst."
-      - t: "Berufsständische Versorgung"
-        d: "Pflichtbeiträge zur berufsständischen Versorgung werden laufend erfasst und steuerlich berücksichtigt."
-      - t: "Team und Notariatskandidat:innen"
-        d: "Lohnverrechnung für Ihr Kanzleiteam, inklusive Sonderzahlungen und Jahreserklärungen."
-    paket: epu
-    paketText: "Für das Notariat mit Einnahmen-Ausgaben-Rechnung, ergänzt um Lohn digital für Ihr Team. Fixpreis nach Belegvolumen."
-    faq:
-      - q: "Führen Sie auch das Treuhandbuch?"
-        a: "Das Treuhandbuch bleibt in Ihrer Kanzlei. Wir sorgen dafür, dass Treuhandbewegungen in der Buchhaltung richtig abgegrenzt sind."
-      - q: "Wie läuft der Wechsel zu Taxomation?"
-        a: "Mit dem Kanzleiwechsel-Service: Vollmacht, Vorjahresdaten und offene Fristen übernehmen wir für Sie."
-      - q: "Kann die Lohnverrechnung mit wachsen?"
-        a: "Ja. Lohn digital wird je Dienstnehmer:in abgerechnet."
-
-  - slug: ziviltechniker
-    name: "Ziviltechniker:innen"
-    gruppe: freieberufe
-    short: "Architektur und Ingenieurkonsulent:innen"
-    title: "Steuerberatung für Ziviltechniker:innen – digital"
-    description: "Digitale Steuerberatung für Architekt:innen und Ingenieurkonsulent:innen: Projektabrechnung, Teilrechnungen, Umsatzsteuer bei Auslandsprojekten, ZT-Gesellschaft."
-    h1: "Steuerberatung für Ziviltechniker:innen"
-    lead: "Für Architekt:innen und Ingenieurkonsulent:innen: Projektabrechnung, Umsatzsteuer und Erklärungen – digital, nachvollziehbar und pünktlich."
-    topics:
-      - t: "Projekte und Teilrechnungen"
-        d: "Akonto- und Teilrechnungen, offene Honorare und Projektkosten bleiben übersichtlich, auch über mehrere Jahre."
-      - t: "Auslandsprojekte"
-        d: "Leistungen an Unternehmen im EU-Ausland, Reverse Charge und Zusammenfassende Meldung. Bei Planungsleistungen für Grundstücke gelten eigene Regeln zum Leistungsort."
-      - t: "Kammer und Vorsorge"
-        d: "Kammerumlagen und Beiträge zur berufsständischen Vorsorge werden laufend berücksichtigt."
-      - t: "Einzelbüro oder ZT-Gesellschaft"
-        d: "Wir rechnen durch, ob und wann eine ZT-GmbH für Sie sinnvoll ist."
-    paket: epu
-    paketText: "Einzelbüro: Paket EPU. ZT-Gesellschaft: Paket GmbH. Bei angestelltem Team jeweils mit Lohn digital."
-    faq:
-      - q: "Wann muss ich bei Anzahlungen Umsatzsteuer abführen?"
-        a: "Das hängt von Ihrer Versteuerungsart ab. Wir berücksichtigen Anzahlungen und Teilrechnungen in Ihren Voranmeldungen."
-      - q: "Ich plane ein Projekt in Deutschland. Was ist zu beachten?"
-        a: "Bei Planungsleistungen im Zusammenhang mit einem Grundstück liegt der Leistungsort grundsätzlich dort, wo das Grundstück liegt. Wir klären die Folgen vorab."
-      - q: "Unterstützen Sie bei der Gründung einer ZT-GmbH?"
-        a: "Ja, mit Rechtsform-Kurzvergleich und Begleitung der steuerlichen Schritte."
-
-  - slug: unternehmensberatung
-    name: "Unternehmensberater:innen"
-    gruppe: freieberufe
-    short: "Beratung, Interim, Projekte"
-    title: "Steuerberatung für Unternehmensberater:innen – digital"
-    description: "Digitale Steuerberatung für Unternehmensberater:innen und Interim-Manager:innen: Reisekosten, EU-Kund:innen, Pauschalierung, EPU oder GmbH."
-    h1: "Steuerberatung für Unternehmensberater:innen"
-    lead: "Viel unterwegs, viele Projekte: Belege per Foto hochladen, Reisekosten automatisch erfasst, Erklärungen pünktlich."
-    topics:
-      - t: "Reisekosten"
-        d: "Kilometergeld, Tagesgelder und Nächtigungen werden aus Ihren Belegen erfasst und richtig berücksichtigt."
-      - t: "Kund:innen im Ausland"
-        d: "Beratungsleistungen an Unternehmen im EU-Ausland: Reverse Charge und Zusammenfassende Meldung."
-      - t: "Pauschalierung"
-        d: "Wir prüfen, ob eine Pauschalierung für Sie günstiger ist als die Erfassung der tatsächlichen Ausgaben."
-      - t: "EPU oder GmbH"
-        d: "Ab einem gewissen Gewinn kann eine GmbH interessant sein. Wir rechnen es für Ihre Zahlen durch."
-    paket: epu
-    paketText: "Paket EPU für Einzelunternehmer:innen, Paket GmbH für Beratungsgesellschaften."
-    faq:
-      - q: "Welche Pauschalierung kommt für mich in Frage?"
-        a: "Das hängt von Umsatz und Tätigkeit ab. Wir vergleichen die Varianten in Ihrer Einkommensteuererklärung."
-      - q: "Ich arbeite für Kund:innen in Deutschland. Verrechne ich Umsatzsteuer?"
-        a: "Bei Leistungen an Unternehmen in der Regel nicht; die Steuerschuld geht über (Reverse Charge). Wir prüfen Ihre Rechnungsmerkmale."
-      - q: "Lohnt sich für mich eine GmbH?"
-        a: "Das zeigt unser Rechtsform-Kurzvergleich – zum Festpreis."
-
-  - slug: immobilienmakler
-    name: "Immobilienmakler:innen"
-    gruppe: freieberufe
-    short: "Provisionen, Fahrzeuge, Team"
-    title: "Steuerberatung für Immobilienmakler:innen – digital"
-    description: "Digitale Steuerberatung für Immobilienmakler:innen: Provisionsabrechnung, Umsatzsteuer, Fahrzeugkosten und Lohnverrechnung zum Fixpreis."
-    h1: "Steuerberatung für Immobilienmakler:innen"
-    lead: "Provisionen kommen unregelmäßig, Kosten laufend: Wir halten Ihre Zahlen digital aktuell, damit Sie Steuern und Liquidität im Blick haben."
-    topics:
-      - t: "Provisionen"
-        d: "Provisionen von Abgeber:innen und Erwerber:innen werden zeitlich richtig erfasst und umsatzsteuerlich korrekt behandelt."
-      - t: "Steuervorauszahlungen"
-        d: "Schwankende Einnahmen bedeuten schwankende Steuern. Wir passen Vorauszahlungen rechtzeitig an."
-      - t: "Fahrzeug und Marketing"
-        d: "Fahrzeugkosten, Inserate und Fotos werden laufend erfasst und zugeordnet."
-      - t: "Team und freie Mitarbeiter:innen"
-        d: "Lohnverrechnung und die Abgrenzung zwischen Anstellung und freier Mitarbeit."
-    paket: epu
-    paketText: "Paket EPU für Einzelunternehmer:innen, Paket GmbH für Maklergesellschaften – jeweils mit Lohn digital erweiterbar."
-    faq:
-      - q: "Wie gehe ich mit schwankenden Provisionen um?"
-        a: "Wir beobachten Ihre Zahlen laufend und beantragen bei Bedarf eine Anpassung der Vorauszahlungen."
-      - q: "Kann ich mein Auto betrieblich absetzen?"
-        a: "Für Pkw gelten Einschränkungen, etwa beim Vorsteuerabzug. Wir zeigen Ihnen die Möglichkeiten."
-      - q: "Arbeiten Sie mit Maklersoftware?"
-        a: "Wir übernehmen Rechnungen und Auswertungen digital, unabhängig von Ihrer Software."
-
-# ── Handel und Dienstleistung ──────────────────────────────
-  - slug: handel
-    name: "Handel"
-    gruppe: handel
-    short: "Geschäft, Filiale, Großhandel"
-    title: "Steuerberatung für Handelsbetriebe – digital"
-    description: "Digitale Steuerberatung für Handelsbetriebe in Österreich: Wareneinsatz, Inventur, Registrierkassenpflicht, Umsatzsteuer und Lohnverrechnung zum Fixpreis."
-    h1: "Steuerberatung für den Handel"
-    lead: "Wareneinkauf, Kassa, Lager und Team: Wir verbinden Kassen- und Bankdaten mit Ihrer Buchhaltung – digital und laufend aktuell."
-    topics:
-      - t: "Registrierkasse"
-        d: "Registrierkassenpflicht besteht ab 15.000 € Jahresumsatz, wenn davon mehr als 7.500 € bar umgesetzt werden. Wir prüfen Ihre Pflichten und übernehmen die Kassendaten."
-      - t: "Wareneinsatz und Inventur"
-        d: "Einkauf, Lagerbestand und Inventur zum Stichtag ergeben den Wareneinsatz – die wichtigste Kennzahl im Handel."
-      - t: "Umsatzsteuer"
-        d: "Unterschiedliche Steuersätze im Sortiment, innergemeinschaftliche Erwerbe und Zusammenfassende Meldung."
-      - t: "Team"
-        d: "Lohnverrechnung für Verkauf und Lager, inklusive Teilzeit und geringfügiger Beschäftigung."
-    paket: epu
-    paketText: "Einzelunternehmen mit E/A-Rechnung: Paket EPU. Bilanzierende Betriebe und GmbHs: Paket GmbH. Mit Personal: Lohn digital."
-    faq:
-      - q: "Brauche ich eine Registrierkasse?"
-        a: "Ab einem Jahresumsatz von 15.000 €, wenn davon mehr als 7.500 € Barumsätze sind. Wir prüfen das für Ihren Betrieb."
-      - q: "Wie läuft die Inventur?"
-        a: "Sie zählen, wir bewerten und übernehmen den Bestand in den Jahresabschluss."
-      - q: "Können Kassenabschlüsse automatisch übernommen werden?"
-        a: "Wir stimmen mit Ihnen die Übernahme digitaler Kassenberichte ab."
-
-  - slug: onlinehandel
-    name: "Online-Handel"
-    gruppe: handel
-    short: "Webshop, Marktplätze, EU-Versand"
-    title: "Steuerberatung für Online-Händler:innen – digital"
-    description: "Digitale Steuerberatung für Online-Handel und E-Commerce: OSS, EU-Versand, Zahlungsdienstleister, Marktplätze und Retouren. Fixpreis, geprüft von unseren Mitarbeiter:innen."
-    h1: "Steuerberatung für Online-Handel"
-    lead: "Viele kleine Zahlungen über Shop, Marktplätze und Zahlungsdienstleister: Wir bringen das automatisiert in Ihre Buchhaltung."
-    topics:
-      - t: "One-Stop-Shop (OSS)"
-        d: "Überschreiten Ihre Fernverkäufe an Privatkund:innen in andere EU-Länder 10.000 € pro Jahr, gilt die Umsatzsteuer des Ziellandes. Die Meldung erfolgt über den OSS."
-      - t: "Zahlungsdienstleister und Marktplätze"
-        d: "Auszahlungen, Gebühren und Rückbuchungen werden mit den Bestellungen abgeglichen."
-      - t: "Retouren und Gutschriften"
-        d: "Rücksendungen und Erstattungen werden umsatzsteuerlich richtig berücksichtigt."
-      - t: "Wareneinsatz"
-        d: "Einkauf, Lager und Versandkosten ergeben Ihren tatsächlichen Deckungsbeitrag."
-    paket: epu
-    paketText: "Paket EPU für kleinere Shops, Paket GmbH für bilanzierende Online-Händler. Preis nach Belegvolumen."
-    faq:
-      - q: "Ab wann brauche ich den OSS?"
-        a: "Sobald Ihre EU-weiten Fernverkäufe an Privatkund:innen die Schwelle von 10.000 € im Jahr überschreiten. Freiwillig ist er auch früher möglich."
-      - q: "Wie kommen die Daten aus meinem Shop zu Ihnen?"
-        a: "Über Exporte aus Shop- und Zahlungssystemen. Welche Formate passen, klären wir beim Start."
-      - q: "Verkaufe ich als Kleinunternehmer:in ohne Umsatzsteuer?"
-        a: "Das ist unter bestimmten Umsatzgrenzen möglich. Wir prüfen, ob es sich für Sie lohnt."
-
-  - slug: gastronomie
-    name: "Gastronomie"
-    gruppe: handel
-    short: "Restaurant, Café, Bar"
-    title: "Steuerberatung für Gastronomie – digital"
-    description: "Digitale Steuerberatung für Gastronomiebetriebe: Registrierkasse, Steuersätze für Speisen und Getränke, Wareneinsatz, Trinkgeld und Lohnverrechnung."
-    h1: "Steuerberatung für die Gastronomie"
-    lead: "Lange Tage, viele Belege: Wir übernehmen Kassendaten und Rechnungen digital, damit Ihre Zahlen stimmen, ohne dass Sie Zettel sortieren."
-    topics:
-      - t: "Registrierkasse und Kassenbuch"
-        d: "Übernahme der Kassendaten, Abgleich mit Bank und Kartenzahlungen, Belegerteilungspflicht."
-      - t: "Steuersätze"
-        d: "Speisen und Getränke unterliegen unterschiedlichen Steuersätzen. Wir prüfen, ob Ihre Kassa richtig aufteilt."
-      - t: "Wareneinsatz"
-        d: "Küche und Getränke getrennt ausgewertet – die Grundlage für Kalkulation und Preise."
-      - t: "Personal"
-        d: "Lohnverrechnung mit Teilzeit, Aushilfen, Zuschlägen und Trinkgeld-Themen."
-    paket: epu
-    paketText: "Paket EPU oder GmbH je nach Rechtsform, mit Lohn digital für Ihr Team. Fixpreis nach Belegvolumen."
-    faq:
-      - q: "Wie behandle ich Trinkgeld?"
-        a: "Für Trinkgelder gelten steuerliche und sozialversicherungsrechtliche Sonderregeln. Wir berücksichtigen sie in der Lohnverrechnung."
-      - q: "Wie oft brauchen Sie meine Belege?"
-        a: "Am besten laufend. Im Upload-Portal geht das in wenigen Sekunden."
-      - q: "Betreuen Sie auch Saisonbetriebe?"
-        a: "Ja. An- und Abmeldungen und Saisonspitzen bilden wir in der Lohnverrechnung ab."
-
-  - slug: friseure-kosmetik
-    name: "Friseur und Kosmetik"
-    gruppe: handel
-    short: "Salon, Kosmetik, Fußpflege, Nagelstudio"
-    title: "Steuerberatung für Friseur- und Kosmetikbetriebe – digital"
-    description: "Digitale Steuerberatung für Friseursalons, Kosmetik, Fußpflege und Nagelstudios: Registrierkasse, Gutscheine, Produktverkauf und Lohnverrechnung."
-    h1: "Steuerberatung für Friseur und Kosmetik"
-    lead: "Kassa, Gutscheine, Produkte und Team: Wir halten Ihre Buchhaltung digital und übersichtlich."
-    topics:
-      - t: "Registrierkasse"
-        d: "Kassendaten übernehmen, Kartenzahlungen abgleichen, Belegerteilungspflicht einhalten."
-      - t: "Gutscheine"
-        d: "Je nach Art des Gutscheins entsteht die Umsatzsteuer beim Verkauf oder erst bei der Einlösung. Wir sorgen für die richtige Behandlung."
-      - t: "Dienstleistung und Produktverkauf"
-        d: "Behandlungen und verkaufte Produkte werden getrennt ausgewertet – für eine klare Kalkulation."
-      - t: "Team und Lehrlinge"
-        d: "Lohnverrechnung inklusive Lehrlingen, Teilzeit und Sonderzahlungen."
-    paket: epu
-    paketText: "Paket EPU für den Einzelbetrieb, mit Lohn digital ab der ersten Mitarbeiterin."
-    faq:
-      - q: "Wann zahle ich Umsatzsteuer auf Gutscheine?"
-        a: "Bei Gutscheinen für eine bestimmte Leistung meist schon beim Verkauf, bei Wertgutscheinen erst bei Einlösung. Wir prüfen Ihre Gutscheine."
-      - q: "Betreuen Sie auch Ein-Personen-Studios?"
-        a: "Ja, mit dem Paket EPU."
-      - q: "Können Sie Lehrlinge abrechnen?"
-        a: "Ja, inklusive Lehrlingsentschädigung nach Kollektivvertrag."
-
-  - slug: it-software
-    name: "IT und Software"
-    gruppe: handel
-    short: "Entwicklung, IT-Services, SaaS"
-    title: "Steuerberatung für IT- und Softwareunternehmen – digital"
-    description: "Digitale Steuerberatung für Entwickler:innen, IT-Dienstleister und Software-Startups: Reverse Charge, OSS für digitale Leistungen, GmbH-Gründung, Forschungsprämie."
-    h1: "Steuerberatung für IT und Software"
-    lead: "Sie arbeiten digital, Ihre Steuerberatung auch: Belege per Upload, Auswertungen online, Antworten per Mail oder Videocall."
-    topics:
-      - t: "Internationale Kund:innen"
-        d: "Leistungen an Unternehmen im EU-Ausland mit Reverse Charge und Zusammenfassender Meldung, Kund:innen außerhalb der EU."
-      - t: "Digitale Leistungen an Private"
-        d: "Bei Software-Abos oder Downloads für Privatkund:innen in der EU kann die Umsatzsteuer des Ziellandes gelten – Meldung über den OSS."
-      - t: "EPU oder GmbH"
-        d: "Vom Freelance-Start bis zur GmbH: Wir rechnen mit Ihnen durch, wann der Wechsel sinnvoll ist."
-      - t: "Forschung und Entwicklung"
-        d: "Für eigene Entwicklungsprojekte kann die Forschungsprämie in Frage kommen. Wir prüfen die Voraussetzungen."
-    paket: epu
-    paketText: "Freelancer:innen: Paket EPU. Software-Unternehmen und Startups: Paket GmbH, bei Gründung zuvor Paket Start."
-    faq:
-      - q: "Ich bin Freelancer:in für eine deutsche Firma. Was muss auf die Rechnung?"
-        a: "Unter anderem beide UID-Nummern und der Hinweis auf den Übergang der Steuerschuld. Wir prüfen Ihre Vorlage."
-      - q: "Was ist die Forschungsprämie?"
-        a: "Eine Prämie auf bestimmte Aufwendungen für Forschung und experimentelle Entwicklung. Voraussetzung ist unter anderem ein Gutachten der FFG."
-      - q: "Arbeiten Sie mit freien Mitarbeiter:innen-Verträgen?"
-        a: "Wir unterstützen bei der Abgrenzung zwischen Dienstvertrag, freiem Dienstvertrag und Werkvertrag aus steuer- und sozialversicherungsrechtlicher Sicht."
-
-  - slug: agenturen-kreative
-    name: "Agenturen und Kreative"
-    gruppe: handel
-    short: "Werbung, Design, Fotografie, Content"
-    title: "Steuerberatung für Agenturen und Kreative – digital"
-    description: "Digitale Steuerberatung für Agenturen, Designer:innen, Fotograf:innen und Content Creator: Projekte, Fremdleistungen, Nutzungsrechte, Auslandskund:innen."
-    h1: "Steuerberatung für Agenturen und Kreative"
-    lead: "Projekte, Fremdleistungen, Kund:innen im In- und Ausland: Wir halten Ihre Zahlen digital, damit mehr Zeit für die Arbeit bleibt."
-    topics:
-      - t: "Projekte und Fremdleistungen"
-        d: "Freelancer, Druck, Produktion: Fremdkosten werden Projekten zugeordnet, damit Sie sehen, was ein Auftrag wirklich bringt."
-      - t: "Nutzungsrechte"
-        d: "Bei der Einräumung von Nutzungsrechten können besondere Umsatzsteuerregeln gelten. Wir prüfen Ihre Rechnungen."
-      - t: "Equipment"
-        d: "Kamera, Rechner, Software: Anschaffungen werden richtig abgeschrieben, Geringwertiges sofort berücksichtigt."
-      - t: "Sozialversicherung"
-        d: "Für künstlerisch Tätige kann ein Zuschuss aus dem Künstler-Sozialversicherungsfonds in Frage kommen."
-    paket: epu
-    paketText: "Paket EPU für Einzelunternehmer:innen, Paket GmbH für Agenturen. Mit Personal: Lohn digital."
-    faq:
-      - q: "Betreuen Sie auch Fotograf:innen und Content Creator?"
-        a: "Ja. Auch Einnahmen aus Plattformen und Kooperationen erfassen wir sauber."
-      - q: "Wie behandle ich Einnahmen aus dem Ausland?"
-        a: "Das hängt davon ab, ob Ihre Kund:innen Unternehmen oder Privatpersonen sind und wo sie sitzen. Wir klären das für Ihre Rechnungen."
-      - q: "Kann ich Equipment sofort absetzen?"
-        a: "Geringwertige Wirtschaftsgüter ja, teurere Anschaffungen werden über die Nutzungsdauer abgeschrieben."
-
-  - slug: trainer-coaches
-    name: "Trainer:innen und Coaches"
-    gruppe: handel
-    short: "Seminare, Coaching, Online-Kurse"
-    title: "Steuerberatung für Trainer:innen und Coaches – digital"
-    description: "Digitale Steuerberatung für Trainer:innen, Coaches und Vortragende: Umsatzsteuer bei Seminaren, Online-Kurse, Reisekosten, Kleinunternehmerregelung."
-    h1: "Steuerberatung für Trainer:innen und Coaches"
-    lead: "Seminare vor Ort, Coaching online, Kurse im Netz: Wir sorgen dafür, dass Ihre Steuern so flexibel mitlaufen wie Ihr Kalender."
-    topics:
-      - t: "Umsatzsteuer"
-        d: "Kleinunternehmerregelung, steuerpflichtige Leistungen oder mögliche Befreiungen bei Bildungsleistungen – das hängt vom Einzelfall ab."
-      - t: "Online-Kurse"
-        d: "Digitale Kurse an Privatkund:innen in der EU können OSS-pflichtig sein. Wir behalten das im Blick."
-      - t: "Reisekosten"
-        d: "Fahrten, Tagesgelder und Unterkünfte werden aus Ihren Belegen erfasst."
-      - t: "Honorare von Bildungseinrichtungen"
-        d: "Honorarnoten und Abrechnungen von Auftraggeber:innen werden vollständig erfasst."
-    paket: epu
-    paketText: "Paket EPU mit Einnahmen-Ausgaben-Rechnung und Einkommensteuererklärung."
-    faq:
-      - q: "Bin ich als Trainerin Kleinunternehmerin?"
-        a: "Wenn Ihre Umsätze unter der gesetzlichen Grenze liegen, ist das möglich. Wir prüfen, ob es für Sie günstiger ist."
-      - q: "Was gilt für Kurse über Online-Plattformen?"
-        a: "Das hängt von Plattform und Kund:innen ab. Wir sehen uns Ihre Abrechnungen an."
-      - q: "Kann ich mein Arbeitszimmer absetzen?"
-        a: "Unter bestimmten Voraussetzungen. Wir prüfen das in Ihrer Erklärung."
-
-# ── Handwerk ────────────────────────────────────────────────
-  - slug: handwerk
-    name: "Handwerk"
-    gruppe: handwerk
-    short: "Überblick für alle Gewerke"
-    title: "Steuerberatung für Handwerksbetriebe – digital"
-    description: "Digitale Steuerberatung für Handwerksbetriebe: Reverse Charge bei Bauleistungen, Materialeinkauf, Fahrzeuge, Lehrlinge, Kollektivvertrag und BUAK."
-    h1: "Steuerberatung für das Handwerk"
-    lead: "Tagsüber auf der Baustelle oder in der Werkstatt, abends keine Belege sortieren: Fotografieren, hochladen, fertig. Den Rest erledigen wir."
-    topics:
-      - t: "Reverse Charge bei Bauleistungen"
-        d: "Erbringen Sie Bauleistungen an ein Unternehmen, das selbst Bauleistungen erbringt, geht die Steuerschuld nach § 19 Abs 1a UStG auf den Empfänger über. Wir prüfen Ihre Rechnungen."
-      - t: "Material und Kalkulation"
-        d: "Materialeinkauf, Lager und Stundensätze: Wir zeigen Ihnen, was Ihre Aufträge tatsächlich einbringen."
-      - t: "Fahrzeuge"
-        d: "Für Klein-Lkw und Pkw gelten unterschiedliche Regeln beim Vorsteuerabzug und Sachbezug."
-      - t: "Lehrlinge, Kollektivvertrag, BUAK"
-        d: "Lohnverrechnung nach Kollektivvertrag, Lehrlingsförderung und – wo anwendbar – Meldungen an die BUAK."
-    paket: epu
-    paketText: "Einzelunternehmen: Paket EPU. GmbH oder bilanzierender Betrieb: Paket GmbH. Mit Lohn digital ab dem ersten Mitarbeiter."
-    faq:
-      - q: "Wann gilt Reverse Charge am Bau?"
-        a: "Wenn Sie eine Bauleistung an ein Unternehmen erbringen, das selbst Bauleistungen erbringt (oder als Generalunternehmer beauftragt ist). An Privatkund:innen verrechnen Sie wie gewohnt Umsatzsteuer."
-      - q: "Übernehmen Sie auch die Lohnverrechnung mit BUAK?"
-        a: "Ja. Lohnverrechnung für Betriebe, die dem BUAG unterliegen, bieten wir nach individuellem Angebot an."
-      - q: "Wie bekomme ich die Belege von der Baustelle zu Ihnen?"
-        a: "Per Foto im Upload-Portal, direkt vom Handy."
-
-  - slug: elektro
-    name: "Elektrotechnik"
-    gruppe: handwerk
-    short: "Elektroinstallation, Photovoltaik, Gebäudetechnik"
-    title: "Steuerberatung für Elektrotechnik-Betriebe – digital"
-    description: "Digitale Steuerberatung für Elektriker:innen und Elektrotechnik-Betriebe: Reverse Charge, Materialeinkauf, Anzahlungen, Fahrzeuge und Lohnverrechnung."
-    h1: "Steuerberatung für Elektrotechnik"
-    lead: "Elektroinstallation, Photovoltaik, Service: Wir halten Ihre Buchhaltung digital aktuell, damit Sie Aufträge und Liquidität im Blick haben."
-    topics:
-      - t: "Reverse Charge"
-        d: "Arbeiten als Subunternehmer für Bau- oder Installationsbetriebe fallen häufig unter § 19 Abs 1a UStG. Wir prüfen Ihre Rechnungen."
-      - t: "Material und Großhandel"
-        d: "Rechnungen vom Großhandel werden automatisiert erfasst, Material den Aufträgen zugeordnet."
-      - t: "Anzahlungen und Schlussrechnungen"
-        d: "Bei größeren Projekten, etwa Photovoltaikanlagen, behalten wir Anzahlungen und offene Posten im Blick."
-      - t: "Team und Lehrlinge"
-        d: "Lohnverrechnung nach Kollektivvertrag mit Zulagen, Überstunden und Lehrlingen."
-    paket: epu
-    paketText: "Paket EPU oder GmbH je nach Rechtsform, mit Lohn digital für Monteur:innen und Lehrlinge."
-    faq:
-      - q: "Muss ich bei einer PV-Anlage für Privatkund:innen Umsatzsteuer verrechnen?"
-        a: "Die Regeln für Photovoltaikanlagen haben sich in den letzten Jahren mehrmals geändert. Wir prüfen den aktuellen Stand für Ihre Angebote."
-      - q: "Ich arbeite als Subunternehmer. Was ändert sich?"
-        a: "Häufig geht die Umsatzsteuerschuld auf Ihren Auftraggeber über. Ihre Rechnung braucht dann einen entsprechenden Hinweis."
-      - q: "Können Sie Zulagen richtig abrechnen?"
-        a: "Ja, nach Ihrem Kollektivvertrag."
-
-  - slug: haustechnik
-    name: "Installateure und Haustechnik"
-    gruppe: handwerk
-    short: "Sanitär, Heizung, Lüftung, Klima"
-    title: "Steuerberatung für Installateure und Haustechnik – digital"
-    description: "Digitale Steuerberatung für Installateur- und Haustechnikbetriebe: Reverse Charge, Material, Wartungsverträge, Bereitschaftsdienst und Lohnverrechnung."
-    h1: "Steuerberatung für Installateure und Haustechnik"
-    lead: "Sanitär, Heizung, Lüftung und Klima: Wir übernehmen Buchhaltung und Lohn digital, damit Sie sich auf Baustelle und Kundendienst konzentrieren können."
-    topics:
-      - t: "Reverse Charge"
-        d: "Installationsarbeiten an Bauunternehmen können unter § 19 Abs 1a UStG fallen. Arbeiten für Privatkund:innen werden wie gewohnt mit Umsatzsteuer verrechnet."
-      - t: "Material und Lager"
-        d: "Großhandelsrechnungen, Lagerbestand und Materialentnahmen werden digital erfasst."
-      - t: "Wartungsverträge"
-        d: "Laufende Wartungsverträge und Serviceeinsätze werden periodengerecht erfasst."
-      - t: "Bereitschaft und Zuschläge"
-        d: "Notdienst, Überstunden und Zulagen werden nach Kollektivvertrag korrekt abgerechnet."
-    paket: epu
-    paketText: "Paket EPU oder GmbH je nach Rechtsform, mit Lohn digital für Ihr Team."
-    faq:
-      - q: "Wie werden Notdienst-Zuschläge abgerechnet?"
-        a: "Nach Ihrem Kollektivvertrag. Für bestimmte Zuschläge gibt es lohnsteuerliche Begünstigungen, die wir berücksichtigen."
-      - q: "Was gilt bei Förderungen meiner Kund:innen?"
-        a: "Rechnungen müssen oft bestimmte Angaben enthalten. Wir prüfen Ihre Vorlage aus steuerlicher Sicht."
-      - q: "Wie aktuell sind meine Zahlen?"
-        a: "Sie sehen laufend Auswertungen, sobald Belege und Bankdaten verarbeitet sind."
-
-  - slug: spengler
-    name: "Spengler und Dachdecker"
-    gruppe: handwerk
-    short: "Bauspenglerei, Dach, Fassade"
-    title: "Steuerberatung für Spengler und Dachdecker – digital"
-    description: "Digitale Steuerberatung für Spenglereien und Dachdeckerbetriebe: Reverse Charge, Material, Saison, Lohnverrechnung und BUAK."
-    h1: "Steuerberatung für Spengler und Dachdecker"
-    lead: "Wetter, Saison und Materialpreise bestimmen Ihr Jahr. Wir sorgen dafür, dass Buchhaltung und Lohn verlässlich mitlaufen."
-    topics:
-      - t: "Reverse Charge"
-        d: "Arbeiten für andere Bau- und Handwerksbetriebe fallen häufig unter § 19 Abs 1a UStG."
-      - t: "Material"
-        d: "Blech, Dämmung und Zubehör werden aus den Lieferantenrechnungen automatisiert erfasst und Projekten zugeordnet."
-      - t: "Saison und Liquidität"
-        d: "Wir zeigen Ihnen rechtzeitig, wie sich Saisonschwankungen auf Liquidität und Steuervorauszahlungen auswirken."
-      - t: "Lohn und BUAK"
-        d: "Lohnverrechnung nach Kollektivvertrag; wo das BUAG anwendbar ist, auch die Meldungen an die BUAK."
-    paket: epu
-    paketText: "Paket EPU oder GmbH je nach Rechtsform, mit Lohn digital. BUAK-Lohnverrechnung nach individuellem Angebot."
-    faq:
-      - q: "Unterliegt mein Betrieb der BUAK?"
-        a: "Das hängt von Tätigkeit und Kollektivvertrag ab. Wir klären das mit Ihnen beim Start."
-      - q: "Wie gehe ich mit Schlechtwetter-Tagen um?"
-        a: "Für bestimmte Betriebe gibt es Regelungen zur Schlechtwetterentschädigung. Wir bilden sie in der Lohnverrechnung ab."
-      - q: "Kann ich Belege vom Handy hochladen?"
-        a: "Ja, per Foto im Upload-Portal."
-
-  - slug: zimmerer
-    name: "Zimmerei und Holzbau"
-    gruppe: handwerk
-    switch: showBuakTrades
-    short: "Zimmerei, Holzbau, Dachstuhl"
-    title: "Steuerberatung für Zimmereien und Holzbau – digital"
-    description: "Digitale Steuerberatung für Zimmereien und Holzbaubetriebe: Reverse Charge, Projektabrechnung, Holzeinkauf, Lohnverrechnung mit BUAK."
-    h1: "Steuerberatung für Zimmerei und Holzbau"
-    lead: "Vom Dachstuhl bis zum Holzbau-Projekt: Wir halten Projektabrechnung, Lohn und BUAK digital in Ordnung."
-    topics:
-      - t: "Reverse Charge"
-        d: "Bauleistungen an andere Bauunternehmen fallen unter § 19 Abs 1a UStG. Wir prüfen Ihre Rechnungen."
-      - t: "Projekte und Anzahlungen"
-        d: "Teilrechnungen, Anzahlungen und Schlussrechnungen bleiben je Projekt nachvollziehbar."
-      - t: "Holzeinkauf und Lager"
-        d: "Holz und Material werden erfasst, Lagerbestände zum Jahresende bewertet."
-      - t: "Lohnverrechnung mit BUAK"
-        d: "Zimmereibetriebe unterliegen in der Regel dem Bauarbeiter-Urlaubs- und Abfertigungsgesetz. Wir übernehmen die Lohnverrechnung inklusive BUAK-Meldungen."
-    paket: gmbh
-    paketText: "Je nach Rechtsform Paket EPU oder GmbH. Die Lohnverrechnung mit BUAK erstellen wir nach individuellem Angebot."
-    faq:
-      - q: "Übernehmen Sie die BUAK-Meldungen?"
-        a: "Ja, im Rahmen der Lohnverrechnung für BUAG-Betriebe nach individuellem Angebot."
-      - q: "Wie behandle ich Teilrechnungen?"
-        a: "Wir erfassen Teil- und Schlussrechnungen je Projekt und berücksichtigen sie in Umsatzsteuer und Jahresabschluss."
-      - q: "Beraten Sie auch bei Investitionen in Maschinen?"
-        a: "Ja, inklusive Abschreibung und möglicher steuerlicher Begünstigungen."
-
-  - slug: tischler
-    name: "Tischlerei"
-    gruppe: handwerk
-    short: "Möbel, Innenausbau, Werkstatt"
-    title: "Steuerberatung für Tischlereien – digital"
-    description: "Digitale Steuerberatung für Tischlereien: Kalkulation, Material und Lager, Anzahlungen, Maschinen, Lehrlinge und Lohnverrechnung."
-    h1: "Steuerberatung für Tischlereien"
-    lead: "Werkstatt, Montage, Kundengespräch – Belege fallen überall an. Mit dem Upload-Portal kommen sie direkt zu uns."
-    topics:
-      - t: "Kalkulation"
-        d: "Material, Maschinenstunden und Lohn: Wir zeigen Ihnen, welche Aufträge sich rechnen."
-      - t: "Anzahlungen"
-        d: "Anzahlungen bei Möbelaufträgen werden umsatzsteuerlich richtig behandelt."
-      - t: "Maschinen und Investitionen"
-        d: "Abschreibung, Gewinnfreibetrag und mögliche Investitionsbegünstigungen werden berücksichtigt."
-      - t: "Montage für Bauunternehmen"
-        d: "Einbauarbeiten für andere Bauunternehmen können unter Reverse Charge nach § 19 Abs 1a UStG fallen."
-    paket: epu
-    paketText: "Paket EPU oder GmbH je nach Rechtsform, mit Lohn digital für Gesell:innen und Lehrlinge."
-    faq:
-      - q: "Wann muss ich Umsatzsteuer auf Anzahlungen abführen?"
-        a: "Grundsätzlich mit Ablauf des Monats, in dem die Anzahlung eingeht. Wir berücksichtigen das in Ihren Voranmeldungen."
-      - q: "Lohnt sich eine neue Maschine steuerlich?"
-        a: "Das rechnen wir vor der Investition mit Ihnen durch."
-      - q: "Betreuen Sie auch Lehrlinge?"
-        a: "Ja, Lohnverrechnung inklusive Lehrlingsentschädigung."
-
-  - slug: maler
-    name: "Maler und Anstreicher"
-    gruppe: handwerk
-    short: "Malerei, Anstrich, Fassade"
-    title: "Steuerberatung für Maler und Anstreicher – digital"
-    description: "Digitale Steuerberatung für Maler- und Anstreicherbetriebe: Reverse Charge, Material, Saison, Lehrlinge und Lohnverrechnung."
-    h1: "Steuerberatung für Maler und Anstreicher"
-    lead: "Viele kleine Aufträge, viel Material: Wir halten Ihre Buchhaltung digital übersichtlich und die Fristen im Blick."
-    topics:
-      - t: "Reverse Charge"
-        d: "Malerarbeiten als Subunternehmer für Bauunternehmen fallen häufig unter § 19 Abs 1a UStG."
-      - t: "Material"
-        d: "Farben und Zubehör werden aus Lieferantenrechnungen automatisiert erfasst."
-      - t: "Saison"
-        d: "Wir planen mit Ihnen Liquidität und Vorauszahlungen für ruhigere Monate."
-      - t: "Lohn"
-        d: "Lohnverrechnung nach Kollektivvertrag, inklusive Lehrlingen und Zulagen."
-    paket: epu
-    paketText: "Paket EPU für den Einzelbetrieb, mit Lohn digital ab dem ersten Mitarbeiter."
-    faq:
-      - q: "Was muss auf eine Reverse-Charge-Rechnung?"
-        a: "Unter anderem die UID-Nummer des Empfängers und der Hinweis auf den Übergang der Steuerschuld. Wir prüfen Ihre Vorlage."
-      - q: "Kann ich Material für Privatkund:innen anders verrechnen?"
-        a: "An Privatkund:innen verrechnen Sie Umsatzsteuer wie gewohnt."
-      - q: "Wie kommen die Belege zu Ihnen?"
-        a: "Per Foto oder PDF im Upload-Portal."
-
-  - slug: kfz-werkstaetten
-    name: "Kfz-Werkstätten"
-    gruppe: handwerk
-    short: "Werkstatt, Service, Fahrzeughandel"
-    title: "Steuerberatung für Kfz-Werkstätten – digital"
-    description: "Digitale Steuerberatung für Kfz-Werkstätten und Fahrzeughandel: Differenzbesteuerung, NoVA, Ersatzteillager, Registrierkasse und Lohnverrechnung."
-    h1: "Steuerberatung für Kfz-Werkstätten"
-    lead: "Werkstatt, Ersatzteile, Gebrauchtwagen: Wir bringen Ihre Zahlen digital zusammen – mit Blick auf die steuerlichen Besonderheiten der Branche."
-    topics:
-      - t: "Gebrauchtwagenhandel"
-        d: "Für Gebrauchtfahrzeuge kann die Differenzbesteuerung nach § 24 UStG zur Anwendung kommen. Wir prüfen die Voraussetzungen je Fahrzeug."
-      - t: "NoVA"
-        d: "Beim Handel mit Fahrzeugen kann Normverbrauchsabgabe anfallen. Wir behalten die Pflichten im Blick."
-      - t: "Ersatzteillager"
-        d: "Einkauf, Lager und Inventur der Ersatzteile werden laufend erfasst."
-      - t: "Kassa und Team"
-        d: "Registrierkasse, Kartenzahlungen sowie Lohnverrechnung für Mechaniker:innen und Lehrlinge."
-    paket: epu
-    paketText: "Paket EPU oder GmbH je nach Rechtsform, mit Lohn digital für Ihr Team."
-    faq:
-      - q: "Was ist die Differenzbesteuerung?"
-        a: "Beim Weiterverkauf bestimmter Gebrauchtwaren wird die Umsatzsteuer nur von der Differenz zwischen Ein- und Verkaufspreis berechnet. Die Voraussetzungen prüfen wir je Fahrzeug."
-      - q: "Brauche ich eine Registrierkasse?"
-        a: "Ab 15.000 € Jahresumsatz, wenn davon mehr als 7.500 € bar umgesetzt werden."
-      - q: "Betreuen Sie auch reine Werkstätten ohne Handel?"
-        a: "Ja, Paket und Preis richten sich nach Ihrem Belegvolumen."
+- slug: aerzte
+  name: "Ärzt:innen"
+  gruppe: gesundheit
+  short: "Ordination, Kassen- und Wahlarztpraxis"
+  title: "Steuerberatung für Ärzt:innen – digital"
+  description: "Digitale Steuerberatung für Ärzt:innen in Österreich: Ordinationsbuchhaltung, Umsatzsteuer, Wohlfahrtsfonds und Lohn für das Ordinationsteam. Fixpreis, geprüft von unseren Mitarbeiter:innen."
+  h1: "Steuerberatung für Ärzt:innen"
+  lead: "Ordinationsbuchhaltung, die neben dem Praxisalltag einfach mitläuft: Belege hochladen, wir erledigen Buchhaltung, Erklärungen und Lohn – digital und mit persönlicher Prüfung."
+  zielgruppe_dativ: "für Ärzt:innen"
+  faq_title: "Häufige Fragen von Ärzt:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Kassen- und Wahlarztpraxis"
+    d: "Kassenhonorare, Privathonorare und Nebeneinkünfte, etwa aus einer Spitalstätigkeit, werden übersichtlich getrennt erfasst und in der Einkommensteuer zusammengeführt."
+  - t: Umsatzsteuer
+    d: "Heilbehandlungen sind nach § 6 Abs 1 Z 19 UStG unecht steuerbefreit – ohne Vorsteuerabzug. Andere Leistungen, etwa bestimmte Gutachten oder ästhetische Behandlungen ohne therapeutisches Ziel, können steuerpflichtig sein. Wir grenzen das für Sie ab."
+  - t: "Ärztekammer und Wohlfahrtsfonds"
+    d: "Kammerumlagen und Beiträge zum Wohlfahrtsfonds werden laufend erfasst und als Betriebsausgaben berücksichtigt. Bei einer Anstellung im Spital prüfen wir mögliche Beitragsermäßigungen im Wohlfahrtsfonds."
+  - t: "Ordinationsgründung und -übernahme"
+    d: "Von der Investitionsplanung über die Abschreibung der Ausstattung bis zur Lohnverrechnung für Ordinationsassistenz."
+  - t: Hausapotheke
+    d: "Die Abgabe von Medikamenten aus einer ärztlichen Hausapotheke ist keine steuerfreie Heilbehandlung: Sie unterliegt in der Regel 10 % Umsatzsteuer. Dafür ist die Vorsteuer aus dem Medikamenteneinkauf abziehbar; gemischt genutzte Kosten werden anteilig aufgeteilt."
+  detail:
+  - "Die meisten ärztlichen Umsätze sind nach § 6 Abs 1 Z 19 UStG unecht steuerbefreit. Das bedeutet: keine Umsatzsteuer auf die Honorare, aber auch kein Vorsteuerabzug aus Ordinationseinrichtung, Geräten und Miete. Steuerpflichtig sind dagegen etwa Gutachten ohne therapeutischen Zweck, ästhetische Behandlungen ohne medizinische Indikation und die Medikamentenabgabe aus der Hausapotheke. Gerade für hausapothekenführende Landärzt:innen ist die saubere Trennung der Umsätze und eine nachvollziehbare Vorsteueraufteilung wichtig."
+  - "Wer neben einer Spitalsanstellung eine Wahlarztpraxis führt, muss eine Einkommensteuererklärung abgeben, sobald die Nebeneinkünfte 730 € im Jahr übersteigen. Die Lohnsteuer aus dem Dienstverhältnis wird dabei mit dem Ordinationsgewinn zusammengerechnet. Wir planen die Vorauszahlungen so, dass die erste Veranlagung keine Überraschung bringt."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Für die Einzelordination mit Einnahmen-Ausgaben-Rechnung das Paket EPU, für Ihr Ordinationsteam zusätzlich Lohn digital. Gruppenpraxis als GmbH: Paket Bilanz."
+  faq:
+  - q: "Kann ich als Ärztin oder Arzt Vorsteuer abziehen?"
+    a: "Für unecht steuerbefreite Heilbehandlungen grundsätzlich nicht. Erbringen Sie auch steuerpflichtige Leistungen, kann ein anteiliger Vorsteuerabzug möglich sein. Das klären wir im Einzelfall."
+  - q: "Betreuen Sie auch Wahlärzt:innen mit wenigen Ordinationstagen?"
+    a: "Ja. Neben einer Anstellung besteht ab 730 € Nebeneinkünften im Jahr Pflicht zur Einkommensteuererklärung. Wir erledigen sie und planen die Vorauszahlungen."
+  - q: "Wie kommen meine Belege zu Ihnen?"
+    a: "Über das Upload-Portal, per Foto oder als PDF. Kontoauszüge können über eine Bankanbindung übernommen werden."
+  - q: "Muss ich auf Medikamente aus der Hausapotheke Umsatzsteuer verrechnen?"
+    a: "In der Regel ja, mit 10 %. Die Abgabe ist keine Heilbehandlung und daher nicht nach § 6 Abs 1 Z 19 UStG befreit. Im Gegenzug können Sie die Vorsteuer aus dem Medikamenteneinkauf abziehen."
+- slug: zahnaerzte
+  name: "Zahnärzt:innen"
+  gruppe: gesundheit
+  short: "Praxis, Labor, Investitionen"
+  title: "Steuerberatung für Zahnärzt:innen – digital"
+  description: "Digitale Steuerberatung für Zahnärzt:innen: Praxisbuchhaltung, Umsatzsteuer, Investitionen und Lohnverrechnung für das Praxisteam. Fixpreis, geprüft von unseren Mitarbeiter:innen."
+  h1: "Steuerberatung für Zahnärzt:innen"
+  lead: "Hohe Investitionen, ein eingespieltes Team und viele Zahlungsflüsse: Wir halten Ihre Praxiszahlen digital aktuell und geprüft."
+  zielgruppe_dativ: "für Zahnärzt:innen"
+  faq_title: "Häufige Fragen von Zahnärzt:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Investitionen und Abschreibung"
+    d: "Behandlungseinheiten, Röntgen und Praxiseinrichtung: Wir planen Anschaffungen mit Ihnen und berücksichtigen Abschreibung, Gewinnfreibetrag und Investitionsfreibetrag (für Anschaffungen bis 31.12.2026: 20 %)."
+  - t: Umsatzsteuer
+    d: "Zahnärztliche Heilbehandlungen sind unecht steuerbefreit (§ 6 Abs 1 Z 19 UStG). Auch die Lieferung von Zahnersatz durch Zahnärzt:innen ist befreit (§ 6 Abs 1 Z 20 UStG). Rein ästhetische Leistungen ohne medizinische Indikation können steuerpflichtig sein."
+  - t: "Praxislabor und Fremdlabor"
+    d: "Ob Zahnersatz im eigenen Praxislabor entsteht oder vom Dentallabor zugekauft wird: Rechnungen und Materialeinkauf werden automatisiert erfasst und den Behandlungen zugeordnet."
+  - t: Praxisteam
+    d: "Lohnverrechnung für Assistenz und Prophylaxe, inklusive Teilzeit und Sonderzahlungen."
+  detail:
+  - "Weil Heilbehandlung und Zahnersatz umsatzsteuerfrei sind, gibt es keinen Vorsteuerabzug: Die Umsatzsteuer auf eine neue Behandlungseinheit ist für die Praxis echter Aufwand. Umso wichtiger ist eine Investitionsplanung, die Abschreibung, Gewinnfreibetrag und den derzeit erhöhten Investitionsfreibetrag zusammen betrachtet."
+  - "Zahnarztpraxen haben in der Regel ein eingespieltes Team aus Assistenz und Prophylaxe. Lohnverrechnung nach Kollektivvertrag, Teilzeitmodelle und Sonderzahlungen gehören daher meist zum Standardumfang."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Für die Einzelpraxis mit Einnahmen-Ausgaben-Rechnung das Paket EPU, ergänzt um Lohn digital für Ihr Team. Gruppenpraxis als GmbH: Paket Bilanz."
+  preisHinweis: "Die „ab“-Preise gelten für einen kleinen Standardumfang. Praxen mit Team und hohem Belegvolumen liegen darüber; Ihren Fixpreis erhalten Sie nach einem kurzen Erstgespräch."
+  faq:
+  - q: "Helfen Sie bei der Finanzierung einer neuen Behandlungseinheit?"
+    a: "Wir rechnen die steuerlichen Auswirkungen durch und bereiten die Zahlen für Ihr Bankgespräch auf."
+  - q: "Übernehmen Sie auch die Lohnverrechnung für mein Team?"
+    a: "Ja, mit Lohn digital – vom ersten Dienstverhältnis an."
+  - q: "Kann ich während des Jahres meine Zahlen sehen?"
+    a: "Ja. Sie erhalten laufende Auswertungen online."
+- slug: tieraerzte
+  name: "Tierärzt:innen"
+  gruppe: gesundheit
+  short: "Kleintier- und Großtierpraxis"
+  title: "Steuerberatung für Tierärzt:innen – digital"
+  description: "Digitale Steuerberatung für Tierärzt:innen: Umsatzsteuer, Medikamentenlager, Praxisfahrzeuge und Lohnverrechnung. Fixpreis, geprüft von unseren Mitarbeiter:innen."
+  h1: "Steuerberatung für Tierärzt:innen"
+  lead: "Praxis, Hausbesuche, Medikamente: Wir sorgen dafür, dass Ihre Buchhaltung und Umsatzsteuer stimmen – digital und ohne Papierstapel."
+  zielgruppe_dativ: "für Tierärzt:innen"
+  faq_title: "Häufige Fragen von Tierärzt:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Umsatzsteuer
+    d: "Tierärztliche Leistungen sind – anders als Heilbehandlungen am Menschen – grundsätzlich umsatzsteuerpflichtig. Dafür ist der Vorsteuerabzug aus Einkäufen möglich."
+  - t: "Medikamente und Lager"
+    d: "Einkauf und Abgabe von Tierarzneimitteln werden erfasst, der Lagerbestand zum Jahresende berücksichtigt."
+  - t: "Fahrzeuge und Hausbesuche"
+    d: "Fahrtenbuch, Kilometergeld oder betriebliches Fahrzeug: Wir wählen mit Ihnen die passende Lösung."
+  - t: Registrierkasse
+    d: "Bei Barzahlungen in der Praxis prüfen wir die Registrierkassen- und Belegerteilungspflicht."
+  detail:
+  - "Anders als bei Humanmediziner:innen sind tierärztliche Leistungen umsatzsteuerpflichtig. Das hat auch einen Vorteil: Aus Praxiseinrichtung, Geräten, Medikamenteneinkauf und Fahrzeugen (sofern kein Pkw) ist der Vorsteuerabzug möglich. Für eine kleine Praxis kann die Kleinunternehmerregelung (bis 55.000 € brutto Jahresumsatz) interessant sein – bei hohen Investitionen ist der Verzicht darauf oft günstiger."
+  - "Bei Großtierpraxen fallen hohe Fahrleistungen an. Ob Fahrtenbuch mit Kilometergeld oder betriebliches Fahrzeug günstiger ist, rechnen wir für Ihre Zahlen durch."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Für die Einzelpraxis mit Einnahmen-Ausgaben-Rechnung; bei angestelltem Team mit Lohn digital."
+  faq:
+  - q: "Muss ich als Tierärztin Umsatzsteuer verrechnen?"
+    a: "In der Regel ja, mit 20 %. Tierärztliche Leistungen sind nicht befreit. Ausnahme ist die Kleinunternehmerregelung: Bis 55.000 € Jahresumsatz (brutto) sind Sie befreit, verlieren dann aber den Vorsteuerabzug."
+  - q: "Wie gehe ich mit Barzahlungen um?"
+    a: "Wir prüfen, ob eine Registrierkassenpflicht besteht, und sorgen für eine saubere Übernahme der Kassendaten."
+  - q: "Betreuen Sie auch Großtierpraxen?"
+    a: "Ja. Hohe Fahrleistungen und Medikamentenlager berücksichtigen wir in der laufenden Buchhaltung."
+- slug: gesundheitsberufe
+  name: Gesundheitsberufe
+  gruppe: gesundheit
+  short: "Physio-, Ergotherapie, Logopädie, Pflege, Hebammen"
+  title: "Steuerberatung für Gesundheitsberufe – digital"
+  description: "Digitale Steuerberatung für Physiotherapeut:innen, Ergotherapeut:innen, Logopäd:innen, Pflege und Hebammen: Umsatzsteuer, Sozialversicherung und E/A-Rechnung zum Fixpreis."
+  h1: "Steuerberatung für Gesundheitsberufe"
+  lead: "Für freiberufliche Therapeut:innen, Pflegepersonen und Hebammen: einfache Buchhaltung, klare Umsatzsteuer, pünktliche Erklärungen."
+  zielgruppe_dativ: "für Angehörige der Gesundheitsberufe"
+  faq_title: "Häufige Fragen aus den Gesundheitsberufen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Umsatzsteuer
+    d: "Heilbehandlungen freiberuflicher Angehöriger der gehobenen medizinisch-technischen Dienste, der Gesundheits- und Krankenpflege, Hebammen sowie Heilmasseur:innen sind nach § 6 Abs 1 Z 19 UStG unecht steuerbefreit. Gewerbliche Masseur:innen fallen nicht darunter, ihre Leistungen sind steuerpflichtig. Kurse oder Trainings ohne therapeutisches Ziel können ebenfalls steuerpflichtig sein."
+  - t: "Anstellung und Selbständigkeit"
+    d: "Viele arbeiten angestellt und zusätzlich selbständig. Wir führen beide Einkünfte in der Einkommensteuer zusammen."
+  - t: Sozialversicherung
+    d: "Wir behalten Vorauszahlungen und Nachbemessungen der Sozialversicherung im Blick."
+  - t: Praxisgemeinschaft
+    d: "Gemeinsame Räume, geteilte Kosten: Wir sorgen für eine nachvollziehbare Aufteilung."
+  detail:
+  - "Steuerfreie Heilbehandlungen zählen nicht zur Kleinunternehmergrenze von 55.000 €. Wer daneben steuerpflichtige Leistungen erbringt – etwa Präventionskurse, Coaching oder den Verkauf von Produkten –, bleibt für diese Umsätze oft Kleinunternehmer:in und muss keine Umsatzsteuer verrechnen, solange sie 55.000 € brutto im Jahr nicht übersteigen."
+  - "Viele Therapeut:innen arbeiten angestellt und zusätzlich selbständig. Beide Einkünfte werden in der Einkommensteuer zusammengeführt; die SVS-Beiträge aus der Selbständigkeit werden nachträglich auf Basis des Gewinns bemessen. Wir schätzen Nachzahlungen rechtzeitig ab."
+  pakete:
+  - epu
+  paketText: "Paket EPU mit Einnahmen-Ausgaben-Rechnung und Einkommensteuererklärung."
+  faq:
+  - q: "Brauche ich eine Steuerberatung, wenn ich nur nebenbei selbständig bin?"
+    a: "Nicht zwingend. Sie spart aber Zeit, und Fehler bei Umsatzsteuer und Sozialversicherung lassen sich vermeiden."
+  - q: "Wie hoch sind meine Sozialversicherungs-Nachzahlungen?"
+    a: "Wir schätzen sie anhand Ihrer laufenden Zahlen und informieren Sie rechtzeitig."
+  - q: "Kann ich alles digital erledigen?"
+    a: "Ja, Belege, Auftrag und Besprechungen laufen online."
+  - q: "Sind auch Massagen umsatzsteuerfrei?"
+    a: "Nur Heilbehandlungen durch Heilmasseur:innen bzw. medizinische Masseur:innen im Rahmen ihrer Berufsberechtigung. Leistungen gewerblicher Masseur:innen sind umsatzsteuerpflichtig, sofern nicht die Kleinunternehmerregelung greift."
+- slug: psychotherapie
+  name: "Psychotherapie und Psychologie"
+  gruppe: gesundheit
+  short: "Psychotherapeut:innen, klinische und Gesundheitspsycholog:innen"
+  title: "Steuerberatung für Psychotherapeut:innen und Psycholog:innen"
+  description: "Digitale Steuerberatung für Psychotherapeut:innen sowie klinische und Gesundheitspsycholog:innen: Umsatzsteuer, E/A-Rechnung, Sozialversicherung. Diskret und digital."
+  h1: "Steuerberatung für Psychotherapie und Psychologie"
+  lead: "Diskret, digital und unkompliziert: Wir erledigen Buchhaltung und Erklärungen, damit Sie sich auf Ihre Klient:innen konzentrieren können."
+  zielgruppe_dativ: "für Psychotherapeut:innen und Psycholog:innen"
+  faq_title: "Häufige Fragen aus Psychotherapie und Psychologie"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Umsatzsteuer
+    d: "Psychotherapie ist als Heilbehandlung nach § 6 Abs 1 Z 19 UStG unecht steuerbefreit. Für klinische und Gesundheitspsycholog:innen kann sich die Befreiung aus dem Unionsrecht ergeben. Coaching, Supervision ohne Heilbehandlungszweck oder Seminare sind in der Regel steuerpflichtig."
+  - t: "Praxis und Raumkosten"
+    d: "Eigene Praxis, Untermiete oder Arbeit von zu Hause: Wir berücksichtigen Miete, Raumkosten und – für 2026 noch – das Arbeitsplatzpauschale."
+  - t: "Aus- und Fortbildung"
+    d: "Kosten für Fortbildungen und Supervision können steuerlich relevant sein – wir erfassen sie laufend."
+  - t: Vertraulichkeit
+    d: "Für Belege genügen Rechnungsdaten; Inhalte aus Ihren Sitzungen brauchen wir nicht."
+  detail:
+  - "Die Steuerbefreiung gilt für die Heilbehandlung, nicht für jede Tätigkeit: Supervision für Kolleg:innen, Lehrtätigkeit, Coaching oder Workshops für Unternehmen sind in der Regel steuerpflichtig. Liegen diese Umsätze unter 55.000 € brutto im Jahr, bleibt es bei der Kleinunternehmerbefreiung – die steuerfreien Therapieumsätze zählen bei dieser Grenze nicht mit."
+  - "Wer ohne eigenen Raum außerhalb der Wohnung arbeitet, kann für 2026 noch das Arbeitsplatzpauschale von 1.200 € (bzw. 300 € bei anderen aktiven Einkünften über 13.539 € mit eigenem Arbeitsplatz) geltend machen. Ab 2027 entfällt das Pauschale; absetzbar bleibt ergonomisches Mobiliar bis 300 € im Jahr."
+  pakete:
+  - epu
+  paketText: "Paket EPU mit Einnahmen-Ausgaben-Rechnung und Einkommensteuererklärung."
+  faq:
+  - q: "Ist Supervision umsatzsteuerfrei?"
+    a: "Nur wenn sie im Einzelfall Teil einer Heilbehandlung ist. Supervision für Kolleg:innen oder Teams ist in der Regel steuerpflichtig. Bis 55.000 € brutto Jahresumsatz aus steuerpflichtigen Leistungen greift aber die Kleinunternehmerbefreiung."
+  - q: "Ich bin in Ausbildung unter Supervision. Betreuen Sie mich schon?"
+    a: "Ja. Gerade am Anfang hilft eine klare Struktur bei Belegen und Erklärungen."
+  - q: "Wie vertraulich ist der Upload?"
+    a: "Wir unterliegen der beruflichen Verschwiegenheitspflicht. Hochgeladen werden nur Rechnungen und Zahlungsbelege."
+  - q: "Kann ich meinen Arbeitsplatz zu Hause absetzen?"
+    a: "Für 2026 noch über das Arbeitsplatzpauschale (1.200 € bzw. 300 €), wenn Ihnen kein anderer Raum außerhalb der Wohnung zur Verfügung steht. Ab 2027 entfällt das Pauschale; ergonomisches Mobiliar bleibt bis 300 € im Jahr absetzbar."
+- slug: apotheker
+  name: "Apotheker:innen"
+  gruppe: gesundheit
+  switch: showApotheker
+  short: "Öffentliche Apotheke, Warenlager, Team"
+  title: "Steuerberatung für Apotheker:innen – digital"
+  description: "Digitale Steuerberatung für Apotheken in Österreich: Warenlager und Inventur, Wareneinsatz, Umsatzsteuer, Lohnverrechnung und Jahresabschluss."
+  h1: "Steuerberatung für Apotheker:innen"
+  lead: "Viele Artikel, viele Zahlungen, ein großes Team: Wir bringen Warenwirtschaft, Buchhaltung und Lohn in einen klaren, digitalen Ablauf."
+  zielgruppe_dativ: "für Apotheken"
+  faq_title: "Häufige Fragen von Apotheker:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Warenlager und Inventur"
+    d: "Wareneinsatz, Lagerbewertung und Inventur zum Stichtag – abgestimmt mit den Daten aus Ihrer Warenwirtschaft."
+  - t: Umsatzsteuer
+    d: "Arzneimittel unterliegen 10 % Umsatzsteuer, Drogerie- und Kosmetikartikel in der Regel 20 %. Wir sorgen für die richtige Zuordnung in Kassa und Buchhaltung."
+  - t: Lohnverrechnung
+    d: "Pharmazeut:innen, PKA und Teilzeitkräfte – inklusive der Besonderheiten bei der Abrechnung über die Pharmazeutische Gehaltskasse."
+  - t: "Konzession und Übernahme"
+    d: "Öffentliche Apotheken werden meist als Einzelunternehmen, OG oder KG geführt. Bei Gründung, Übernahme oder Beteiligung begleiten wir die steuerlichen Fragen und die Wahl der Rechtsform."
+  detail:
+  - "In der Apotheke treffen zwei Steuersätze an einer Kassa zusammen: 10 % für Arzneimittel und 20 % für Drogerie, Kosmetik und Nahrungsergänzung. Eine saubere Warengruppenzuordnung in der Warenwirtschaft ist die Voraussetzung für richtige Voranmeldungen."
+  - "Das Warenlager ist in der Apotheke oft der größte Bilanzposten. Inventur und Bewertung zum Stichtag bestimmen den Wareneinsatz und damit den Gewinn – wir stimmen die Daten aus Ihrem Warenwirtschaftssystem mit der Buchhaltung ab."
+  pakete:
+  - bilanz
+  - lohn
+  paketText: "Für bilanzierende Apotheken das Paket Bilanz (doppelte Buchhaltung und Jahresabschluss), ergänzt um Lohn digital. Der Fixpreis richtet sich nach Belegvolumen und Teamgröße."
+  preisHinweis: "Für Apotheken erstellen wir den Fixpreis nach einem kurzen Erstgespräch; die „ab“-Preise gelten für kleinere Betriebe."
+  faq:
+  - q: "Übernehmen Sie die Daten aus unserer Warenwirtschaft?"
+    a: "Wir stimmen mit Ihnen ab, welche Auswertungen wir benötigen, und übernehmen sie digital."
+  - q: "Betreuen Sie auch die Übernahme einer Apotheke?"
+    a: "Ja, mit einem individuellen Angebot für Planung, Finanzierungsunterlagen und steuerliche Struktur."
+  - q: "Wie wird die Lohnverrechnung abgerechnet?"
+    a: "Lohn digital wird je Dienstnehmer:in und Monat abgerechnet. Für größere Teams erstellen wir ein eigenes Angebot."
+- slug: rechtsanwaelte
+  name: "Rechtsanwält:innen"
+  gruppe: freieberufe
+  short: "Kanzlei, Treuhandgelder, Versorgung"
+  title: "Steuerberatung für Rechtsanwält:innen – digital"
+  description: "Digitale Steuerberatung für Rechtsanwält:innen: Trennung von Treuhandgeldern, Versorgungseinrichtung, Umsatzsteuer und Kanzleibuchhaltung. Vertraulich, Fixpreis."
+  h1: "Steuerberatung für Rechtsanwält:innen"
+  lead: "Vertraulich, präzise, digital: Wir führen Ihre Kanzleibuchhaltung so, dass Honorare, Barauslagen und Treuhandgelder sauber getrennt bleiben."
+  zielgruppe_dativ: "für Rechtsanwält:innen"
+  faq_title: "Häufige Fragen von Rechtsanwält:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Treuhand- und Anderkonten"
+    d: "Fremdgelder gehören nicht in die eigene Buchhaltung. Wir halten Treuhandkonten klar von Ihren Betriebseinnahmen getrennt."
+  - t: "Versorgungseinrichtung der Kammer"
+    d: "Beiträge zur Versorgungseinrichtung der Rechtsanwaltskammer werden laufend erfasst und steuerlich berücksichtigt."
+  - t: "Honorare und Barauslagen"
+    d: "Barauslagen wie Fahrtspesen oder Kopien sind Teil Ihres Entgelts und mit 20 % Umsatzsteuer zu verrechnen. Nur Beträge, die Sie im Namen und auf Rechnung Ihrer Mandant:innen bezahlen – etwa Gerichtsgebühren –, sind durchlaufende Posten ohne Umsatzsteuer."
+  - t: "Kanzleigründung und Partnerschaft"
+    d: "Einzelkanzlei, Partnerschaft oder Rechtsanwalts-GmbH: Wir rechnen die steuerlichen Unterschiede durch."
+  detail:
+  - "Rechtsanwält:innen versteuern als Freiberufler:innen nach vereinnahmten Entgelten (§ 17 UStG): Die Umsatzsteuer wird erst mit Zahlungseingang fällig. Treuhandgelder sind keine Betriebseinnahmen und werden getrennt geführt."
+  - "In der Honorarnote ist die Trennung wichtig: Eigene Barauslagen wie Reisekosten, Kopien oder Porto erhöhen das steuerpflichtige Entgelt. Durchlaufende Posten im Sinne des § 4 Abs 3 UStG – etwa im Namen der Mandant:innen entrichtete Gerichtsgebühren – werden ohne Umsatzsteuer weiterverrechnet."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Für die Einzelkanzlei mit Einnahmen-Ausgaben-Rechnung das Paket EPU, für Ihr Kanzleiteam zusätzlich Lohn digital. Rechtsanwalts-GmbH oder größere Kanzlei: Paket Bilanz."
+  faq:
+  - q: "Wie gehen Sie mit Treuhandgeldern um?"
+    a: "Treuhandkonten werden getrennt geführt und nicht als Betriebseinnahmen erfasst. Wir stimmen die Kontenzuordnung zu Beginn mit Ihnen ab."
+  - q: "Muss ich Umsatzsteuer nach Zahlungseingang abführen?"
+    a: "Freiberufler:innen versteuern grundsätzlich nach vereinnahmten Entgelten (§ 17 UStG). Wir berücksichtigen das in Ihren Voranmeldungen."
+  - q: "Sind meine Mandantendaten beim Upload geschützt?"
+    a: "Wir benötigen nur Rechnungs- und Zahlungsbelege. Für alle Daten gilt unsere berufliche Verschwiegenheitspflicht."
+  - q: "Muss ich auf Barauslagen Umsatzsteuer verrechnen?"
+    a: "Auf eigene Barauslagen wie Fahrtkosten oder Kopien ja, sie gehören zum Entgelt. Gerichtsgebühren, die Sie im Namen und auf Rechnung der Mandant:innen bezahlen, sind durchlaufende Posten und bleiben ohne Umsatzsteuer."
+- slug: notare
+  name: "Notar:innen"
+  gruppe: freieberufe
+  short: "Notariat, Treuhandschaften, Team"
+  title: "Steuerberatung für Notar:innen – digital"
+  description: "Digitale Steuerberatung für Notariate: Treuhandabwicklung getrennt von der Kanzleibuchhaltung, Versorgung, Umsatzsteuer und Lohnverrechnung. Vertraulich und digital."
+  h1: "Steuerberatung für Notar:innen"
+  lead: "Ein Notariat bewegt viele Gelder, die nicht die eigenen sind. Wir sorgen für eine klare Trennung und eine Kanzleibuchhaltung, die digital mitläuft."
+  zielgruppe_dativ: "für Notariate"
+  faq_title: "Häufige Fragen von Notar:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Treuhandschaften
+    d: "Treuhandgelder werden getrennt von der eigenen Buchhaltung geführt. Wir stimmen die Kontenstruktur mit Ihnen ab."
+  - t: "Gebühren und Barauslagen"
+    d: "Durchlaufende Posten wie Eintragungsgebühren werden korrekt behandelt und nicht als Umsatz erfasst."
+  - t: "Berufsständische Versorgung"
+    d: "Pflichtbeiträge zur berufsständischen Versorgung werden laufend erfasst und steuerlich berücksichtigt."
+  - t: "Team und Notariatskandidat:innen"
+    d: "Lohnverrechnung für Ihr Kanzleiteam, inklusive Sonderzahlungen und Jahreserklärungen."
+  detail:
+  - "Im Notariat fließen laufend Treuhandgelder, Grunderwerbsteuer und Eintragungsgebühren durch die Kanzlei. Diese Beträge sind keine eigenen Einnahmen: Gebühren, die im Namen und auf Rechnung der Klient:innen bezahlt werden, sind durchlaufende Posten ohne Umsatzsteuer. Eigene Barauslagen gehören dagegen zum steuerpflichtigen Entgelt."
+  - "Als Freiberufler:innen versteuern Notar:innen nach vereinnahmten Entgelten. Wir stimmen die Kontenstruktur so ab, dass Treuhandbewegungen klar von den Betriebseinnahmen getrennt bleiben."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Für das Notariat mit Einnahmen-Ausgaben-Rechnung, ergänzt um Lohn digital für Ihr Team. Fixpreis nach Belegvolumen."
+  faq:
+  - q: "Führen Sie auch das Treuhandbuch?"
+    a: "Das Treuhandbuch bleibt in Ihrer Kanzlei. Wir sorgen dafür, dass Treuhandbewegungen in der Buchhaltung richtig abgegrenzt sind."
+  - q: "Wie läuft der Wechsel zu Taxomation?"
+    a: "Mit dem Kanzleiwechsel-Service: Vollmacht, Vorjahresdaten und offene Fristen übernehmen wir für Sie."
+  - q: "Kann die Lohnverrechnung mit wachsen?"
+    a: "Ja. Lohn digital wird je Dienstnehmer:in abgerechnet."
+- slug: ziviltechniker
+  name: "Ziviltechniker:innen"
+  gruppe: freieberufe
+  short: "Architektur und Ingenieurkonsulent:innen"
+  title: "Steuerberatung für Ziviltechniker:innen – digital"
+  description: "Digitale Steuerberatung für Architekt:innen und Ingenieurkonsulent:innen: Projektabrechnung, Teilrechnungen, Umsatzsteuer bei Auslandsprojekten, ZT-Gesellschaft."
+  h1: "Steuerberatung für Ziviltechniker:innen"
+  lead: "Für Architekt:innen und Ingenieurkonsulent:innen: Projektabrechnung, Umsatzsteuer und Erklärungen – digital, nachvollziehbar und pünktlich."
+  zielgruppe_dativ: "für Ziviltechniker:innen"
+  faq_title: "Häufige Fragen von Ziviltechniker:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Projekte und Teilrechnungen"
+    d: "Akonto- und Teilrechnungen, offene Honorare und Projektkosten bleiben übersichtlich, auch über mehrere Jahre."
+  - t: Auslandsprojekte
+    d: "Leistungen an Unternehmen im EU-Ausland, Reverse Charge und Zusammenfassende Meldung. Bei Planungsleistungen für Grundstücke gelten eigene Regeln zum Leistungsort."
+  - t: "Kammer und Sozialversicherung"
+    d: "Kammerumlagen und Beiträge zur Sozialversicherung werden laufend erfasst und steuerlich berücksichtigt."
+  - t: "Einzelbüro oder ZT-Gesellschaft"
+    d: "Wir rechnen durch, ob und wann eine ZT-GmbH für Sie sinnvoll ist."
+  detail:
+  - "Bei Planungs- und Bauaufsichtsleistungen im Zusammenhang mit einem Grundstück liegt der Leistungsort dort, wo das Grundstück liegt (§ 3a Abs 9 UStG). Für ein Projekt in Deutschland kann das eine Registrierung oder eine Steuerschuldumkehr nach deutschem Recht bedeuten. Allgemeine Beratungsleistungen an Unternehmen im EU-Ausland werden dagegen dort versteuert, wo der Empfänger sitzt – mit Reverse Charge und Zusammenfassender Meldung."
+  - "Ziviltechniker:innen versteuern als Freiberufler:innen nach vereinnahmten Entgelten. Akonto- und Teilrechnungen lösen die Umsatzsteuer erst mit Zahlungseingang aus; offene Honorare bleiben bis dahin ohne Steuerlast."
+  pakete:
+  - epu
+  paketText: "Einzelbüro mit Einnahmen-Ausgaben-Rechnung: Paket EPU. ZT-Gesellschaft: Paket Bilanz. Bei angestelltem Team jeweils mit Lohn digital."
+  faq:
+  - q: "Wann muss ich bei Anzahlungen Umsatzsteuer abführen?"
+    a: "Als Freiberufler:in versteuern Sie grundsätzlich nach vereinnahmten Entgelten: Die Umsatzsteuer entsteht mit Ablauf des Monats, in dem die Akonto- oder Teilzahlung eingeht. Wir berücksichtigen das in Ihren Voranmeldungen."
+  - q: "Ich plane ein Projekt in Deutschland. Was ist zu beachten?"
+    a: "Bei Planungsleistungen im Zusammenhang mit einem Grundstück liegt der Leistungsort grundsätzlich dort, wo das Grundstück liegt. Wir klären die Folgen vorab."
+  - q: "Unterstützen Sie bei der Gründung einer ZT-GmbH?"
+    a: "Ja, mit Rechtsform-Kurzvergleich und Begleitung der steuerlichen Schritte."
+- slug: handel
+  name: Handel
+  gruppe: handel
+  short: "Geschäft, Filiale, Großhandel"
+  title: "Steuerberatung für Handelsbetriebe – digital"
+  description: "Digitale Steuerberatung für Handelsbetriebe in Österreich: Wareneinsatz, Inventur, Registrierkassenpflicht, Umsatzsteuer und Lohnverrechnung zum Fixpreis."
+  h1: "Steuerberatung für den Handel"
+  lead: "Wareneinkauf, Kassa, Lager und Team: Wir verbinden Kassen- und Bankdaten mit Ihrer Buchhaltung – digital und laufend aktuell."
+  zielgruppe_dativ: "für Handelsbetriebe"
+  faq_title: "Häufige Fragen aus dem Handel"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Registrierkasse
+    d: "Registrierkassenpflicht besteht ab 15.000 € Jahresumsatz, wenn davon mehr als 7.500 € bar umgesetzt werden. Wir prüfen Ihre Pflichten und übernehmen die Kassendaten."
+  - t: "Wareneinsatz und Inventur"
+    d: "Einkauf, Lagerbestand und Inventur zum Stichtag ergeben den Wareneinsatz – die wichtigste Kennzahl im Handel."
+  - t: Umsatzsteuer
+    d: "Unterschiedliche Steuersätze im Sortiment – seit 1.7.2026 gilt für bestimmte Grundnahrungsmittel wie Milch, Brot, Eier oder frisches Gemüse 4,9 % –, innergemeinschaftliche Erwerbe und Zusammenfassende Meldung."
+  - t: Team
+    d: "Lohnverrechnung für Verkauf und Lager, inklusive Teilzeit und geringfügiger Beschäftigung."
+  detail:
+  - "Seit 1. Juli 2026 gibt es einen vierten Umsatzsteuersatz: 4,9 % für bestimmte Grundnahrungsmittel laut Anlage 3 zum UStG, etwa Milch, Joghurt, Butter, Eier, frisches Gemüse, Reis, Mehl, Teigwaren und Brot. Für den Lebensmittelhandel bedeutet das: Warengruppen in Kassa und Warenwirtschaft müssen exakt zugeordnet sein."
+  - "Registrierkassenpflicht besteht ab 15.000 € Jahresumsatz je Betrieb, wenn davon mehr als 7.500 € bar (inklusive Karte) umgesetzt werden. Ab dann gilt auch die Belegerteilungspflicht. Investitionsfreibetrag: für Anschaffungen bis 31.12.2026 20 % (ökologische Investitionen 22 %), danach wieder 10 % bzw. 15 %. Geringwertige Wirtschaftsgüter bis 1.000 € netto sind sofort absetzbar."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Einzelunternehmen mit E/A-Rechnung: Paket EPU. Bilanzierende Betriebe und GmbHs: Paket Bilanz. Mit Personal: Lohn digital."
+  faq:
+  - q: "Brauche ich eine Registrierkasse?"
+    a: "Ab 15.000 € Jahresumsatz je Betrieb, wenn davon mehr als 7.500 € Barumsätze sind (Kartenzahlungen zählen dazu). Wir prüfen das für Ihren Betrieb."
+  - q: "Wie läuft die Inventur?"
+    a: "Sie zählen, wir bewerten und übernehmen den Bestand in den Jahresabschluss."
+  - q: "Können Kassenabschlüsse automatisch übernommen werden?"
+    a: "Wir stimmen mit Ihnen die Übernahme digitaler Kassenberichte ab."
+- slug: onlinehandel
+  name: Online-Handel
+  gruppe: handel
+  short: "Webshop, Marktplätze, EU-Versand"
+  title: "Steuerberatung für Online-Händler:innen – digital"
+  description: "Digitale Steuerberatung für Online-Handel und E-Commerce: OSS, EU-Versand, Zahlungsdienstleister, Marktplätze und Retouren. Fixpreis, geprüft von unseren Mitarbeiter:innen."
+  h1: "Steuerberatung für Online-Handel"
+  lead: "Viele kleine Zahlungen über Shop, Marktplätze und Zahlungsdienstleister: Wir bringen das automatisiert in Ihre Buchhaltung."
+  zielgruppe_dativ: "für Online-Händler:innen"
+  faq_title: "Häufige Fragen aus dem Online-Handel"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "One-Stop-Shop (OSS)"
+    d: "Überschreiten Ihre Fernverkäufe an Privatkund:innen in andere EU-Länder 10.000 € pro Jahr, gilt die Umsatzsteuer des Ziellandes. Die Meldung erfolgt über den OSS."
+  - t: "Zahlungsdienstleister und Marktplätze"
+    d: "Auszahlungen, Gebühren und Rückbuchungen werden mit den Bestellungen abgeglichen. Marktplätze melden Ihre Verkäufe nach DAC7 an die Finanzverwaltung – Ihre Buchhaltung sollte dazu passen."
+  - t: "Retouren und Gutschriften"
+    d: "Rücksendungen und Erstattungen werden umsatzsteuerlich richtig berücksichtigt."
+  - t: Wareneinsatz
+    d: "Einkauf, Lager und Versandkosten ergeben Ihren tatsächlichen Deckungsbeitrag."
+  detail:
+  - "Verkaufen Sie über Marktplätze, gilt bei Waren aus Drittländern und bei Verkäufen ausländischer Händler:innen unter Umständen eine fiktive Lieferkette: Die Plattform wird umsatzsteuerlich so behandelt, als hätte sie die Ware selbst gekauft und verkauft. Zusätzlich melden Plattformen für Zeiträume ab 2023 die Verkäufe ihrer Händler:innen an die Finanzverwaltung (DAC7). Wer dann Post vom Finanzamt erhält, sollte vollständige Aufzeichnungen haben."
+  - "Die Kleinunternehmerbefreiung (bis 55.000 € brutto) gilt nur für Umsätze, die in Österreich steuerbar sind. Übersteigen Ihre EU-weiten Fernverkäufe an Privatkund:innen 10.000 € im Jahr, ist die Umsatzsteuer des Bestimmungslands zu verrechnen und über den OSS zu melden – auch für Kleinunternehmer:innen."
+  pakete:
+  - epu
+  paketText: "Paket EPU für kleinere Shops, Paket Bilanz für bilanzierende Online-Händler. Preis nach Belegvolumen."
+  faq:
+  - q: "Ab wann brauche ich den OSS?"
+    a: "Sobald Ihre EU-weiten Fernverkäufe an Privatkund:innen die Schwelle von 10.000 € im Jahr überschreiten. Freiwillig ist er auch früher möglich."
+  - q: "Wie kommen die Daten aus meinem Shop zu Ihnen?"
+    a: "Über Exporte aus Shop- und Zahlungssystemen. Welche Formate passen, klären wir beim Start."
+  - q: "Verkaufe ich als Kleinunternehmer:in ohne Umsatzsteuer?"
+    a: "Für Umsätze in Österreich bis 55.000 € brutto im Jahr ja. Fernverkäufe in andere EU-Länder über der Schwelle von 10.000 € sind aber im Bestimmungsland steuerpflichtig und über den OSS zu melden."
+  - q: "Warum bekomme ich wegen meiner Marktplatz-Verkäufe Post vom Finanzamt?"
+    a: "Plattformen melden für Zeiträume ab 2023 die Umsätze ihrer Händler:innen an die Finanzverwaltung (DAC7). Das Finanzamt gleicht diese Daten mit den Steuererklärungen ab. Wir sorgen dafür, dass Ihre Zahlen übereinstimmen."
+- slug: gastronomie
+  name: Gastronomie
+  gruppe: handel
+  short: "Restaurant, Café, Bar"
+  title: "Steuerberatung für Gastronomie – digital"
+  description: "Digitale Steuerberatung für Gastronomiebetriebe: Registrierkasse, Steuersätze für Speisen und Getränke, Wareneinsatz, Trinkgeld und Lohnverrechnung."
+  h1: "Steuerberatung für die Gastronomie"
+  lead: "Lange Tage, viele Belege: Wir übernehmen Kassendaten und Rechnungen digital, damit Ihre Zahlen stimmen, ohne dass Sie Zettel sortieren."
+  zielgruppe_dativ: "für Gastronomiebetriebe"
+  faq_title: "Häufige Fragen aus der Gastronomie"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Registrierkasse und Kassenbuch"
+    d: "Übernahme der Kassendaten, Abgleich mit Bank und Kartenzahlungen, Belegerteilungspflicht."
+  - t: Steuersätze
+    d: "Speisen und Getränke unterliegen unterschiedlichen Steuersätzen. Wir prüfen, ob Ihre Kassa richtig aufteilt."
+  - t: Wareneinsatz
+    d: "Küche und Getränke getrennt ausgewertet – die Grundlage für Kalkulation und Preise."
+  - t: Personal
+    d: "Lohnverrechnung mit Teilzeit, Aushilfen, Zuschlägen und der bundeseinheitlichen Trinkgeldpauschale seit 1.1.2026."
+  detail:
+  - "Seit 1. Jänner 2026 gelten im Hotel- und Gastgewerbe bundesweit einheitliche Trinkgeldpauschalen der ÖGK. Sie sind Höchstbeträge für die Sozialversicherung: 2026 monatlich 65 € für Beschäftigte mit Inkasso, 45 € ohne Inkasso und 20 € für Lehrlinge, 2027 steigen sie auf 85 € bzw. bleiben bei 45 €. Nachforderungen über die Pauschale hinaus gibt es bei richtiger Anwendung nicht mehr; die Lohnsteuerfreiheit ortsüblicher Trinkgelder bleibt."
+  - "Neu sind auch Informationspflichten: Gibt es ein Verteilsystem (Tronc), müssen Beschäftigte über den Aufteilungsschlüssel informiert werden, und auf Anfrage ist Auskunft über bargeldlose Trinkgelder zu geben. Wir bilden das in der Lohnverrechnung ab."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Paket EPU oder Bilanz je nach Rechtsform, mit Lohn digital für Ihr Team. Fixpreis nach Belegvolumen."
+  faq:
+  - q: "Wie behandle ich Trinkgeld?"
+    a: "Ortsübliche Trinkgelder ohne Rechtsanspruch bleiben lohnsteuerfrei. In der Sozialversicherung gilt seit 1.1.2026 eine bundesweite Pauschale: 2026 monatlich 65 € mit Inkasso, 45 € ohne Inkasso, 20 € für Lehrlinge (2027: 85 € bzw. 45 €). Teilzeit wird aliquotiert."
+  - q: "Wie oft brauchen Sie meine Belege?"
+    a: "Am besten laufend. Im Upload-Portal geht das in wenigen Sekunden."
+  - q: "Betreuen Sie auch Saisonbetriebe?"
+    a: "Ja. An- und Abmeldungen und Saisonspitzen bilden wir in der Lohnverrechnung ab."
+- slug: friseure-kosmetik
+  name: "Friseur und Kosmetik"
+  gruppe: handel
+  short: "Salon, Kosmetik, Fußpflege, Nagelstudio"
+  title: "Steuerberatung für Friseur- und Kosmetikbetriebe – digital"
+  description: "Digitale Steuerberatung für Friseursalons, Kosmetik, Fußpflege und Nagelstudios: Registrierkasse, Gutscheine, Produktverkauf und Lohnverrechnung."
+  h1: "Steuerberatung für Friseur und Kosmetik"
+  lead: "Kassa, Gutscheine, Produkte und Team: Wir halten Ihre Buchhaltung digital und übersichtlich."
+  zielgruppe_dativ: "für Friseur- und Kosmetikbetriebe"
+  faq_title: "Häufige Fragen aus Friseur und Kosmetik"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Registrierkasse
+    d: "Kassendaten übernehmen, Kartenzahlungen abgleichen, Belegerteilungspflicht einhalten."
+  - t: Gutscheine
+    d: "Steht beim Verkauf fest, welcher Steuersatz gilt – im Salon meist durchgehend 20 % –, handelt es sich um einen Einzweckgutschein: Die Umsatzsteuer ist schon beim Verkauf fällig, auch bei Wertgutscheinen. Nur Mehrzweckgutscheine werden erst bei Einlösung versteuert."
+  - t: "Dienstleistung und Produktverkauf"
+    d: "Behandlungen und verkaufte Produkte werden getrennt ausgewertet – für eine klare Kalkulation."
+  - t: "Team und Lehrlinge"
+    d: "Lohnverrechnung inklusive Lehrlingen, Teilzeit und Sonderzahlungen."
+  detail:
+  - "Seit 2019 unterscheidet das Umsatzsteuerrecht nicht mehr zwischen Wert- und Sachgutscheinen, sondern zwischen Einzweck- und Mehrzweckgutscheinen. Entscheidend ist, ob bei der Ausgabe Leistungsort und Steuersatz feststehen. In einem Salon, der nur 20-%-Leistungen und -Produkte anbietet, ist daher auch ein Gutschein über einen Geldbetrag ein Einzweckgutschein. Wichtig ist, dass die Gutscheintaste der Registrierkasse entsprechend eingestellt ist."
+  - "Seit 1.1.2026 gibt es auch für das Friseurgewerbe sowie für Kosmetik, Fußpflege und Massage bundesweit einheitliche Trinkgeldpauschalen in der Sozialversicherung. Wir berücksichtigen sie in der Lohnverrechnung."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Paket EPU für den Einzelbetrieb, mit Lohn digital ab der ersten Mitarbeiterin."
+  faq:
+  - q: "Wann zahle ich Umsatzsteuer auf Gutscheine?"
+    a: "Steht bei Verkauf des Gutscheins fest, welcher Steuersatz gilt – im Salon meist durchgehend 20 % –, ist die Umsatzsteuer schon beim Verkauf fällig, auch bei Wertgutscheinen. Nur wenn der Gutschein für Leistungen oder Waren mit unterschiedlichen Steuersätzen eingelöst werden kann, entsteht sie erst bei Einlösung."
+  - q: "Betreuen Sie auch Ein-Personen-Studios?"
+    a: "Ja, mit dem Paket EPU."
+  - q: "Können Sie Lehrlinge abrechnen?"
+    a: "Ja, inklusive Lehrlingsentschädigung nach Kollektivvertrag."
+- slug: it-software
+  name: "IT und Software"
+  gruppe: handel
+  short: "Entwicklung, IT-Services, SaaS"
+  title: "Steuerberatung für IT- und Softwareunternehmen – digital"
+  description: "Digitale Steuerberatung für Entwickler:innen, IT-Dienstleister und Software-Startups: Reverse Charge, OSS für digitale Leistungen, GmbH-Gründung, Forschungsprämie."
+  h1: "Steuerberatung für IT und Software"
+  lead: "Sie arbeiten digital, Ihre Steuerberatung auch: Belege per Upload, Auswertungen online, Antworten per Mail oder Videocall."
+  zielgruppe_dativ: "für IT- und Softwareunternehmen"
+  faq_title: "Häufige Fragen aus IT und Software"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Internationale Kund:innen"
+    d: "Leistungen an Unternehmen im EU-Ausland mit Reverse Charge und Zusammenfassender Meldung, Kund:innen außerhalb der EU."
+  - t: "Digitale Leistungen an Private"
+    d: "Bei Software-Abos oder Downloads für Privatkund:innen in der EU kann die Umsatzsteuer des Ziellandes gelten – Meldung über den OSS."
+  - t: "EPU oder GmbH"
+    d: "Vom Freelance-Start bis zur GmbH: Wir rechnen mit Ihnen durch, wann der Wechsel sinnvoll ist."
+  - t: "Forschung und Entwicklung"
+    d: "Für eigene Entwicklungsprojekte kann die Forschungsprämie von 14 % der Forschungsaufwendungen in Frage kommen. Voraussetzung ist unter anderem ein Gutachten der FFG."
+  detail:
+  - "Wer als Freelancer:in überwiegend für eine Auftraggeberin arbeitet, sollte die sozialversicherungsrechtliche Einordnung kennen: Liegt in Wahrheit ein Dienstverhältnis vor, drohen Nachzahlungen nach ASVG. Über das Sozialversicherungs-Zuordnungsgesetz kann die Zuordnung vorab geprüft werden."
+  - "Bei eigener Softwareentwicklung lohnt sich ein Blick auf die Forschungsprämie: 14 % der begünstigten Aufwendungen werden vom Finanzamt gutgeschrieben, auch bei Verlusten. Voraussetzung ist ein Jahresgutachten der FFG, das über FinanzOnline angefordert wird."
+  pakete:
+  - epu
+  paketText: "Freelancer:innen: Paket EPU. Software-Unternehmen und Startups: Paket Bilanz, bei Gründung zuvor Paket Start."
+  faq:
+  - q: "Ich bin Freelancer:in für eine deutsche Firma. Was muss auf die Rechnung?"
+    a: "Unter anderem beide UID-Nummern und der Hinweis auf den Übergang der Steuerschuld. Wir prüfen Ihre Vorlage."
+  - q: "Was ist die Forschungsprämie?"
+    a: "Eine Prämie von 14 % auf bestimmte Aufwendungen für Forschung und experimentelle Entwicklung (§ 108c EStG). Sie wird vom Finanzamt gutgeschrieben, ist steuerfrei und setzt unter anderem ein Gutachten der FFG voraus."
+  - q: "Arbeiten Sie mit freien Mitarbeiter:innen-Verträgen?"
+    a: "Wir unterstützen bei der Abgrenzung zwischen Dienstvertrag, freiem Dienstvertrag und Werkvertrag aus steuer- und sozialversicherungsrechtlicher Sicht."
+  - q: "Bin ich als Freelancer:in womöglich scheinselbständig?"
+    a: "Das hängt von Weisungsbindung, Arbeitszeit, Betriebsmitteln und Vertretungsmöglichkeit ab. Bestehen Zweifel, kann die Zuordnung nach dem Sozialversicherungs-Zuordnungsgesetz vorab geprüft werden. Wir sehen uns Ihre Verträge an."
+- slug: agenturen-kreative
+  name: "Agenturen und Kreative"
+  gruppe: handel
+  short: "Werbung, Design, Fotografie, Content"
+  title: "Steuerberatung für Agenturen und Kreative – digital"
+  description: "Digitale Steuerberatung für Agenturen, Designer:innen, Fotograf:innen und Content Creator: Projekte, Fremdleistungen, Nutzungsrechte, Auslandskund:innen."
+  h1: "Steuerberatung für Agenturen und Kreative"
+  lead: "Projekte, Fremdleistungen, Kund:innen im In- und Ausland: Wir halten Ihre Zahlen digital, damit mehr Zeit für die Arbeit bleibt."
+  zielgruppe_dativ: "für Agenturen und Kreative"
+  faq_title: "Häufige Fragen von Agenturen und Kreativen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Projekte und Fremdleistungen"
+    d: "Freelancer, Druck, Produktion: Fremdkosten werden Projekten zugeordnet, damit Sie sehen, was ein Auftrag wirklich bringt."
+  - t: Steuersatz
+    d: "Leistungen aus einer künstlerischen Tätigkeit können dem ermäßigten Steuersatz von 13 % unterliegen (§ 10 Abs 3 Z 4 UStG). Werbe-, Agentur- und Designleistungen sind in der Regel mit 20 % zu versteuern. Wir prüfen die Abgrenzung für Ihre Rechnungen."
+  - t: Equipment
+    d: "Kamera, Rechner, Software: Geringwertige Wirtschaftsgüter bis 1.000 € netto sind sofort absetzbar, teurere Anschaffungen werden über die Nutzungsdauer abgeschrieben."
+  - t: Sozialversicherung
+    d: "Für künstlerisch Tätige kann ein Zuschuss aus dem Künstler-Sozialversicherungsfonds in Frage kommen."
+  detail:
+  - "Für Content Creator kommen die Einnahmen oft aus dem Ausland: Werbeerlöse von Plattformen mit Sitz in Irland oder den USA sind Leistungen an Unternehmen und werden dort versteuert, wo der Empfänger sitzt. Die Rechnung bzw. Gutschrift läuft ohne österreichische Umsatzsteuer, bei EU-Plattformen mit Reverse-Charge-Hinweis und Zusammenfassender Meldung. Sachleistungen aus Kooperationen sind mit ihrem Wert als Einnahme zu erfassen."
+  - "Wer künstlerisch tätig ist, kann beim Künstler-Sozialversicherungsfonds einen Zuschuss zu den SVS-Beiträgen beantragen. Ob eine Leistung künstlerisch ist, ist auch für den Steuersatz wichtig: 13 % statt 20 %."
+  pakete:
+  - epu
+  paketText: "Paket EPU für Einzelunternehmer:innen, Paket Bilanz für Agenturen. Mit Personal: Lohn digital."
+  faq:
+  - q: "Betreuen Sie auch Fotograf:innen und Content Creator?"
+    a: "Ja. Auszahlungen von Plattformen wie YouTube oder Twitch sind in der Regel Leistungen an ausländische Unternehmen ohne österreichische Umsatzsteuer. Auch Produkte, die Sie von Kooperationspartnern erhalten, zählen zu den Einnahmen."
+  - q: "Wie behandle ich Einnahmen aus dem Ausland?"
+    a: "Das hängt davon ab, ob Ihre Kund:innen Unternehmen oder Privatpersonen sind und wo sie sitzen. Wir klären das für Ihre Rechnungen."
+  - q: "Kann ich Equipment sofort absetzen?"
+    a: "Bis 1.000 € netto je Wirtschaftsgut ja (geringwertige Wirtschaftsgüter). Teurere Anschaffungen werden über die Nutzungsdauer abgeschrieben; zusätzlich kann der Investitionsfreibetrag zustehen."
+- slug: trainer-coaches
+  name: "Trainer:innen und Coaches"
+  gruppe: handel
+  short: "Seminare, Coaching, Online-Kurse"
+  title: "Steuerberatung für Trainer:innen und Coaches – digital"
+  description: "Digitale Steuerberatung für Trainer:innen, Coaches und Vortragende: Umsatzsteuer bei Seminaren, Online-Kurse, Reisekosten, Kleinunternehmerregelung."
+  h1: "Steuerberatung für Trainer:innen und Coaches"
+  lead: "Seminare vor Ort, Coaching online, Kurse im Netz: Wir sorgen dafür, dass Ihre Steuern so flexibel mitlaufen wie Ihr Kalender."
+  zielgruppe_dativ: "für Trainer:innen und Coaches"
+  faq_title: "Häufige Fragen von Trainer:innen und Coaches"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Umsatzsteuer
+    d: "Bis 55.000 € brutto Jahresumsatz greift die Kleinunternehmerbefreiung. Befreit sind außerdem Umsätze von Privatlehrer:innen an öffentlichen Schulen und anerkannten Privatschulen sowie bestimmte privatschulähnliche Bildungsangebote (§ 6 Abs 1 Z 11 UStG) – jeweils unter engen Voraussetzungen. Firmenseminare und Coaching sind in der Regel steuerpflichtig."
+  - t: Online-Kurse
+    d: "Digitale Kurse an Privatkund:innen in der EU können OSS-pflichtig sein. Wir behalten das im Blick."
+  - t: Reisekosten
+    d: "Für betrieblich veranlasste Inlandsreisen sind pauschal bis zu 30 € Tagesgeld je 24 Stunden (ab drei Stunden anteilig je angefangene Stunde ein Zwölftel) und 17 € Nächtigungsgeld ohne Beleg absetzbar; höhere Nächtigungskosten mit Beleg."
+  - t: "Honorare von Bildungseinrichtungen"
+    d: "Honorarnoten und Abrechnungen von Auftraggeber:innen werden vollständig erfasst."
+  detail:
+  - "Die Umsatzsteuerbefreiung für Bildungsleistungen ist eng: Sie gilt für Privatlehrer:innen an öffentlichen Schulen und Privatschulen sowie für Einrichtungen mit einer den öffentlichen Schulen vergleichbaren Zielsetzung. Ein Führungskräfte-Seminar für ein Unternehmen oder ein Einzelcoaching fällt in der Regel nicht darunter. Für viele Trainer:innen ist daher die Kleinunternehmerregelung bis 55.000 € brutto der entscheidende Punkt."
+  - "Für betrieblich veranlasste Inlandsreisen sind pauschal bis zu 30 € Tagesgeld je 24 Stunden (ab drei Stunden anteilig je angefangene Stunde ein Zwölftel) und 17 € Nächtigungsgeld ohne Beleg absetzbar; höhere Nächtigungskosten mit Beleg."
+  pakete:
+  - epu
+  paketText: "Paket EPU mit Einnahmen-Ausgaben-Rechnung und Einkommensteuererklärung."
+  faq:
+  - q: "Bin ich als Trainerin Kleinunternehmerin?"
+    a: "Wenn Ihr Jahresumsatz 55.000 € brutto im Vorjahr und im laufenden Jahr nicht übersteigt, ja. Dann verrechnen Sie keine Umsatzsteuer, können aber auch keine Vorsteuer abziehen. Wir rechnen durch, ob ein Verzicht günstiger ist."
+  - q: "Was gilt für Kurse über Online-Plattformen?"
+    a: "Das hängt von Plattform und Kund:innen ab. Wir sehen uns Ihre Abrechnungen an."
+  - q: "Kann ich mein Arbeitszimmer absetzen?"
+    a: "Ein Arbeitszimmer nur, wenn es den Mittelpunkt Ihrer Tätigkeit bildet. Sonst für 2026 noch das Arbeitsplatzpauschale von 1.200 € bzw. 300 €. Ab 2027 entfällt das Pauschale; ergonomisches Mobiliar bleibt bis 300 € im Jahr absetzbar."
+- slug: immobilienmakler
+  name: "Immobilienmakler:innen"
+  gruppe: handel
+  short: "Provisionen, Fahrzeuge, Team"
+  title: "Steuerberatung für Immobilienmakler:innen – digital"
+  description: "Digitale Steuerberatung für Immobilienmakler:innen: Provisionen und Bestellerprinzip, Umsatzsteuer, Fahrzeugkosten und Lohnverrechnung zum Fixpreis."
+  h1: "Steuerberatung für Immobilienmakler:innen"
+  lead: "Provisionen kommen unregelmäßig, Kosten laufend: Wir halten Ihre Zahlen digital aktuell, damit Sie Steuern und Liquidität im Blick haben."
+  zielgruppe_dativ: "für Immobilienmakler:innen"
+  faq_title: "Häufige Fragen von Immobilienmakler:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Gewerbe und Umsatzsteuer"
+    d: "Immobilienmakler:innen üben ein reglementiertes Gewerbe aus: Einkünfte aus Gewerbebetrieb, GSVG und grundsätzlich Sollbesteuerung in der Umsatzsteuer. Auf Provisionen sind 20 % Umsatzsteuer aufzuschlagen."
+  - t: Provisionen
+    d: "Provisionen von Abgeber:innen und Erwerber:innen werden zeitlich richtig erfasst und umsatzsteuerlich korrekt behandelt."
+  - t: Steuervorauszahlungen
+    d: "Schwankende Einnahmen bedeuten schwankende Steuern. Wir passen Vorauszahlungen rechtzeitig an."
+  - t: "Fahrzeug und Marketing"
+    d: "Fahrzeugkosten, Inserate und Fotos werden laufend erfasst und zugeordnet."
+  - t: "Team und freie Mitarbeiter:innen"
+    d: "Lohnverrechnung und die Abgrenzung zwischen Anstellung und freier Mitarbeit."
+  - t: Bestellerprinzip
+    d: "Seit 1.7.2023 gilt bei der Vermittlung von Wohnungsmietverträgen das Erstauftraggeberprinzip (§ 17a MaklerG): Provision zahlt, wer den Makler zuerst beauftragt hat – meist die Vermieterseite."
+  detail:
+  - "Das Bestellerprinzip hat das Provisionsmodell bei Mietwohnungen verändert: Mit Wohnungssuchenden darf eine Provision nur vereinbart werden, wenn sie selbst Erstauftraggeber:innen sind. Für Kaufverträge und Geschäftsräume gilt das nicht. Für Ihre Planung heißt das: Einnahmen aus der Vermietung kommen überwiegend von Vermieter:innen, und Maklerverträge sind mit Datum dauerhaft festzuhalten."
+  - "Provisionen fallen unregelmäßig an, die Steuervorauszahlungen bleiben gleich. Wir beobachten Ihre Zahlen laufend und beantragen bei Bedarf eine Anpassung, damit Liquidität und Steuer zusammenpassen."
+  pakete:
+  - epu
+  paketText: "Paket EPU für Einzelunternehmer:innen, Paket Bilanz für Maklergesellschaften – jeweils mit Lohn digital erweiterbar."
+  faq:
+  - q: "Wie gehe ich mit schwankenden Provisionen um?"
+    a: "Wir beobachten Ihre Zahlen laufend und beantragen bei Bedarf eine Anpassung der Vorauszahlungen."
+  - q: "Kann ich mein Auto betrieblich absetzen?"
+    a: "Für Pkw gelten Einschränkungen, etwa beim Vorsteuerabzug. Wir zeigen Ihnen die Möglichkeiten."
+  - q: "Arbeiten Sie mit Maklersoftware?"
+    a: "Wir übernehmen Rechnungen und Auswertungen digital, unabhängig von Ihrer Software."
+  - q: "Wer zahlt bei Mietwohnungen die Provision?"
+    a: "Seit 1.7.2023 die Person, die Sie zuerst beauftragt hat – in der Regel die Vermieterseite (§ 17a MaklerG). Wohnungssuchende nur dann, wenn sie selbst den Suchauftrag erteilt haben und keine Ausnahme vorliegt."
+- slug: unternehmensberatung
+  name: "Unternehmensberater:innen"
+  gruppe: handel
+  short: "Beratung, Interim, Projekte"
+  title: "Steuerberatung für Unternehmensberater:innen – digital"
+  description: "Digitale Steuerberatung für Unternehmensberater:innen und Interim-Manager:innen: Gewerbe und GSVG, Reisekosten, EU-Kund:innen, Basispauschalierung, EPU oder GmbH."
+  h1: "Steuerberatung für Unternehmensberater:innen"
+  lead: "Viel unterwegs, viele Projekte: Belege per Foto hochladen, Reisekosten automatisch erfasst, Erklärungen pünktlich."
+  zielgruppe_dativ: "für Unternehmensberater:innen"
+  faq_title: "Häufige Fragen von Unternehmensberater:innen"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Gewerbe, nicht freier Beruf"
+    d: "Unternehmensberatung ist ein reglementiertes Gewerbe: Einkünfte aus Gewerbebetrieb, Mitgliedschaft in der Wirtschaftskammer und Pflichtversicherung nach dem GSVG. In der Umsatzsteuer gilt grundsätzlich die Sollbesteuerung."
+  - t: Reisekosten
+    d: "Für betrieblich veranlasste Inlandsreisen sind pauschal bis zu 30 € Tagesgeld je 24 Stunden (ab drei Stunden anteilig je angefangene Stunde ein Zwölftel) und 17 € Nächtigungsgeld ohne Beleg absetzbar; höhere Nächtigungskosten mit Beleg."
+  - t: "Kund:innen im Ausland"
+    d: "Beratungsleistungen an Unternehmen im EU-Ausland: Reverse Charge und Zusammenfassende Meldung."
+  - t: Pauschalierung
+    d: "Bei kaufmännischer oder technischer Beratung können Sie statt der tatsächlichen Ausgaben 6 % der Umsätze pauschal absetzen (2026 höchstens 25.200 €). Für Kleinunternehmer:innen gibt es zusätzlich die Kleinunternehmerpauschalierung: 20 % bei Dienstleistungsbetrieben, sonst 45 %."
+  - t: "EPU oder GmbH"
+    d: "Ab einem gewissen Gewinn kann eine GmbH interessant sein. Wir rechnen es für Ihre Zahlen durch."
+  detail:
+  - "Anders als Freiberufler:innen versteuern Gewerbetreibende die Umsatzsteuer grundsätzlich nach vereinbarten Entgelten (Sollbesteuerung): Sie wird mit Rechnungslegung fällig, auch wenn der Kunde noch nicht bezahlt hat. Lag Ihr Umsatz in einem der beiden Vorjahre bei höchstens 110.000 €, versteuern Sie nach vereinnahmten Entgelten (§ 17 Abs 2 UStG)."
+  - "Für Beratungsleistungen an Unternehmen im EU-Ausland gilt in der Regel das Empfängerortprinzip: Rechnung ohne österreichische Umsatzsteuer, mit beiden UID-Nummern und dem Hinweis auf den Übergang der Steuerschuld, dazu die Zusammenfassende Meldung."
+  pakete:
+  - epu
+  paketText: "Paket EPU für Einzelunternehmer:innen mit Einnahmen-Ausgaben-Rechnung, Paket Bilanz für Beratungsgesellschaften."
+  faq:
+  - q: "Welche Pauschalierung kommt für mich in Frage?"
+    a: "Bei kaufmännischer oder technischer Beratung die Basispauschalierung mit 6 % der Umsätze als Betriebsausgaben (2026 höchstens 25.200 €). Als Kleinunternehmer:in alternativ die Kleinunternehmerpauschalierung. Wir vergleichen die Varianten mit Ihren tatsächlichen Ausgaben."
+  - q: "Ich arbeite für Kund:innen in Deutschland. Verrechne ich Umsatzsteuer?"
+    a: "Bei Leistungen an Unternehmen in der Regel nicht; die Steuerschuld geht über (Reverse Charge). Wir prüfen Ihre Rechnungsmerkmale."
+  - q: "Lohnt sich für mich eine GmbH?"
+    a: "Das zeigt unser Rechtsform-Kurzvergleich – zum Festpreis."
+  - q: "Wie viel Tagesgeld kann ich ansetzen?"
+    a: "Für Inlandsreisen bis zu 30 € je 24 Stunden, ab drei Stunden anteilig, dazu 17 € Nächtigungsgeld ohne Beleg. Für Auslandsreisen gelten die Sätze der Bundesbediensteten."
+- slug: handwerk
+  name: Handwerk
+  gruppe: handwerk
+  short: "Überblick für alle Gewerke"
+  title: "Steuerberatung für Handwerksbetriebe – digital"
+  description: "Digitale Steuerberatung für Handwerksbetriebe: Reverse Charge bei Bauleistungen, Materialeinkauf, Fahrzeuge, Lehrlinge, Kollektivvertrag und BUAK."
+  h1: "Steuerberatung für das Handwerk"
+  lead: "Tagsüber auf der Baustelle oder in der Werkstatt, abends keine Belege sortieren: Fotografieren, hochladen, fertig. Den Rest erledigen wir."
+  zielgruppe_dativ: "für Handwerksbetriebe"
+  faq_title: "Häufige Fragen aus dem Handwerk"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Reverse Charge bei Bauleistungen"
+    d: "Erbringen Sie Bauleistungen an ein Unternehmen, das selbst Bauleistungen erbringt, geht die Steuerschuld nach § 19 Abs 1a UStG auf den Empfänger über. Wir prüfen Ihre Rechnungen."
+  - t: "Material und Kalkulation"
+    d: "Materialeinkauf, Lager und Stundensätze: Wir zeigen Ihnen, was Ihre Aufträge tatsächlich einbringen."
+  - t: Fahrzeuge
+    d: "Klein-Lkw und Kastenwagen, die auf der Liste der vorsteuerabzugsberechtigten Fahrzeuge des BMF stehen („Fiskal-Lkw“), berechtigen zum Vorsteuerabzug. Bei Pkw und Kombis ist er grundsätzlich ausgeschlossen; für private Nutzung durch Dienstnehmer:innen ist ein Sachbezug anzusetzen."
+  - t: "Lehrlinge, Kollektivvertrag, BUAK"
+    d: "Lohnverrechnung nach Kollektivvertrag, Lehrlingsförderung und – wo anwendbar – Meldungen an die BUAK."
+  - t: Investitionen
+    d: "Investitionsfreibetrag: für Anschaffungen bis 31.12.2026 20 % (ökologische Investitionen 22 %), danach wieder 10 % bzw. 15 %. Geringwertige Wirtschaftsgüter bis 1.000 € netto sind sofort absetzbar."
+  detail:
+  - "Reverse Charge am Bau (§ 19 Abs 1a UStG) gilt, wenn Sie eine Bauleistung an ein Unternehmen erbringen, das selbst Bauleistungen erbringt oder als Generalunternehmer beauftragt ist. Die Rechnung enthält dann keine Umsatzsteuer, aber die UID-Nummer des Empfängers und den Hinweis auf den Übergang der Steuerschuld. An Privatkund:innen verrechnen Sie wie gewohnt 20 %."
+  - "Für Investitionen in Maschinen und Werkstatt ist 2026 ein günstiges Jahr: Der Investitionsfreibetrag beträgt für Anschaffungen bis 31.12.2026 20 % (ökologische Investitionen 22 %), danach wieder 10 % bzw. 15 %. Geringwertige Wirtschaftsgüter bis 1.000 € netto sind sofort absetzbar."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Einzelunternehmen: Paket EPU. GmbH oder bilanzierender Betrieb: Paket Bilanz. Mit Lohn digital ab dem ersten Mitarbeiter."
+  faq:
+  - q: "Wann gilt Reverse Charge am Bau?"
+    a: "Wenn Sie eine Bauleistung an ein Unternehmen erbringen, das selbst Bauleistungen erbringt (oder als Generalunternehmer beauftragt ist). An Privatkund:innen verrechnen Sie wie gewohnt Umsatzsteuer."
+  - q: "Übernehmen Sie auch die Lohnverrechnung mit BUAK?"
+    a: "Ja. Lohnverrechnung für Betriebe, die dem Bauarbeiter-Urlaubs- und Abfertigungsgesetz (BUAG) unterliegen, bieten wir nach individuellem Angebot an."
+  - q: "Wie bekomme ich die Belege von der Baustelle zu Ihnen?"
+    a: "Per Foto im Upload-Portal, direkt vom Handy."
+- slug: elektro
+  name: Elektrotechnik
+  gruppe: handwerk
+  short: "Elektroinstallation, Photovoltaik, Gebäudetechnik"
+  title: "Steuerberatung für Elektrotechnik-Betriebe – digital"
+  description: "Digitale Steuerberatung für Elektriker:innen und Elektrotechnik-Betriebe: Reverse Charge, Photovoltaik und Umsatzsteuer, Materialeinkauf, Anzahlungen und Lohnverrechnung."
+  h1: "Steuerberatung für Elektrotechnik"
+  lead: "Elektroinstallation, Photovoltaik, Service: Wir halten Ihre Buchhaltung digital aktuell, damit Sie Aufträge und Liquidität im Blick haben."
+  zielgruppe_dativ: "für Elektrotechnik-Betriebe"
+  faq_title: "Häufige Fragen aus der Elektrotechnik"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Reverse Charge"
+    d: "Arbeiten als Subunternehmer für Bau- oder Installationsbetriebe fallen häufig unter § 19 Abs 1a UStG. Wir prüfen Ihre Rechnungen."
+  - t: "Material und Großhandel"
+    d: "Rechnungen vom Großhandel werden automatisiert erfasst, Material den Aufträgen zugeordnet."
+  - t: "Anzahlungen und Schlussrechnungen"
+    d: "Bei größeren Projekten, etwa Photovoltaikanlagen, entsteht die Umsatzsteuer auf Anzahlungen bereits mit Ablauf des Voranmeldungszeitraums, in dem das Geld eingeht (Mindest-Istbesteuerung) – auch wenn Sie sonst nach vereinbarten Entgelten versteuern."
+  - t: "Team und Lehrlinge"
+    d: "Lohnverrechnung nach Kollektivvertrag mit Zulagen, Überstunden und Lehrlingen."
+  detail:
+  - "Photovoltaik war zwei Jahre lang ein Sonderfall: Von 1.1.2024 bis 31.3.2025 galt für Lieferung und Installation von PV-Modulen bis 35 kWp an Betreiber:innen ein Nullsteuersatz (§ 28 Abs 62 UStG). Durch das Budgetsanierungsmaßnahmengesetz 2025 endete er vorzeitig; für Verträge vor dem 7.3.2025 lief er spätestens mit Ende 2025 aus. Heute gilt für PV-Anlagen an Privatkund:innen wieder der Normalsteuersatz von 20 %."
+  - "Bei größeren Aufträgen sind Anzahlungen üblich. Für sie entsteht die Umsatzsteuer schon mit Ablauf des Voranmeldungszeitraums, in dem sie eingehen – unabhängig davon, wann die Anlage fertig ist. Eine saubere Anzahlungsrechnung und die Verrechnung in der Schlussrechnung vermeiden doppelte oder vergessene Umsatzsteuer."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Paket EPU oder Bilanz je nach Rechtsform, mit Lohn digital für Monteur:innen und Lehrlinge."
+  faq:
+  - q: "Muss ich bei einer PV-Anlage für Privatkund:innen Umsatzsteuer verrechnen?"
+    a: "Ja. Der befristete Nullsteuersatz für Photovoltaikmodule ist ausgelaufen: Er galt für Lieferungen und Installationen bis 31.3.2025, bei Verträgen vor dem 7.3.2025 bis Ende 2025. Seither verrechnen Sie wieder 20 % Umsatzsteuer. Arbeiten Sie als Subunternehmer:in für Elektro- oder Baubetriebe, kann Reverse Charge gelten."
+  - q: "Ich arbeite als Subunternehmer. Was ändert sich?"
+    a: "Häufig geht die Umsatzsteuerschuld auf Ihren Auftraggeber über. Ihre Rechnung braucht dann einen entsprechenden Hinweis."
+  - q: "Können Sie Zulagen richtig abrechnen?"
+    a: "Ja, nach Ihrem Kollektivvertrag."
+- slug: haustechnik
+  name: "Installateure und Haustechnik"
+  gruppe: handwerk
+  short: "Sanitär, Heizung, Lüftung, Klima"
+  title: "Steuerberatung für Installateure und Haustechnik – digital"
+  description: "Digitale Steuerberatung für Installateur- und Haustechnikbetriebe: Reverse Charge, Material, Wartungsverträge, Bereitschaftsdienst und Lohnverrechnung."
+  h1: "Steuerberatung für Installateure und Haustechnik"
+  lead: "Sanitär, Heizung, Lüftung und Klima: Wir übernehmen Buchhaltung und Lohn digital, damit Sie sich auf Baustelle und Kundendienst konzentrieren können."
+  zielgruppe_dativ: "für Installateur- und Haustechnikbetriebe"
+  faq_title: "Häufige Fragen aus der Haustechnik"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Reverse Charge"
+    d: "Installationsarbeiten an Bauunternehmen können unter § 19 Abs 1a UStG fallen. Arbeiten für Privatkund:innen werden wie gewohnt mit Umsatzsteuer verrechnet."
+  - t: "Material und Lager"
+    d: "Großhandelsrechnungen, Lagerbestand und Materialentnahmen werden digital erfasst."
+  - t: Wartungsverträge
+    d: "Laufende Wartungsverträge und Serviceeinsätze werden periodengerecht erfasst."
+  - t: "Bereitschaft und Zuschläge"
+    d: "Schmutz-, Erschwernis- und Gefahrenzulagen sowie Zuschläge für Sonntags-, Feiertags- und Nachtarbeit sind 2026 bis 400 € monatlich lohnsteuerfrei, Überstundenzuschläge zusätzlich für die ersten 15 Überstunden bis 170 € (§ 68 EStG)."
+  detail:
+  - "Im Kundendienst fallen Zuschläge für Nacht-, Sonn- und Feiertagsarbeit regelmäßig an. Für 2026 sind diese gemeinsam mit Schmutz-, Erschwernis- und Gefahrenzulagen bis 400 € monatlich steuerfrei; für Überstundenzuschläge gilt zusätzlich ein Freibetrag für die ersten 15 Überstunden bis 170 € im Monat. Die richtige Zuordnung im Lohnkonto spart Ihren Mitarbeiter:innen bares Geld."
+  - "Wartungsverträge mit Vorauszahlung werden periodengerecht abgegrenzt. Arbeiten Sie als Subunternehmer:in für Bauunternehmen, gilt häufig Reverse Charge; bei Privatkund:innen 20 % Umsatzsteuer."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Paket EPU oder Bilanz je nach Rechtsform, mit Lohn digital für Ihr Team."
+  faq:
+  - q: "Wie werden Notdienst-Zuschläge abgerechnet?"
+    a: "Nach Ihrem Kollektivvertrag. Steuerlich gilt 2026: SEG-Zulagen und Zuschläge für Sonntags-, Feiertags- und Nachtarbeit sind bis 400 € im Monat lohnsteuerfrei, Zuschläge für die ersten 15 Überstunden zusätzlich bis 170 €. Ab 2027 sind es nach derzeitiger Rechtslage 10 Überstunden bzw. 120 €."
+  - q: "Was gilt bei Förderungen meiner Kund:innen?"
+    a: "Förderstellen verlangen meist eine Rechnung mit Leistungsadresse, Leistungszeitraum und getrennt ausgewiesenen förderfähigen Positionen. Wir prüfen Ihre Rechnungsvorlage aus steuerlicher Sicht; die Förderbedingungen selbst legt die jeweilige Förderstelle fest."
+  - q: "Wie aktuell sind meine Zahlen?"
+    a: "Sie sehen laufend Auswertungen, sobald Belege und Bankdaten verarbeitet sind."
+- slug: spengler
+  name: "Spengler und Dachdecker"
+  gruppe: handwerk
+  short: "Bauspenglerei, Dach, Fassade"
+  title: "Steuerberatung für Spengler und Dachdecker – digital"
+  description: "Digitale Steuerberatung für Spenglereien und Dachdeckerbetriebe: Reverse Charge, Material, Saison, Lohnverrechnung und BUAK."
+  h1: "Steuerberatung für Spengler und Dachdecker"
+  lead: "Wetter, Saison und Materialpreise bestimmen Ihr Jahr. Wir sorgen dafür, dass Buchhaltung und Lohn verlässlich mitlaufen."
+  zielgruppe_dativ: "für Spenglereien und Dachdeckereien"
+  faq_title: "Häufige Fragen von Spenglern und Dachdeckern"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Reverse Charge"
+    d: "Arbeiten für andere Bau- und Handwerksbetriebe fallen häufig unter § 19 Abs 1a UStG."
+  - t: Material
+    d: "Blech, Dämmung und Zubehör werden aus den Lieferantenrechnungen automatisiert erfasst und Projekten zugeordnet."
+  - t: "Saison und Liquidität"
+    d: "Wir zeigen Ihnen rechtzeitig, wie sich Saisonschwankungen auf Liquidität und Steuervorauszahlungen auswirken."
+  - t: "Lohn und BUAK"
+    d: "Lohnverrechnung nach Kollektivvertrag; wo das BUAG anwendbar ist, auch die Meldungen an die BUAK."
+  detail:
+  - "Spenglereien und Dachdeckereien arbeiten häufig für andere Bau- und Handwerksbetriebe. Dann gilt Reverse Charge nach § 19 Abs 1a UStG: Rechnung ohne Umsatzsteuer, mit UID-Nummer des Empfängers und Hinweis auf den Übergang der Steuerschuld. Ob Ihr Betrieb der BUAK unterliegt, hängt von Tätigkeit und Kollektivvertrag ab; das klären wir beim Start."
+  - "Für Tage, an denen wegen Schlechtwetters nicht gearbeitet werden kann, gibt es für Betriebe im Geltungsbereich des Bauarbeiter-Schlechtwetterentschädigungsgesetzes eine Entschädigung, die über die BUAK rückerstattet wird. Wir bilden sie in der Lohnverrechnung ab."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Paket EPU oder Bilanz je nach Rechtsform, mit Lohn digital. BUAK-Lohnverrechnung nach individuellem Angebot."
+  faq:
+  - q: "Unterliegt mein Betrieb der BUAK?"
+    a: "Das hängt von Tätigkeit und Kollektivvertrag ab. Wir klären das mit Ihnen beim Start."
+  - q: "Wie gehe ich mit Schlechtwetter-Tagen um?"
+    a: "Für bestimmte Betriebe gibt es Regelungen zur Schlechtwetterentschädigung. Wir bilden sie in der Lohnverrechnung ab."
+  - q: "Kann ich Belege vom Handy hochladen?"
+    a: "Ja, per Foto im Upload-Portal."
+- slug: zimmerer
+  name: "Zimmerei und Holzbau"
+  gruppe: handwerk
+  switch: showBuakTrades
+  short: "Zimmerei, Holzbau, Dachstuhl"
+  title: "Steuerberatung für Zimmereien und Holzbau – digital"
+  description: "Digitale Steuerberatung für Zimmereien und Holzbaubetriebe: Reverse Charge, Projektabrechnung, Holzeinkauf, Lohnverrechnung mit BUAK."
+  h1: "Steuerberatung für Zimmerei und Holzbau"
+  lead: "Vom Dachstuhl bis zum Holzbau-Projekt: Wir halten Projektabrechnung, Lohn und BUAK digital in Ordnung."
+  zielgruppe_dativ: "für Zimmereien und Holzbaubetriebe"
+  faq_title: "Häufige Fragen aus Zimmerei und Holzbau"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Reverse Charge"
+    d: "Bauleistungen an andere Bauunternehmen fallen unter § 19 Abs 1a UStG. Wir prüfen Ihre Rechnungen."
+  - t: "Projekte und Anzahlungen"
+    d: "Teilrechnungen, Anzahlungen und Schlussrechnungen bleiben je Projekt nachvollziehbar."
+  - t: "Holzeinkauf und Lager"
+    d: "Holz und Material werden erfasst, Lagerbestände zum Jahresende bewertet. Investitionsfreibetrag: für Anschaffungen bis 31.12.2026 20 % (ökologische Investitionen 22 %), danach wieder 10 % bzw. 15 %. Geringwertige Wirtschaftsgüter bis 1.000 € netto sind sofort absetzbar."
+  - t: "Lohnverrechnung mit BUAK"
+    d: "Zimmereibetriebe unterliegen in der Regel dem Bauarbeiter-Urlaubs- und Abfertigungsgesetz. Wir übernehmen die Lohnverrechnung inklusive BUAK-Meldungen."
+  detail:
+  - "Zimmereibetriebe unterliegen in der Regel dem Bauarbeiter-Urlaubs- und Abfertigungsgesetz: Urlaub und Abfertigung der Arbeiter:innen laufen über die BUAK, die monatlichen Zuschläge werden mit der Lohnverrechnung gemeldet. Bauleistungen an andere Bauunternehmen fallen unter Reverse Charge."
+  - "Bei Holzbau-Projekten sind Anzahlungen und Teilrechnungen üblich. Die Umsatzsteuer auf Anzahlungen entsteht mit Ablauf des Voranmeldungszeitraums, in dem sie eingehen. Für Maschinen und Abbund gilt 2026 der erhöhte Investitionsfreibetrag von 20 %."
+  pakete:
+  - bilanz
+  - lohn
+  paketText: "Für bilanzierende Zimmereien das Paket Bilanz, für Einzelunternehmen mit E/A-Rechnung das Paket EPU. Die Lohnverrechnung mit BUAK erstellen wir nach individuellem Angebot."
+  faq:
+  - q: "Übernehmen Sie die BUAK-Meldungen?"
+    a: "Ja, im Rahmen der Lohnverrechnung für BUAG-Betriebe nach individuellem Angebot."
+  - q: "Wie behandle ich Teilrechnungen?"
+    a: "Wir erfassen Teil- und Schlussrechnungen je Projekt und berücksichtigen sie in Umsatzsteuer und Jahresabschluss."
+  - q: "Beraten Sie auch bei Investitionen in Maschinen?"
+    a: "Ja. Für Anschaffungen bis 31.12.2026 beträgt der Investitionsfreibetrag 20 % (ökologische Investitionen 22 %), dazu kommt die laufende Abschreibung. Wir rechnen die Auswirkung vor der Investition durch."
+- slug: tischler
+  name: Tischlerei
+  gruppe: handwerk
+  short: "Möbel, Innenausbau, Werkstatt"
+  title: "Steuerberatung für Tischlereien – digital"
+  description: "Digitale Steuerberatung für Tischlereien: Kalkulation, Material und Lager, Anzahlungen, Maschinen, Lehrlinge und Lohnverrechnung."
+  h1: "Steuerberatung für Tischlereien"
+  lead: "Werkstatt, Montage, Kundengespräch – Belege fallen überall an. Mit dem Upload-Portal kommen sie direkt zu uns."
+  zielgruppe_dativ: "für Tischlereien"
+  faq_title: "Häufige Fragen aus der Tischlerei"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Kalkulation
+    d: "Material, Maschinenstunden und Lohn: Wir zeigen Ihnen, welche Aufträge sich rechnen."
+  - t: Anzahlungen
+    d: "Anzahlungen bei Möbelaufträgen werden umsatzsteuerlich richtig behandelt."
+  - t: "Maschinen und Investitionen"
+    d: "Investitionsfreibetrag: für Anschaffungen bis 31.12.2026 20 % (ökologische Investitionen 22 %), danach wieder 10 % bzw. 15 %. Geringwertige Wirtschaftsgüter bis 1.000 € netto sind sofort absetzbar."
+  - t: "Montage für Bauunternehmen"
+    d: "Einbauarbeiten für andere Bauunternehmen können unter Reverse Charge nach § 19 Abs 1a UStG fallen."
+  detail:
+  - "Bei Möbelaufträgen und Innenausbau sind Anzahlungen die Regel. Die Umsatzsteuer darauf entsteht mit Ablauf des Voranmeldungszeitraums, in dem das Geld eingeht – nicht erst mit der Lieferung. In der Schlussrechnung werden die Anzahlungen mit der darauf entfallenden Umsatzsteuer abgezogen."
+  - "Montieren Sie für Bauunternehmen oder Generalunternehmer, gilt für diese Einbauleistungen häufig Reverse Charge. Für Investitionen in CNC-Maschinen und Werkstatt ist 2026 durch den erhöhten Investitionsfreibetrag von 20 % ein günstiger Zeitpunkt."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Paket EPU oder Bilanz je nach Rechtsform, mit Lohn digital für Gesell:innen und Lehrlinge."
+  faq:
+  - q: "Wann muss ich Umsatzsteuer auf Anzahlungen abführen?"
+    a: "Mit Ablauf des Voranmeldungszeitraums (Monat oder Quartal), in dem die Anzahlung eingeht – auch wenn das Möbelstück noch nicht geliefert ist. Wir berücksichtigen das in Ihren Voranmeldungen."
+  - q: "Lohnt sich eine neue Maschine steuerlich?"
+    a: "Das rechnen wir vor der Investition mit Ihnen durch. Für Anschaffungen bis 31.12.2026 beträgt der Investitionsfreibetrag 20 %, danach wieder 10 %."
+  - q: "Betreuen Sie auch Lehrlinge?"
+    a: "Ja, Lohnverrechnung inklusive Lehrlingsentschädigung."
+- slug: maler
+  name: "Maler und Anstreicher"
+  gruppe: handwerk
+  short: "Malerei, Anstrich, Fassade"
+  title: "Steuerberatung für Maler und Anstreicher – digital"
+  description: "Digitale Steuerberatung für Maler- und Anstreicherbetriebe: Reverse Charge, Material, Saison, Lehrlinge und Lohnverrechnung."
+  h1: "Steuerberatung für Maler und Anstreicher"
+  lead: "Viele kleine Aufträge, viel Material: Wir halten Ihre Buchhaltung digital übersichtlich und die Fristen im Blick."
+  zielgruppe_dativ: "für Maler- und Anstreicherbetriebe"
+  faq_title: "Häufige Fragen von Malern und Anstreichern"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: "Reverse Charge"
+    d: "Malerarbeiten als Subunternehmer für Bauunternehmen fallen häufig unter § 19 Abs 1a UStG."
+  - t: Material
+    d: "Farben und Zubehör werden aus Lieferantenrechnungen automatisiert erfasst."
+  - t: Saison
+    d: "Wir planen mit Ihnen Liquidität und Vorauszahlungen für ruhigere Monate."
+  - t: Lohn
+    d: "Lohnverrechnung nach Kollektivvertrag, inklusive Lehrlingen und Zulagen."
+  detail:
+  - "Malerarbeiten an Gebäuden sind Bauleistungen. Arbeiten Sie für Baumeister, Generalunternehmer oder andere Bauhandwerker, geht die Steuerschuld auf den Auftraggeber über (§ 19 Abs 1a UStG). Für Hausverwaltungen oder Privatkund:innen verrechnen Sie dagegen 20 % Umsatzsteuer. Die richtige Zuordnung je Auftrag ist der häufigste Prüfpunkt bei Betriebsprüfungen im Baunebengewerbe."
+  - "In ruhigeren Monaten sinkt der Umsatz, die Kosten bleiben. Wir planen mit Ihnen Liquidität und Steuervorauszahlungen, damit die Wintermonate keine Überraschung bringen."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Paket EPU für den Einzelbetrieb, mit Lohn digital ab dem ersten Mitarbeiter."
+  faq:
+  - q: "Was muss auf eine Reverse-Charge-Rechnung?"
+    a: "Unter anderem die UID-Nummer des Empfängers und der Hinweis auf den Übergang der Steuerschuld. Wir prüfen Ihre Vorlage."
+  - q: "Kann ich Material für Privatkund:innen anders verrechnen?"
+    a: "Nein. An Privatkund:innen verrechnen Sie Leistung und Material mit 20 % Umsatzsteuer. Reverse Charge gilt nur bei Bauleistungen an Unternehmen, die selbst Bauleistungen erbringen."
+  - q: "Wie kommen die Belege zu Ihnen?"
+    a: "Per Foto oder PDF im Upload-Portal."
+- slug: kfz-werkstaetten
+  name: Kfz-Werkstätten
+  gruppe: handwerk
+  short: "Werkstatt, Service, Fahrzeughandel"
+  title: "Steuerberatung für Kfz-Werkstätten – digital"
+  description: "Digitale Steuerberatung für Kfz-Werkstätten und Fahrzeughandel: Differenzbesteuerung, NoVA, Ersatzteillager, Registrierkasse und Lohnverrechnung."
+  h1: "Steuerberatung für Kfz-Werkstätten"
+  lead: "Werkstatt, Ersatzteile, Gebrauchtwagen: Wir bringen Ihre Zahlen digital zusammen – mit Blick auf die steuerlichen Besonderheiten der Branche."
+  zielgruppe_dativ: "für Kfz-Werkstätten"
+  faq_title: "Häufige Fragen von Kfz-Werkstätten"
+  geprueft_am: '2026-11-18'
+  topics:
+  - t: Gebrauchtwagenhandel
+    d: "Für Gebrauchtfahrzeuge kann die Differenzbesteuerung nach § 24 UStG zur Anwendung kommen. Wir prüfen die Voraussetzungen je Fahrzeug."
+  - t: NoVA
+    d: "Beim Handel mit Fahrzeugen kann Normverbrauchsabgabe anfallen. Wir behalten die Pflichten im Blick."
+  - t: Ersatzteillager
+    d: "Einkauf, Lager und Inventur der Ersatzteile werden laufend erfasst."
+  - t: "Kassa und Team"
+    d: "Registrierkasse, Kartenzahlungen sowie Lohnverrechnung für Mechaniker:innen und Lehrlinge."
+  - t: Vorführfahrzeuge
+    d: "Für Pkw ist der Vorsteuerabzug grundsätzlich ausgeschlossen – nicht aber für Vorführfahrzeuge und Fahrzeuge, die zur gewerblichen Weiterveräußerung bestimmt sind (§ 12 Abs 2 Z 2 lit b UStG). Für Kfz-Händler:innen ist das ein wichtiger Unterschied."
+  detail:
+  - "Beim Handel mit Gebrauchtwagen von Privatpersonen kann die Differenzbesteuerung nach § 24 UStG angewendet werden: Umsatzsteuer fällt nur auf die Spanne zwischen Ein- und Verkaufspreis an. Vorführfahrzeuge und Fahrzeuge, die zum Weiterverkauf bestimmt sind, berechtigen – anders als sonst bei Pkw – zum Vorsteuerabzug."
+  - "Registrierkassenpflicht besteht ab 15.000 € Jahresumsatz, wenn davon mehr als 7.500 € bar oder mit Karte umgesetzt werden. In der Werkstatt mit vielen Barzahlungen ist das meist der Fall."
+  pakete:
+  - epu
+  - lohn
+  paketText: "Paket EPU oder Bilanz je nach Rechtsform, mit Lohn digital für Ihr Team."
+  faq:
+  - q: "Was ist die Differenzbesteuerung?"
+    a: "Beim Weiterverkauf bestimmter Gebrauchtwaren wird die Umsatzsteuer nur von der Differenz zwischen Ein- und Verkaufspreis berechnet. Die Voraussetzungen prüfen wir je Fahrzeug."
+  - q: "Brauche ich eine Registrierkasse?"
+    a: "Ab 15.000 € Jahresumsatz, wenn davon mehr als 7.500 € bar umgesetzt werden."
+  - q: "Betreuen Sie auch reine Werkstätten ohne Handel?"
+    a: "Ja, Paket und Preis richten sich nach Ihrem Belegvolumen."
+  - q: "Kann ich die Vorsteuer aus Vorführwagen abziehen?"
+    a: "Ja. Vorführkraftfahrzeuge und Fahrzeuge, die ausschließlich zur gewerblichen Weiterveräußerung bestimmt sind, sind vom Vorsteuerausschluss für Pkw ausgenommen (§ 12 Abs 2 Z 2 lit b UStG)."

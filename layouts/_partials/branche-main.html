@@ -3,9 +3,10 @@
 {{- $b := index (where hugo.Data.branchen.branchen "slug" .Params.branche) 0 -}}
 {{- $g := index (where hugo.Data.branchen.gruppen "key" $b.gruppe) 0 -}}
 {{- $list := partial "branchen-list.html" . -}}
-{{- $subject := printf "Angebot anfragen – Taxomation für %s" $b.name -}}
+{{- $zd := $b.zielgruppe_dativ | default (printf "für %s" $b.name) -}}
+{{- $subject := printf "Angebot anfragen – Taxomation %s" $zd -}}
 {{- $mail := partial "mailto.html" (dict "subject" $subject) -}}
-{{- $p := index (where $L.pakete "key" $b.paket) 0 -}}
+{{- $geprueft := time.AsTime $b.geprueft_am -}}
 
 <section class="lp-hero">
   <div class="wrap">
@@ -21,9 +22,9 @@
         </div>
       </div>
       <div class="lp-aside">
-        <div>{{ partial "icon.html" "cloud" }}<span><b>Komplett digital</b>Belege per Upload, Besprechung per Videocall</span></div>
+        <div>{{ partial "icon.html" "shield" }}<span><b>Geprüft von unseren Mitarbeiter:innen</b>bevor etwas ans Finanzamt geht</span></div>
         <div>{{ partial "icon.html" "clock" }}<span><b>{{ if $d.showServicePromise }}{{ $d.servicePromise }}{{ else }}Schnelle Bearbeitung{{ end }}</b>feste Ansprechpartner:innen</span></div>
-        <div>{{ partial "icon.html" "shield" }}<span><b>Geprüft von unseren Mitarbeiter:innen</b>{{ partial "experience.html" . }}</span></div>
+        <div>{{ partial "icon.html" "cloud" }}<span><b>Komplett digital</b>Belege per Upload, Besprechung per Videocall</span></div>
       </div>
     </div>
   </div>
@@ -31,48 +32,51 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">Worauf es ankommt</span><h2>Steuerliche Themen für {{ $b.name }}.</h2></div>
-    <div class="topics reveal">
+    <div class="sec-head reveal"><span class="eyebrow">Worauf es ankommt</span><h2>Steuerliche Themen {{ $zd }}.</h2></div>
+    <div class="topics">
       {{- range $b.topics }}<div class="topic"><h3>{{ .t }}</h3><p>{{ .d }}</p></div>{{ end }}
     </div>
+    {{- with $b.detail }}
+    <div class="detail">
+      <h3>Im Detail</h3>
+      {{- range . }}<p>{{ . }}</p>{{ end }}
+    </div>
+    {{- end }}
   </div>
 </section>
 
-<section class="alt">
+<section id="paket" class="alt">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">So funktioniert es</span><h2>Digital, komfortabel, persönlich geprüft.</h2></div>
-    <ol class="steps reveal">
-      {{- range $L.ablauf }}<li><h3>{{ .title }}</h3><p>{{ .text }}</p></li>{{ end }}
-    </ol>
-  </div>
-</section>
-
-<section id="paket">
-  <div class="wrap rec">
-    <div class="reveal">
+    <div class="sec-head reveal">
       <span class="eyebrow">Paketempfehlung</span>
-      <h2>Unsere Empfehlung für {{ $b.name }}.</h2>
+      <h2>Unsere Empfehlung {{ $zd }}.</h2>
       <p class="lead">{{ $b.paketText }}</p>
-      {{ if $d.showPrices }}<p class="fine">{{ $d.priceFootnote }}</p>{{ end }}
-      <p><a href="{{ "/#preise" | relURL }}">Alle Pakete und Einzelleistungen ansehen</a></p>
     </div>
-    <div class="reveal">{{ partial "pkg.html" (dict "p" (merge $p (dict "featured" true)) "subject" $subject) }}</div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>Häufige Fragen von {{ $b.name }}.</h2></div>
-    <div class="faq reveal">
-      {{- range $b.faq }}<details><summary>{{ .q }}</summary><p>{{ .a }}</p></details>{{ end }}
+    <div class="rec-cards">
+      {{- range $i, $k := $b.pakete }}{{ $p := index (where $L.pakete "key" $k) 0 }}
+      {{ partial "pkg.html" (dict "p" (merge $p (dict "featured" (eq $i 0))) "subject" $subject) }}
+      {{- end }}
     </div>
-    <p class="disclaimer">Die Inhalte auf dieser Seite sind allgemeine Informationen und ersetzen keine Beratung im Einzelfall. Stand: {{ now.Format "01/2006" }}.</p>
+    <p class="fine">{{ with $b.preisHinweis }}{{ . }} {{ end }}{{ if $d.showPrices }}{{ $d.priceFootnote }} {{ end }}<a href="{{ "/#preise" | relURL }}">Alle Pakete und Einzelleistungen</a></p>
+    <ol class="steps-mini" aria-label="Ablauf">
+      {{- range $L.ablauf }}<li>{{ .title }}</li>{{ end }}
+    </ol>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sec-head"><span class="eyebrow">Weitere Branchen</span><h2 style="font-size:1.9rem">Auch für diese Berufsgruppen.</h2></div>
+    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>{{ $b.faq_title | default "Häufige Fragen" }}.</h2></div>
+    <div class="faq">
+      {{- range $b.faq }}<details><summary>{{ .q }}</summary><p>{{ .a }}</p></details>{{ end }}
+    </div>
+    <p class="disclaimer">Allgemeine Information, ersetzt keine Beratung im Einzelfall. Rechtsstand und letzte Fachkontrolle: <time datetime="{{ $geprueft.Format "2006-01-02" }}">{{ $geprueft.Format "02.01.2006" }}</time>.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Weitere Branchen</span><h2 class="h-small">Auch für diese Berufsgruppen.</h2></div>
     <div class="chips">
       {{- range where $list "gruppe" $b.gruppe }}{{ if ne .slug $b.slug }}<a href="{{ printf "/%s/" .slug | relURL }}">{{ .name }}</a>{{ end }}{{ end }}
       <a href="{{ "/#branchen" | relURL }}">Alle Branchen →</a>
@@ -80,10 +84,4 @@
   </div>
 </section>
 
-<section class="cta">
-  <div class="wrap">
-    <h2>Angebot für {{ $b.name }} anfragen.</h2>
-    <p>Schreiben Sie uns kurz Rechtsform, Belegvolumen und Anzahl der Dienstnehmer:innen. Sie erhalten ein Fixpreis-Angebot{{ if $d.showServicePromise }} – Antwort binnen 1 Werktag{{ end }}.</p>
-    <div class="btns"><a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen {{ partial "icon.html" "arrow" }}</a></div>
-  </div>
-</section>
+{{ partial "contact.html" (dict "title" (printf "Ihr Fixpreis-Angebot %s." $zd) "mail" $mail "text" "Schreiben Sie uns kurz Rechtsform, Belegvolumen und Anzahl der Dienstnehmer:innen.") }}

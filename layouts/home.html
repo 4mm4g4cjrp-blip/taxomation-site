@@ -10,16 +10,23 @@
   <div class="wrap grid">
     <div>
       <span class="eyebrow">Digitale Steuerberatung für Unternehmen</span>
-      <h1>Steuerberatung, die <em>digital</em> mitläuft.</h1>
-      <p class="lead">Belege hochladen, den Rest erledigen wir: automatisierte Belegverarbeitung, schnelle Bearbeitung und persönliche Prüfung durch unsere Mitarbeiter:innen – für Selbständige, freie Berufe, Handel und Handwerk in ganz Österreich.</p>
+      <h1>Belege hochladen. <em>Den Rest</em> erledigen wir.</h1>
+      <p class="lead">Digitale Steuerberatung zum Fixpreis für Selbständige und KMU in ganz Österreich – jede Abgabe persönlich von unseren Mitarbeiter:innen geprüft.</p>
       <div class="btns">
         <a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen {{ partial "icon.html" "arrow" }}</a>
         <a class="btn ghost" href="#paketfinder">Passendes Paket finden</a>
       </div>
-      <p class="note">{{ if $d.showServicePromise }}{{ $d.servicePromise }} · {{ end }}Fixpreise{{ if $d.showPrices }} ab 99 € pro Monat{{ end }} · {{ $exp }}</p>
+      <p class="mailnote">oder direkt an <a href="mailto:{{ $d.contactEmail }}">{{ $d.contactEmail }}</a></p>
+      <p class="note">{{ if $d.showServicePromise }}{{ $d.servicePromise }} · {{ end }}Fixpreis{{ if $d.showPrices }} ab 99 €/Monat{{ end }} · Sitz in {{ $d.operator.city }}, tätig in ganz Österreich</p>
+      {{- if and $d.showPerson $d.person.name }}
+      <div class="person">
+        {{- with $d.person.photo }}<img src="{{ . | relURL }}" alt="" width="56" height="56">{{ end }}
+        <p><b>{{ $d.person.name }}</b><span>{{ $d.person.role }}</span></p>
+      </div>
+      {{- end }}
     </div>
     <div class="mock" aria-hidden="true">
-      <div class="bar"><span style="display:flex;align-items:center;gap:10px;color:var(--navy);font-weight:600;font-size:.88rem"><img class="gear" src="{{ "img/icon.svg" | relURL }}" alt="" width="22" height="22">Belege · November</span><span>Upload-Portal</span></div>
+      <div class="bar"><span class="bar-title"><img class="gear" src="{{ "img/icon.svg" | relURL }}" alt="" width="22" height="22">Belege · November</span><span>Upload-Portal</span></div>
       <ul>
         <li><b>Großhandel – Material</b><span class="amt">1.284,60 €</span><span class="tag ok">verbucht</span></li>
         <li><b>Mobilfunk</b><span class="amt">39,90 €</span><span class="tag ok">verbucht</span></li>
@@ -32,23 +39,26 @@
   </div>
 </section>
 
-<div class="trust">
+<section class="trustsec" aria-labelledby="vertrauen">
   <div class="wrap">
-    <div>{{ partial "icon.html" "cloud" }}<p style="margin:0"><b>Komplett digital</b><span>Upload, Auftrag, Besprechung online</span></p></div>
-    <div>{{ partial "icon.html" "clock" }}<p style="margin:0"><b>{{ if $d.showServicePromise }}{{ $d.servicePromise }}{{ else }}Schnelle Bearbeitung{{ end }}</b><span>feste Ansprechpartner:innen</span></p></div>
-    <div>{{ partial "icon.html" "shield" }}<p style="margin:0"><b>Geprüft von unseren Mitarbeiter:innen</b><span>bevor etwas ans Finanzamt geht</span></p></div>
-    <div>{{ partial "icon.html" "award" }}<p style="margin:0"><b>{{ $exp }}</b><span>moderne Arbeitsweise</span></p></div>
+    <h2 id="vertrauen" class="sr-only">Vertrauen</h2>
+    <div class="trust-grid">
+      <div>{{ partial "icon.html" "shield" }}<p><b>Geprüft, bevor es abgeht</b><span>Automatisierung beschleunigt die Arbeit. Jede Abgabe prüfen unsere Mitarbeiter:innen, bevor sie ans Finanzamt geht.</span></p></div>
+      <div>{{ partial "icon.html" "lock" }}<p><b>Verschwiegenheit</b><span>Berufliche Verschwiegenheitspflicht nach dem Wirtschaftstreuhandberufsgesetz.</span></p></div>
+      <div>{{ partial "icon.html" "clock" }}<p><b>{{ if $d.showServicePromise }}{{ $d.servicePromise }}{{ else }}Schnelle Bearbeitung{{ end }}</b><span>Feste Ansprechpartner:innen, Fristen im Blick.</span></p></div>
+      <div>{{ partial "icon.html" "award" }}<p><b>{{ $exp }}</b><span>Sitz in {{ $d.operator.city }} – digital für ganz Österreich.</span></p></div>
+    </div>
   </div>
-</div>
+</section>
 
 <section id="leistungen">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Digital · Komfort · Service</span>
-      <h2>Moderne Arbeitsweise, persönliche Verantwortung.</h2>
-      <p class="lead">Routinearbeit erledigt die automatisierte Belegverarbeitung. Unsere Zeit gehört der Prüfung, Ihren Fragen und einer schnellen Bearbeitung.</p>
+      <h2>Digital erledigt. Persönlich geprüft.</h2>
+      <p class="lead">Automatisierte Belegverarbeitung, feste Ansprechpartner:innen und Mitarbeiter:innen, die jede Abgabe prüfen, bevor sie an das Finanzamt geht.</p>
     </div>
-    <div class="pillars reveal">
+    <div class="pillars">
       {{- range $L.saeulen }}
       <div class="pillar">
         <div class="ic">{{ partial "icon.html" .icon }}</div>
@@ -66,7 +76,7 @@
       <span class="eyebrow">So funktioniert es</span>
       <h2>In vier Schritten zur digitalen Steuerberatung.</h2>
     </div>
-    <ol class="steps reveal">
+    <ol class="steps">
       {{- range $L.ablauf }}<li><h3>{{ .title }}</h3><p>{{ .text }}</p></li>{{ end }}
     </ol>
   </div>
@@ -79,23 +89,23 @@
       <h2>Klare Pakete zum Fixpreis.</h2>
       <p class="lead">Sie wissen vorab, was Ihre Steuerberatung kostet. Das Angebot richtet sich nach Rechtsform, Belegvolumen und Dienstnehmer:innen.</p>
     </div>
-    <div class="pkgs reveal">
+    <div class="pkgs">
       {{- range $L.pakete }}{{ partial "pkg.html" (dict "p" .) }}{{ end }}
     </div>
     {{ if $d.showPrices }}<p class="fine">{{ $d.priceFootnote }}</p>{{ end }}
 
-    <div class="finder reveal" id="paketfinder">
+    <div class="finder" id="paketfinder">
       <div>
-        <span class="eyebrow" style="color:#A9BDF2">Paketfinder</span>
+        <span class="eyebrow eyebrow-light">Paketfinder</span>
         <h3>Welches Paket passt zu Ihnen?</h3>
         <p>{{ $L.paketfinder.intro }}</p>
       </div>
-      <form id="finder" onsubmit="return false">
+      <form id="finder" action="#paketfinder">
         <fieldset><legend>1. Wo stehen Sie?</legend>
           <div class="opts">
             <label><input type="radio" name="rf" value="gruendung"><span>Ich gründe gerade</span></label>
             <label><input type="radio" name="rf" value="epu"><span>Einzelunternehmen / freier Beruf</span></label>
-            <label><input type="radio" name="rf" value="gmbh"><span>GmbH / bilanzierend</span></label>
+            <label><input type="radio" name="rf" value="bilanz"><span>GmbH / bilanzierend</span></label>
           </div>
         </fieldset>
         <fieldset><legend>2. Beschäftigen Sie Mitarbeiter:innen?</legend>
@@ -111,39 +121,35 @@
       {{- range $L.pakete }}{{ $pr := cond (and $d.showPrices (ne .price "")) (printf "ab %s %s" .price .unit) "Preis auf Anfrage" }}{{ $fd = merge $fd (dict .key (dict "name" .name "price" $pr)) }}{{ end }}
       <script type="application/json" id="finder-data">{{ $fd | jsonify | safeJS }}</script>
     </div>
-  </div>
-</section>
 
-<section class="alt">
-  <div class="wrap two">
-    <div class="reveal">
-      <span class="eyebrow">À la carte</span>
-      <h2>Festpreis-Einzelleistungen.</h2>
-      <p>Für eine konkrete Frage, ohne laufendes Paket.</p>
-      <ul class="list">
-        {{- range $L.einzelleistungen }}<li><b>{{ .name }}</b><span class="p">{{ if and $d.showPrices .price }}{{ .price }}{{ else }}Festpreis auf Anfrage{{ end }}</span><p>{{ .text }}</p></li>{{ end }}
-      </ul>
-      <div class="box"><h3>{{ $L.wechsel.title }}</h3><p>{{ $L.wechsel.text }}</p></div>
-    </div>
-    <div class="reveal">
-      <span class="eyebrow">Individuell</span>
-      <h2>Auch für umfangreichere Themen.</h2>
-      <p>Wenn es komplexer wird, bleiben Sie bei uns. Diese Leistungen bieten wir nach individuellem Angebot an.</p>
-      <ul class="list">
-        {{- range $L.spezial }}<li><b>{{ .name }}</b><span class="p">nach Angebot</span><p>{{ .text }}</p></li>{{ end }}
-      </ul>
+    <div class="two extras">
+      <div>
+        <h3 class="h-sub">Fixpreis-Einzelleistungen</h3>
+        <p>Für eine konkrete Frage, ohne laufendes Paket.</p>
+        <ul class="list">
+          {{- range $L.einzelleistungen }}<li><b>{{ .name }}</b><span class="p">{{ if and $d.showPrices .price }}{{ .price }}{{ else }}Fixpreis nach kurzem Erstgespräch{{ end }}</span><p>{{ .text }}</p></li>{{ end }}
+        </ul>
+        <div class="box"><h3>{{ $L.wechsel.title }}</h3><p>{{ $L.wechsel.text }}</p></div>
+      </div>
+      <div>
+        <h3 class="h-sub">Auch für umfangreichere Themen</h3>
+        <p>Wenn es komplexer wird, bleiben Sie bei uns. Diese Leistungen bieten wir nach individuellem Angebot an.</p>
+        <ul class="list">
+          {{- range $L.spezial }}<li><b>{{ .name }}</b><span class="p">nach Angebot</span><p>{{ .text }}</p></li>{{ end }}
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="branchen">
+<section id="branchen" class="alt">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Branchen</span>
       <h2>Steuerberatung, die Ihre Branche kennt.</h2>
       <p class="lead">Jede Branche hat ihre eigenen Fragen – von der Umsatzsteuerbefreiung in der Ordination bis zu Reverse Charge am Bau. Wählen Sie Ihre Berufsgruppe.</p>
     </div>
-    <div class="bgrid reveal">
+    <div class="bgrid">
       {{- range $B.gruppen }}{{ $g := .key }}
       <div class="bgroup">
         <h3>{{ .name }}</h3>
@@ -158,24 +164,10 @@
   </div>
 </section>
 
-<section class="alt">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Vertrauen</span>
-      <h2>Sorgfalt, auf die Sie sich verlassen können.</h2>
-    </div>
-    <div class="facts reveal">
-      <div><b>Geprüft, bevor es abgeht</b><p>Automatisierung beschleunigt die Arbeit. Jede Abgabe wird dennoch von unseren Mitarbeiter:innen geprüft und freigegeben.</p></div>
-      <div><b>Verschwiegenheit</b><p>Wir unterliegen der beruflichen Verschwiegenheitspflicht nach dem Wirtschaftstreuhandberufsgesetz.</p></div>
-      <div><b>Keine Tracker auf dieser Website</b><p>Keine Cookies, keine Analyse-Tools, keine externen Schriften. Der Paketfinder speichert nichts.</p></div>
-    </div>
-  </div>
-</section>
-
 <section id="faq">
   <div class="wrap">
     <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>Häufige Fragen.</h2></div>
-    <div class="faq reveal">
+    <div class="faq">
       {{- range $L.faq }}{{ if or (not .servicePromise) $d.showServicePromise }}
       <details><summary>{{ .q }}</summary><p>{{ .a }}</p></details>
       {{- end }}{{ end }}
@@ -183,11 +175,5 @@
   </div>
 </section>
 
-<section class="cta">
-  <div class="wrap">
-    <h2>Bereit für eine Steuerberatung, die mitläuft?</h2>
-    <p>Schreiben Sie uns Rechtsform, Branche und ungefähres Belegvolumen. Sie erhalten ein Fixpreis-Angebot{{ if $d.showServicePromise }} – Antwort binnen 1 Werktag{{ end }}.</p>
-    <div class="btns"><a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen {{ partial "icon.html" "arrow" }}</a><a class="btn ghost" href="mailto:{{ $d.contactEmail }}">{{ $d.contactEmail }}</a></div>
-  </div>
-</section>
+{{ partial "contact.html" (dict "title" "Angebot anfragen." "mail" $mail "text" "Schreiben Sie uns Rechtsform, Branche und ungefähres Belegvolumen. Sie erhalten ein Fixpreis-Angebot.") }}
 {{ end }}

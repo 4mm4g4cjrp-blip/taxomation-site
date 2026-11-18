@@ -31,16 +31,16 @@ pakete:
       - "Einkommensteuererklärung"
       - "Bescheidprüfung und Vorauszahlungen"
       - "Fristen-Erinnerungen"
-  - key: gmbh
-    name: "GmbH"
+  - key: bilanz
+    name: "Bilanz"
     tagline: "Doppelte Buchhaltung"
     price: "390"
     unit: "€ / Monat"
-    for: "Kapitalgesellschaften und bilanzierende Unternehmen"
+    for: "GmbHs, OG und KG sowie alle bilanzierenden Unternehmen"
     items:
       - "Doppelte Buchhaltung, UVA und Zusammenfassende Meldung"
       - "Jahresabschluss und Offenlegung im Firmenbuch"
-      - "Körperschaftsteuererklärung"
+      - "Körperschaft- bzw. Einkommensteuererklärung"
       - "Laufende Online-Auswertungen"
       - "Preis nach Belegvolumen"
   - key: lohn
@@ -56,7 +56,7 @@ pakete:
       - "Sonderzahlungen, Lohnzettel, Jahreserklärungen"
       - "Start-Paket „Erster Mitarbeiter“ auf Anfrage"
 
-# Festpreis-Einzelleistungen (Preise noch nicht freigegeben → „Festpreis auf Anfrage“)
+# Fixpreis-Einzelleistungen. price leer = „Fixpreis nach kurzem Erstgespräch“ (Preise noch nicht freigegeben)
 einzelleistungen:
   - name: "Videocall-Beratung"
     text: "30 Minuten zu Ihrer konkreten Frage, mit kurzer schriftlicher Zusammenfassung."
@@ -121,7 +121,7 @@ faq:
   - q: "Für wen ist Taxomation gedacht?"
     a: "Für Unternehmen in ganz Österreich: Einzelunternehmer:innen, freie Berufe, Gründer:innen, GmbHs, Handels- und Handwerksbetriebe. Private Arbeitnehmerveranlagungen bieten wir nicht an."
   - q: "Was ist im Fixpreis enthalten?"
-    a: "Der im Angebot beschriebene Leistungsumfang, etwa laufende Buchhaltung, Voranmeldungen, Jahresabschluss und Erklärungen. Leistungen darüber hinaus vereinbaren wir vorab, zum Beispiel als Festpreis-Einzelleistung."
+    a: "Der im Angebot beschriebene Leistungsumfang, etwa laufende Buchhaltung, Voranmeldungen, Jahresabschluss und Erklärungen. Leistungen darüber hinaus vereinbaren wir vorab, zum Beispiel als Fixpreis-Einzelleistung."
   - q: "Wie schnell erhalte ich eine Antwort?"
     a: "Auf Anfragen antworten wir binnen 1 Werktag."
     servicePromise: true

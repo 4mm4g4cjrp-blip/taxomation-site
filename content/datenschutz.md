@@ -6,7 +6,7 @@ sitemap:
   priority: 0.2
 ---
 
-Diese Website ist bewusst schlicht gebaut: Sie besteht ausschließlich aus statischen Seiten, verwendet **keine Cookies**, **keine Analyse- oder Tracking-Werkzeuge**, **keine Social-Media-Plugins** und lädt **keine externen Schriftarten oder Skripte**. Der Paketfinder läuft ausschließlich in Ihrem Browser; Ihre Auswahl wird weder gespeichert noch übertragen. Im Folgenden informieren wir Sie gemäß Art. 13 DSGVO.
+Diese Website ist bewusst schlicht gebaut: Sie besteht ausschließlich aus statischen Seiten, verwendet **keine Cookies**, **keine Analyse- oder Tracking-Werkzeuge**, **keine Social-Media-Plugins** und lädt **keine externen Schriftarten oder Skripte**. Der Paketfinder läuft ausschließlich in Ihrem Browser; Ihre Auswahl wird weder gespeichert noch übertragen. Dasselbe gilt für die Schaltfläche „E-Mail-Adresse kopieren“: Sie legt die Adresse nur lokal in Ihre Zwischenablage. Im Folgenden informieren wir Sie gemäß Art. 13 DSGVO.
 
 ## Verantwortliche
 

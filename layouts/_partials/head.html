@@ -1,11 +1,17 @@
-{{- $title := cond .IsHome "Digitale Steuerberatung Österreich | Taxomation" (printf "%s | Taxomation" .Title) -}}
+{{- $is404 := eq .Kind "404" -}}
+{{- $title := cond .IsHome "Digitale Steuerberatung Österreich | Taxomation" (cond $is404 "Seite nicht gefunden | Taxomation" (printf "%s | Taxomation" .Title)) -}}
 {{- $desc := .Description | default .Params.description | default site.Params.description -}}
 <meta charset="utf-8">
+{{ partial "csp.html" . }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $desc }}">
+{{- if $is404 }}
+<meta name="robots" content="noindex">
+{{- else }}
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="alternate" hreflang="de-AT" href="{{ .Permalink }}">
+{{- end }}
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
@@ -24,5 +30,5 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 {{- $css := resources.Get "css/main.css" | minify | fingerprint }}
-<style>{{ $css.Content | safeCSS }}</style>
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{ partial "jsonld.html" . }}

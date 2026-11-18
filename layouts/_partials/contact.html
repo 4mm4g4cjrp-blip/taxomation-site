@@ -1,0 +1,28 @@
+{{- /* dict "title" "text" "mail" (mailto-URL) — Kontaktbereich mit sichtbarer Adresse, Kopier-Button, optional Telefon/Termin/Formular (Schalter in site.yaml) */ -}}
+{{- $d := hugo.Data.site -}}
+<section class="cta" id="kontakt">
+  <div class="wrap">
+    <h2>{{ .title }}</h2>
+    <p>{{ .text }}{{ if $d.showServicePromise }} {{ $d.servicePromise }}.{{ end }}</p>
+    <div class="btns">
+      <a class="btn" href="{{ .mail | safeURL }}">E-Mail schreiben {{ partial "icon.html" "arrow" }}</a>
+      {{- if and $d.showBooking $d.bookingUrl }}<a class="btn ghost" href="{{ $d.bookingUrl }}" rel="noopener">{{ $d.bookingLabel }}</a>{{ end }}
+    </div>
+    <div class="contact-lines">
+      <p class="addr"><span>E-Mail</span><a href="mailto:{{ $d.contactEmail }}">{{ $d.contactEmail }}</a>
+        <button type="button" class="copy" data-copy="{{ $d.contactEmail }}" hidden>E-Mail-Adresse kopieren</button>
+        <span class="copied" role="status" aria-live="polite"></span></p>
+      {{- if and $d.showPhone $d.phone }}<p class="addr"><span>Telefon</span><a href="tel:{{ $d.phoneHref }}">{{ $d.phone }}</a></p>{{ end }}
+      <p class="addr"><span>Post</span>{{ $d.operator.name }}, {{ $d.operator.street }}, {{ $d.operator.zip }} {{ $d.operator.city }}</p>
+    </div>
+    {{- if and $d.showContactForm $d.contactFormAction }}
+    <form class="cform" method="post" action="{{ $d.contactFormAction }}">
+      <label>Name<input name="name" autocomplete="name" required></label>
+      <label>E-Mail<input type="email" name="email" autocomplete="email" required></label>
+      <label class="full">Ihre Nachricht (Rechtsform, Branche, Belege pro Monat, Dienstnehmer:innen)<textarea name="message" rows="5" required></textarea></label>
+      <p class="full fine">Mit dem Absenden werden Ihre Angaben zur Bearbeitung Ihrer Anfrage übermittelt. Details in der <a href="{{ "/datenschutz/" | relURL }}">Datenschutzerklärung</a>.</p>
+      <button class="btn" type="submit">Anfrage senden</button>
+    </form>
+    {{- end }}
+  </div>
+</section>

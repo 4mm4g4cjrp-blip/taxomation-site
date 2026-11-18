@@ -1,0 +1,5 @@
+# Sicherheitskontakt für taxomation.at (RFC 9116)
+Contact: mailto:office@taxomation.at
+Expires: 2027-11-18T00:00:00.000Z
+Preferred-Languages: de, en
+Canonical: https://taxomation.at/.well-known/security.txt

@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{- $list := partial "branchen-list.html" . -}}
+<section class="legal notfound"><div class="wrap">
+  <span class="eyebrow">Fehler 404</span>
+  <h1>Diese Seite gibt es nicht.</h1>
+  <p class="lead">Vielleicht hat sich ein Tippfehler in die Adresse eingeschlichen, oder die Seite wurde verschoben. Hier geht es weiter:</p>
+  <div class="btns">
+    <a class="btn" href="{{ "/" | relURL }}">Zur Startseite {{ partial "icon.html" "arrow" }}</a>
+    <a class="btn ghost" href="{{ "/#preise" | relURL }}">Pakete und Preise</a>
+    <a class="btn ghost" href="{{ "/#kontakt" | relURL }}">Kontakt</a>
+  </div>
+  <h2>Branchenseiten</h2>
+  <div class="chips">
+    {{- range $list }}<a href="{{ printf "/%s/" .slug | relURL }}">{{ .name }}</a>{{ end }}
+  </div>
+</div></section>
+{{ end }}

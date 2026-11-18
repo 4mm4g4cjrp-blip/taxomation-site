@@ -1,0 +1,13 @@
+{{- /* Content-Security-Policy als Meta-Tag (GitHub Pages erlaubt keine eigenen Header).
+     Keine Inline-Skripte/-Styles: CSS und JS liegen als Dateien vor; JSON-LD und
+     finder-data sind Datenblöcke und werden von der CSP nicht erfasst.
+     frame-ancestors/report-uri wirken im Meta-Tag nicht und fehlen daher bewusst.
+     upgrade-insecure-requests erst setzen, wenn HTTPS erzwungen ist. */ -}}
+{{- $d := hugo.Data.site -}}
+{{- $form := "'self'" -}}
+{{- if and $d.showContactForm $d.contactFormAction -}}
+  {{- $u := urls.Parse $d.contactFormAction -}}
+  {{- $form = printf "'self' %s://%s" $u.Scheme $u.Host -}}
+{{- end -}}
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; form-action {{ $form }}; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">

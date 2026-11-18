@@ -32,9 +32,30 @@ switches:
   showBuakTrades: true     # Zimmerei und andere BUAK-pflichtige Handwerke
   showApotheker: true      # Landingpage Apotheker:innen
 
-# Betreiberin (Impressum/Datenschutz/JSON-LD)
+# ── Vorbereitete Elemente: standardmäßig AUS, erst mit echten Daten einschalten ──
+# Ansprechperson im Hero (Foto unter static/img/, z. B. "img/team/name.jpg")
+showPerson: false
+person:
+  name: ""                # z. B. "Vorname Nachname"
+  role: ""                # z. B. "Ihre Ansprechpartnerin"
+  photo: ""
+# Telefonnummer (Kontaktbereich, Footer, Impressum-Hinweis)
+showPhone: false
+phone: ""                 # Anzeige, z. B. "+43 …"
+phoneHref: ""             # tel:-Format ohne Leerzeichen, z. B. "+43…"
+# Termin-Link für ein kurzes Erstgespräch (eigener Dienst, CSP wird nicht berührt – reiner Link)
+showBooking: false
+bookingUrl: ""
+bookingLabel: "Erstgespräch vereinbaren"
+# Kontaktformular – nur mit Anbieter + AV-Vertrag einschalten und Datenschutzerklärung ergänzen!
+# contactFormAction muss eine https-URL sein; ihre Herkunft wird automatisch in die CSP (form-action) übernommen.
+showContactForm: false
+contactFormAction: ""
+
+# Betreiberin (Impressum/Datenschutz/JSON-LD/Footer)
 operator:
   name: "SCAR Steuerberatung Holding GmbH"
   street: "Hauptplatz 11"
   zip: "7400"
   city: "Oberwart"
+  brandLine: "Taxomation – eine Marke der SCAR Steuerberatung Holding GmbH, Oberwart"

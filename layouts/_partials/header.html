@@ -1,4 +1,3 @@
-{{- $mail := partial "mailto.html" (dict "subject" "Angebot anfragen – Taxomation") -}}
 {{- $h := cond .IsHome "" "/" -}}
 <a class="skip" href="#main">Zum Inhalt springen</a>
 <header class="hdr">
@@ -10,7 +9,7 @@
       <a href="{{ $h }}#ablauf">Ablauf</a>
       <a href="{{ $h }}#preise">Preise</a>
       <a href="{{ $h }}#faq">FAQ</a>
-      <a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen</a>
+      <a class="btn" href="{{ $h }}#kontakt">Angebot anfragen</a>
     </nav>
     <details class="menu">
       <summary aria-label="Menü öffnen">{{ partial "icon.html" "menu" }}</summary>
@@ -20,7 +19,7 @@
         <a href="{{ $h }}#ablauf">Ablauf</a>
         <a href="{{ $h }}#preise">Preise</a>
         <a href="{{ $h }}#faq">FAQ</a>
-        <a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen</a>
+        <a class="btn" href="{{ $h }}#kontakt">Angebot anfragen</a>
       </div>
     </details>
   </div>

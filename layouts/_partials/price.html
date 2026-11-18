@@ -2,5 +2,5 @@
 {{- if and hugo.Data.site.showPrices .price -}}
 <div class="price num"><span class="ab">ab</span>{{ .price }} €<small>{{ replace .unit "€ " "" }}</small></div>
 {{- else -}}
-<div class="price" style="font-size:1.6rem">auf Anfrage<small>Fixpreis nach Angebot</small></div>
+<div class="price price-text">auf Anfrage<small>Fixpreis nach Angebot</small></div>
 {{- end -}}
