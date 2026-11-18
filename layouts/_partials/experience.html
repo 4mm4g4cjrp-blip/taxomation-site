@@ -1,0 +1,5 @@
+{{- $d := hugo.Data.site -}}
+{{- $mode := $d.experienceClaim | default "neutral" -}}
+{{- if and (eq $mode "year") $d.foundingYear -}}{{ printf (index $d.experienceTexts "year") $d.foundingYear }}
+{{- else if eq $mode "decades" -}}{{ index $d.experienceTexts "decades" }}
+{{- else -}}{{ index $d.experienceTexts "neutral" }}{{- end -}}

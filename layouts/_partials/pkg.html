@@ -1,0 +1,10 @@
+{{- /* dict "p" Paket "subject" Betreff */ -}}
+{{- $p := .p -}}
+<article class="pkg{{ if $p.featured }} featured{{ end }}">
+  <div class="tl">{{ $p.tagline }}</div>
+  <h3>{{ $p.name }}</h3>
+  {{ partial "price.html" $p }}
+  <p class="for">{{ $p.for }}</p>
+  <ul>{{ range $p.items }}<li>{{ partial "icon.html" "check" }}{{ . }}</li>{{ end }}</ul>
+  <a class="btn{{ if not $p.featured }} ghost{{ end }}" href="{{ partial "mailto.html" (dict "subject" (.subject | default (printf "Angebot anfragen – Paket %s" $p.name))) | safeURL }}">Angebot anfragen</a>
+</article>

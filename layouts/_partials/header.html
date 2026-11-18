@@ -1,0 +1,27 @@
+{{- $mail := partial "mailto.html" (dict "subject" "Angebot anfragen – Taxomation") -}}
+{{- $h := cond .IsHome "" "/" -}}
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="{{ "/" | relURL }}" aria-label="Taxomation – Startseite">{{ partial "logo.html" "logo" }}</a>
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="{{ $h }}#leistungen">Leistungen</a>
+      <a href="{{ $h }}#branchen">Branchen</a>
+      <a href="{{ $h }}#ablauf">Ablauf</a>
+      <a href="{{ $h }}#preise">Preise</a>
+      <a href="{{ $h }}#faq">FAQ</a>
+      <a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen</a>
+    </nav>
+    <details class="menu">
+      <summary aria-label="Menü öffnen">{{ partial "icon.html" "menu" }}</summary>
+      <div class="panel">
+        <a href="{{ $h }}#leistungen">Leistungen</a>
+        <a href="{{ $h }}#branchen">Branchen</a>
+        <a href="{{ $h }}#ablauf">Ablauf</a>
+        <a href="{{ $h }}#preise">Preise</a>
+        <a href="{{ $h }}#faq">FAQ</a>
+        <a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen</a>
+      </div>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,40 @@
+# ─────────────────────────────────────────────────────────────
+# Taxomation – zentrale Schalter und Texte der Hauptseite
+# Leistungen/Preise: data/leistungen.yaml · Berufsgruppen: data/branchen.yaml
+# ─────────────────────────────────────────────────────────────
+
+contactEmail: office@taxomation.at
+
+# Preise (von Andreas am 11.11.2026 bestätigt): true = „ab“-Preise, false = „Preis auf Anfrage“
+showPrices: true
+priceFootnote: "Alle Preise netto zzgl. 20 % USt. „Ab“-Preise gelten für einen typischen Standardumfang; Ihr Fixpreis richtet sich nach Rechtsform, Belegvolumen und Dienstnehmer:innen."
+
+# Service-Versprechen (von Andreas bestätigt)
+showServicePromise: true
+servicePromise: "Antwort binnen 1 Werktag"
+
+# Erfahrung – Formulierung (WT-AARL: wahr und belegbar). Werte: neutral | decades | year
+#   neutral = „Langjährige Erfahrung in der Steuerberatung“ (Standard, keine Zahl)
+#   decades = „Jahrzehnte an Erfahrung in der Steuerberatung“ (erst nach Bestätigung durch Andreas)
+#   year    = „Erfahrung in der Steuerberatung seit <foundingYear>“ (nur mit belegtem Jahr)
+experienceClaim: neutral
+foundingYear: ""          # Platzhalter, bewusst leer
+experienceTexts:
+  neutral: "Langjährige Erfahrung in der Steuerberatung"
+  decades: "Jahrzehnte an Erfahrung in der Steuerberatung"
+  year: "Erfahrung in der Steuerberatung seit %s"
+
+# Belegkanal
+belegChannelText: "Belege einfach im Upload-Portal hochladen"
+
+# Berufsgruppen-Schalter (Seite wird bei false nicht erzeugt und nirgends verlinkt)
+switches:
+  showBuakTrades: true     # Zimmerei und andere BUAK-pflichtige Handwerke
+  showApotheker: true      # Landingpage Apotheker:innen
+
+# Betreiberin (Impressum/Datenschutz/JSON-LD)
+operator:
+  name: "SCAR Steuerberatung Holding GmbH"
+  street: "Hauptplatz 11"
+  zip: "7400"
+  city: "Oberwart"

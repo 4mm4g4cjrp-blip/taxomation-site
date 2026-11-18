@@ -1,0 +1,6 @@
+{{- /* Erwartet dict "subject" "…" ; liefert mailto-URL mit Betreff und Formular-Vorlage */ -}}
+{{- $d := hugo.Data.site -}}
+{{- $body := "Guten Tag,\n\nich interessiere mich für ein Angebot.\n\nBranche/Tätigkeit:\nRechtsform:\nBelege pro Monat (ca.):\nDienstnehmer:innen:\nGewünschter Start:\n\nVielen Dank!" -}}
+{{- $s := replace (urlquery .subject) "+" "%20" -}}
+{{- $b := replace (urlquery $body) "+" "%20" -}}
+{{- return (printf "mailto:%s?subject=%s&body=%s" $d.contactEmail $s $b) -}}

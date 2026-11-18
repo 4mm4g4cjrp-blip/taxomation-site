@@ -1,0 +1,35 @@
+{{- $d := hugo.Data.site -}}
+{{- $list := partial "branchen-list.html" . -}}
+<footer class="ftr">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="{{ "/" | relURL }}">{{ partial "logo.html" "white" }}</a>
+        <p>Digitale Steuerberatung für Unternehmen in Österreich. Automatisierte Belegverarbeitung, geprüft von unseren Mitarbeiter:innen.</p>
+        <p><a href="mailto:{{ $d.contactEmail }}">{{ $d.contactEmail }}</a></p>
+      </div>
+      <div>
+        <h2 class="fh">Branchen</h2>
+        <ul>{{ range first 9 (where $list "gruppe" "in" (slice "gesundheit" "freieberufe")) }}<li><a href="{{ printf "/%s/" .slug | relURL }}">{{ .name }}</a></li>{{ end }}</ul>
+      </div>
+      <div>
+        <h2 class="fh">&nbsp;</h2>
+        <ul>{{ range where $list "gruppe" "in" (slice "handel" "handwerk") }}{{ if in (slice "handel" "onlinehandel" "gastronomie" "it-software" "handwerk" "elektro" "haustechnik" "zimmerer" "kfz-werkstaetten") .slug }}<li><a href="{{ printf "/%s/" .slug | relURL }}">{{ .name }}</a></li>{{ end }}{{ end }}<li><a href="{{ "/#branchen" | relURL }}">Alle Branchen</a></li></ul>
+      </div>
+      <div>
+        <h2 class="fh">Taxomation</h2>
+        <ul>
+          <li><a href="{{ "/#leistungen" | relURL }}">Leistungen</a></li>
+          <li><a href="{{ "/#preise" | relURL }}">Preise</a></li>
+          <li><a href="{{ "/#faq" | relURL }}">FAQ</a></li>
+          <li><a href="{{ "/impressum/" | relURL }}">Impressum</a></li>
+          <li><a href="{{ "/datenschutz/" | relURL }}">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© {{ now.Year }} {{ $d.operator.name }} · Taxomation</span>
+      <span>Taxomation ist eine Marke der {{ $d.operator.name }}.</span>
+    </div>
+  </div>
+</footer>

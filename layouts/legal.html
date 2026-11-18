@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section class="legal"><div class="wrap">
+  <nav class="crumbs" aria-label="Brotkrümel"><a href="{{ "/" | relURL }}">Startseite</a><span>/</span>{{ .Title }}</nav>
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+</div></section>
+{{ end }}

@@ -1,0 +1,16 @@
+{{/* Erzeugt je Berufsgruppe aus data/branchen.yaml eine Seite unter /<slug>/ */}}
+{{- $sw := hugo.Data.site.switches -}}
+{{- range hugo.Data.branchen.branchen -}}
+  {{- $on := true -}}
+  {{- with .switch }}{{ $on = index $sw . }}{{ end -}}
+  {{- if $on -}}
+    {{- $.AddPage (dict
+        "path" .slug
+        "title" .title
+        "kind" "page"
+        "params" (dict "branche" .slug "description" .description "layout" "branche")
+        "content" (dict "mediaType" "text/markdown" "value" "")
+        "sitemap" (dict "priority" 0.8)
+    ) -}}
+  {{- end -}}
+{{- end -}}

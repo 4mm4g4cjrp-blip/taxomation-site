@@ -1,0 +1,137 @@
+# ─────────────────────────────────────────────────────────────
+# Leistungen & Preise (Quelle: Produktentwicklung portfolio_v3.md,
+# angebot-produktentwicklung.md, berufsgruppen-produktentwicklung.md).
+# Austauschbar: neue Übersicht hier einpflegen, Layout bleibt.
+# price: Zahl als Text ("" = „auf Anfrage“); unit: Zusatz nach dem Preis.
+# ─────────────────────────────────────────────────────────────
+
+pakete:
+  - key: start
+    name: "Start"
+    tagline: "Digitale Gründung"
+    price: "390"
+    unit: "€ einmalig"
+    for: "Gründer:innen, die von Anfang an sauber aufgestellt sein wollen"
+    items:
+      - "Rechtsform-Kurzvergleich (Einzelunternehmen oder GmbH)"
+      - "Steuernummer und UID-Nummer beantragen"
+      - "Anmeldung zur Sozialversicherung begleiten"
+      - "NeuFöG-Erklärung vorbereiten"
+      - "Gründungscheckliste und Einrichtung des Upload-Portals"
+  - key: epu
+    name: "EPU"
+    tagline: "Einnahmen-Ausgaben-Rechnung"
+    price: "99"
+    unit: "€ / Monat"
+    for: "Einzelunternehmer:innen und freie Berufe mit E/A-Rechnung"
+    featured: true
+    items:
+      - "Laufende Einnahmen-Ausgaben-Rechnung aus Ihren Uploads"
+      - "Umsatzsteuervoranmeldungen"
+      - "Einkommensteuererklärung"
+      - "Bescheidprüfung und Vorauszahlungen"
+      - "Fristen-Erinnerungen"
+  - key: gmbh
+    name: "GmbH"
+    tagline: "Doppelte Buchhaltung"
+    price: "390"
+    unit: "€ / Monat"
+    for: "Kapitalgesellschaften und bilanzierende Unternehmen"
+    items:
+      - "Doppelte Buchhaltung, UVA und Zusammenfassende Meldung"
+      - "Jahresabschluss und Offenlegung im Firmenbuch"
+      - "Körperschaftsteuererklärung"
+      - "Laufende Online-Auswertungen"
+      - "Preis nach Belegvolumen"
+  - key: lohn
+    name: "Lohn digital"
+    tagline: "Ab der ersten Mitarbeiterin"
+    price: "13,49"
+    unit: "€ je Dienstnehmer:in / Monat"
+    for: "Arbeitgeber:innen – vom ersten Dienstverhältnis an"
+    items:
+      - "Laufende Lohn- und Gehaltsabrechnung"
+      - "An-, Ab- und Änderungsmeldungen, mBGM"
+      - "Kollektivvertrag und Einstufung"
+      - "Sonderzahlungen, Lohnzettel, Jahreserklärungen"
+      - "Start-Paket „Erster Mitarbeiter“ auf Anfrage"
+
+# Festpreis-Einzelleistungen (Preise noch nicht freigegeben → „Festpreis auf Anfrage“)
+einzelleistungen:
+  - name: "Videocall-Beratung"
+    text: "30 Minuten zu Ihrer konkreten Frage, mit kurzer schriftlicher Zusammenfassung."
+    price: ""
+  - name: "Bescheidprüfung"
+    text: "Wir prüfen Ihren Steuerbescheid und sagen Ihnen, ob sich ein Rechtsmittel lohnen kann."
+    price: ""
+  - name: "Rechtsform-Kurzvergleich"
+    text: "Einzelunternehmen oder GmbH: die steuerlichen Unterschiede für Ihre Zahlen auf einen Blick."
+    price: ""
+  - name: "Gehalt oder Ausschüttung"
+    text: "Kurzcheck für GmbH-Gesellschafter-Geschäftsführer:innen."
+    price: ""
+  - name: "e-Rechnung & Registrierkasse"
+    text: "Check Ihrer Belegprozesse: Rechnungsmerkmale, Registrierkassenpflicht, Archivierung."
+    price: ""
+
+wechsel:
+  title: "Kanzleiwechsel-Service"
+  text: "Sie sind bereits bei einer Steuerberatung? Wir übernehmen den Wechsel: Vollmacht in FinanzOnline, Übernahme der Vorjahresdaten und offenen Fristen, Einrichtung des Upload-Portals. Wir kümmern uns um die Formalitäten."
+
+# Umfangreichere Themen – nach individuellem Angebot
+spezial:
+  - name: "Holding und Umgründung"
+    text: "Strukturen für Unternehmen und Gesellschafter:innen, Einbringung, Umwandlung, Verschmelzung."
+  - name: "Unternehmensnachfolge"
+    text: "Übergabe in der Familie oder Verkauf, steuerlich vorbereitet und begleitet."
+  - name: "Betriebsprüfung"
+    text: "Vorbereitung, Begleitung und Nachbereitung von Außenprüfungen und Lohnabgabenprüfungen."
+  - name: "Finanzstrafrecht"
+    text: "Selbstanzeige und Vertretung in Finanzstrafverfahren."
+  - name: "Lohnverrechnung Bau (BUAK)"
+    text: "Lohnverrechnung für Betriebe, die dem Bauarbeiter-Urlaubs- und Abfertigungsgesetz unterliegen."
+  - name: "Größere Lohnverrechnung"
+    text: "Für Betriebe mit vielen Dienstnehmer:innen, Schichtmodellen oder mehreren Kollektivverträgen."
+
+# Drei Säulen der Hauptseite
+saeulen:
+  - icon: "cloud"
+    title: "Digital"
+    text: "Belege hochladen statt Ordner bringen. Automatisierte Belegverarbeitung, Bankanbindung und Auswertungen online – Ihre Buchhaltung ist laufend aktuell."
+  - icon: "sofa"
+    title: "Komfort"
+    text: "Fixe Monatspreise, klare Leistungsbeschreibung, keine Termine in der Kanzlei nötig. Fristen behalten wir im Blick, Sie erhalten rechtzeitig Bescheid."
+  - icon: "chat"
+    title: "Service"
+    text: "Feste Ansprechpartner:innen, schnelle Bearbeitung und persönliche Prüfung jeder Abgabe durch unsere Mitarbeiter:innen."
+
+ablauf:
+  - title: "Anfragen"
+    text: "Sie schreiben uns kurz Rechtsform, Branche und ungefähres Belegvolumen. Sie erhalten ein Fixpreis-Angebot."
+  - title: "Digital starten"
+    text: "Auftrag digital bestätigen, Identität online nachweisen, Zugang zum Upload-Portal einrichten."
+  - title: "Belege hochladen"
+    text: "Rechnungen und Belege laufend hochladen. Die Belegverarbeitung erfolgt automatisiert."
+  - title: "Geprüft und erledigt"
+    text: "Unsere Mitarbeiter:innen prüfen jede Abgabe, bevor sie an das Finanzamt geht. Den Stand sehen Sie laufend online."
+
+faq:
+  - q: "Erstellt hier eine Software meine Steuererklärung?"
+    a: "Nein. Die Belegverarbeitung ist automatisiert, damit Routinearbeit schnell erledigt ist. Jede Abgabe wird von unseren Mitarbeiter:innen geprüft, bevor sie an das Finanzamt geht."
+  - q: "Für wen ist Taxomation gedacht?"
+    a: "Für Unternehmen in ganz Österreich: Einzelunternehmer:innen, freie Berufe, Gründer:innen, GmbHs, Handels- und Handwerksbetriebe. Private Arbeitnehmerveranlagungen bieten wir nicht an."
+  - q: "Was ist im Fixpreis enthalten?"
+    a: "Der im Angebot beschriebene Leistungsumfang, etwa laufende Buchhaltung, Voranmeldungen, Jahresabschluss und Erklärungen. Leistungen darüber hinaus vereinbaren wir vorab, zum Beispiel als Festpreis-Einzelleistung."
+  - q: "Wie schnell erhalte ich eine Antwort?"
+    a: "Auf Anfragen antworten wir binnen 1 Werktag."
+    servicePromise: true
+  - q: "Muss ich in die Kanzlei kommen?"
+    a: "Nein. Auftrag, Identifizierung, Belegübermittlung und Besprechungen laufen digital, auf Wunsch per Videocall."
+  - q: "Können Sie auch komplexere Themen übernehmen?"
+    a: "Ja, etwa Holding-Strukturen, Umgründungen, Nachfolge, Betriebsprüfungen oder Lohnverrechnung mit BUAK. Dafür erstellen wir ein individuelles Angebot."
+  - q: "Wie wechsle ich von meiner bisherigen Steuerberatung?"
+    a: "Mit unserem Kanzleiwechsel-Service: Wir übernehmen die Vollmacht in FinanzOnline, die Vorjahresdaten und die offenen Fristen."
+
+# Paketfinder (läuft rein im Browser, speichert nichts)
+paketfinder:
+  intro: "Zwei Fragen, eine Empfehlung. Es werden keine Daten gespeichert oder übertragen."

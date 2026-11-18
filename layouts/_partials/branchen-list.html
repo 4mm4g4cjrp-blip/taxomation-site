@@ -1,0 +1,8 @@
+{{- /* liefert Slice der sichtbaren Branchen (Schalter berücksichtigt) */ -}}
+{{- $sw := hugo.Data.site.switches -}}
+{{- $out := slice -}}
+{{- range hugo.Data.branchen.branchen -}}
+  {{- $on := true -}}{{- with .switch }}{{ $on = index $sw . }}{{ end -}}
+  {{- if $on }}{{ $out = $out | append . }}{{ end -}}
+{{- end -}}
+{{- return $out -}}

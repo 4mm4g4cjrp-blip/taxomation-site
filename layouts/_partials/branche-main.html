@@ -1,0 +1,89 @@
+{{- $d := hugo.Data.site -}}
+{{- $L := hugo.Data.leistungen -}}
+{{- $b := index (where hugo.Data.branchen.branchen "slug" .Params.branche) 0 -}}
+{{- $g := index (where hugo.Data.branchen.gruppen "key" $b.gruppe) 0 -}}
+{{- $list := partial "branchen-list.html" . -}}
+{{- $subject := printf "Angebot anfragen – Taxomation für %s" $b.name -}}
+{{- $mail := partial "mailto.html" (dict "subject" $subject) -}}
+{{- $p := index (where $L.pakete "key" $b.paket) 0 -}}
+
+<section class="lp-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Brotkrümel"><a href="{{ "/" | relURL }}">Startseite</a><span>/</span><a href="{{ "/#branchen" | relURL }}">Branchen</a><span>/</span>{{ $b.name }}</nav>
+    <div class="grid">
+      <div>
+        <span class="eyebrow">{{ $g.name }}</span>
+        <h1>{{ $b.h1 }}</h1>
+        <p class="lead">{{ $b.lead }}</p>
+        <div class="btns">
+          <a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen {{ partial "icon.html" "arrow" }}</a>
+          <a class="btn ghost" href="#paket">Paketempfehlung</a>
+        </div>
+      </div>
+      <div class="lp-aside">
+        <div>{{ partial "icon.html" "cloud" }}<span><b>Komplett digital</b>Belege per Upload, Besprechung per Videocall</span></div>
+        <div>{{ partial "icon.html" "clock" }}<span><b>{{ if $d.showServicePromise }}{{ $d.servicePromise }}{{ else }}Schnelle Bearbeitung{{ end }}</b>feste Ansprechpartner:innen</span></div>
+        <div>{{ partial "icon.html" "shield" }}<span><b>Geprüft von unseren Mitarbeiter:innen</b>{{ partial "experience.html" . }}</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">Worauf es ankommt</span><h2>Steuerliche Themen für {{ $b.name }}.</h2></div>
+    <div class="topics reveal">
+      {{- range $b.topics }}<div class="topic"><h3>{{ .t }}</h3><p>{{ .d }}</p></div>{{ end }}
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">So funktioniert es</span><h2>Digital, komfortabel, persönlich geprüft.</h2></div>
+    <ol class="steps reveal">
+      {{- range $L.ablauf }}<li><h3>{{ .title }}</h3><p>{{ .text }}</p></li>{{ end }}
+    </ol>
+  </div>
+</section>
+
+<section id="paket">
+  <div class="wrap rec">
+    <div class="reveal">
+      <span class="eyebrow">Paketempfehlung</span>
+      <h2>Unsere Empfehlung für {{ $b.name }}.</h2>
+      <p class="lead">{{ $b.paketText }}</p>
+      {{ if $d.showPrices }}<p class="fine">{{ $d.priceFootnote }}</p>{{ end }}
+      <p><a href="{{ "/#preise" | relURL }}">Alle Pakete und Einzelleistungen ansehen</a></p>
+    </div>
+    <div class="reveal">{{ partial "pkg.html" (dict "p" (merge $p (dict "featured" true)) "subject" $subject) }}</div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="eyebrow">FAQ</span><h2>Häufige Fragen von {{ $b.name }}.</h2></div>
+    <div class="faq reveal">
+      {{- range $b.faq }}<details><summary>{{ .q }}</summary><p>{{ .a }}</p></details>{{ end }}
+    </div>
+    <p class="disclaimer">Die Inhalte auf dieser Seite sind allgemeine Informationen und ersetzen keine Beratung im Einzelfall. Stand: {{ now.Format "01/2006" }}.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Weitere Branchen</span><h2 style="font-size:1.9rem">Auch für diese Berufsgruppen.</h2></div>
+    <div class="chips">
+      {{- range where $list "gruppe" $b.gruppe }}{{ if ne .slug $b.slug }}<a href="{{ printf "/%s/" .slug | relURL }}">{{ .name }}</a>{{ end }}{{ end }}
+      <a href="{{ "/#branchen" | relURL }}">Alle Branchen →</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Angebot für {{ $b.name }} anfragen.</h2>
+    <p>Schreiben Sie uns kurz Rechtsform, Belegvolumen und Anzahl der Dienstnehmer:innen. Sie erhalten ein Fixpreis-Angebot{{ if $d.showServicePromise }} – Antwort binnen 1 Werktag{{ end }}.</p>
+    <div class="btns"><a class="btn" href="{{ $mail | safeURL }}">Angebot anfragen {{ partial "icon.html" "arrow" }}</a></div>
+  </div>
+</section>

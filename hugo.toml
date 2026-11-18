@@ -1,0 +1,20 @@
+# Taxomation – taxomation.at (v2, Neuaufbau 18.11.2026)
+# Inhalte, Preise und Schalter: data/site.yaml, data/leistungen.yaml, data/branchen.yaml
+baseURL = "https://taxomation.at/"
+locale = "de-AT"
+defaultContentLanguage = "de"
+title = "Taxomation"
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
+
+[params]
+  description = "Digitale Steuerberatung für Unternehmen in Österreich: automatisierte Belegverarbeitung, schnelle Bearbeitung und Prüfung durch unsere Mitarbeiter:innen. Für Selbständige, freie Berufe, Handel und Handwerk."
+
+[sitemap]
+  changeFreq = "monthly"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[minify.tdewolff.html]
+  keepComments = false
