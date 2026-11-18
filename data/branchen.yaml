@@ -41,7 +41,7 @@ branchen:
   - t: "Ordinationsgründung und -übernahme"
     d: "Von der Investitionsplanung über die Abschreibung der Ausstattung bis zur Lohnverrechnung für Ordinationsassistenz."
   - t: Hausapotheke
-    d: "Die Abgabe von Medikamenten aus einer ärztlichen Hausapotheke ist keine steuerfreie Heilbehandlung: Sie unterliegt in der Regel 10 % Umsatzsteuer. Dafür ist die Vorsteuer aus dem Medikamenteneinkauf abziehbar; gemischt genutzte Kosten werden anteilig aufgeteilt."
+    d: "Die Abgabe von Medikamenten aus einer ärztlichen Hausapotheke ist keine steuerfreie Heilbehandlung: Sie unterliegt in der Regel 10 % Umsatzsteuer. Dafür steht für die Hausapotheke der Vorsteuerabzug zu; bei gemeinsam genutzten Räumen und Kosten wird er sachgerecht aufgeteilt, oft nach Fläche."
   detail:
   - "Die meisten ärztlichen Umsätze sind nach § 6 Abs 1 Z 19 UStG unecht steuerbefreit. Das bedeutet: keine Umsatzsteuer auf die Honorare, aber auch kein Vorsteuerabzug aus Ordinationseinrichtung, Geräten und Miete. Steuerpflichtig sind dagegen etwa Gutachten ohne therapeutischen Zweck, ästhetische Behandlungen ohne medizinische Indikation und die Medikamentenabgabe aus der Hausapotheke. Gerade für hausapothekenführende Landärzt:innen ist die saubere Trennung der Umsätze und eine nachvollziehbare Vorsteueraufteilung wichtig."
   - "Wer neben einer Spitalsanstellung eine Wahlarztpraxis führt, muss eine Einkommensteuererklärung abgeben, sobald die Nebeneinkünfte 730 € im Jahr übersteigen. Die Lohnsteuer aus dem Dienstverhältnis wird dabei mit dem Ordinationsgewinn zusammengerechnet. Wir planen die Vorauszahlungen so, dass die erste Veranlagung keine Überraschung bringt."
@@ -175,7 +175,7 @@ branchen:
   geprueft_am: '2026-11-18'
   topics:
   - t: Umsatzsteuer
-    d: "Psychotherapie ist als Heilbehandlung nach § 6 Abs 1 Z 19 UStG unecht steuerbefreit. Für klinische und Gesundheitspsycholog:innen kann sich die Befreiung aus dem Unionsrecht ergeben. Coaching, Supervision ohne Heilbehandlungszweck oder Seminare sind in der Regel steuerpflichtig."
+    d: "Psychotherapie sowie die therapeutische Tätigkeit klinischer und Gesundheitspsycholog:innen sind als Heilbehandlung unecht steuerbefreit (§ 6 Abs 1 Z 19 UStG, für Psycholog:innen laut Umsatzsteuerrichtlinien): keine Umsatzsteuer, aber auch kein Vorsteuerabzug. Supervision, Coaching, Seminare, Firmenberatung oder Eignungstests sind dagegen in der Regel steuerpflichtig."
   - t: "Praxis und Raumkosten"
     d: "Eigene Praxis, Untermiete oder Arbeit von zu Hause: Wir berücksichtigen Miete, Raumkosten und – für 2026 noch – das Arbeitsplatzpauschale."
   - t: "Aus- und Fortbildung"
@@ -184,19 +184,19 @@ branchen:
     d: "Für Belege genügen Rechnungsdaten; Inhalte aus Ihren Sitzungen brauchen wir nicht."
   detail:
   - "Die Steuerbefreiung gilt für die Heilbehandlung, nicht für jede Tätigkeit: Supervision für Kolleg:innen, Lehrtätigkeit, Coaching oder Workshops für Unternehmen sind in der Regel steuerpflichtig. Liegen diese Umsätze unter 55.000 € brutto im Jahr, bleibt es bei der Kleinunternehmerbefreiung – die steuerfreien Therapieumsätze zählen bei dieser Grenze nicht mit."
-  - "Wer ohne eigenen Raum außerhalb der Wohnung arbeitet, kann für 2026 noch das Arbeitsplatzpauschale von 1.200 € (bzw. 300 € bei anderen aktiven Einkünften über 13.539 € mit eigenem Arbeitsplatz) geltend machen. Ab 2027 entfällt das Pauschale; absetzbar bleibt ergonomisches Mobiliar bis 300 € im Jahr."
+  - "Wer ohne eigenen Raum außerhalb der Wohnung arbeitet, kann für 2026 noch das Arbeitsplatzpauschale von 1.200 € (bzw. 300 € bei anderen aktiven Einkünften über 13.539 € mit eigenem Arbeitsplatz) geltend machen. Für Wirtschaftsjahre, die ab 1.1.2027 beginnen, entfällt das Pauschale (§ 4 Abs 4 Z 8, § 124b Z 495 EStG); absetzbar bleibt ergonomisches Mobiliar bis 300 € im Jahr."
   pakete:
   - epu
   paketText: "Paket EPU mit Einnahmen-Ausgaben-Rechnung und Einkommensteuererklärung."
   faq:
   - q: "Ist Supervision umsatzsteuerfrei?"
-    a: "Nur wenn sie im Einzelfall Teil einer Heilbehandlung ist. Supervision für Kolleg:innen oder Teams ist in der Regel steuerpflichtig. Bis 55.000 € brutto Jahresumsatz aus steuerpflichtigen Leistungen greift aber die Kleinunternehmerbefreiung."
+    a: "In der Regel nicht. Supervision ist keine Heilbehandlung und daher grundsätzlich steuerpflichtig, die Umsatzsteuerrichtlinien nehmen sie bei Psycholog:innen ausdrücklich von der Befreiung aus. Bis 55.000 € brutto Jahresumsatz aus steuerpflichtigen Leistungen greift aber die Kleinunternehmerbefreiung."
   - q: "Ich bin in Ausbildung unter Supervision. Betreuen Sie mich schon?"
     a: "Ja. Gerade am Anfang hilft eine klare Struktur bei Belegen und Erklärungen."
   - q: "Wie vertraulich ist der Upload?"
     a: "Wir unterliegen der beruflichen Verschwiegenheitspflicht. Hochgeladen werden nur Rechnungen und Zahlungsbelege."
   - q: "Kann ich meinen Arbeitsplatz zu Hause absetzen?"
-    a: "Für 2026 noch über das Arbeitsplatzpauschale (1.200 € bzw. 300 €), wenn Ihnen kein anderer Raum außerhalb der Wohnung zur Verfügung steht. Ab 2027 entfällt das Pauschale; ergonomisches Mobiliar bleibt bis 300 € im Jahr absetzbar."
+    a: "Für 2026 noch über das Arbeitsplatzpauschale (1.200 € bzw. 300 €), wenn Ihnen kein anderer Raum außerhalb der Wohnung zur Verfügung steht. Für Wirtschaftsjahre ab 1.1.2027 entfällt das Pauschale; ergonomisches Mobiliar bleibt bis 300 € im Jahr absetzbar."
 - slug: apotheker
   name: "Apotheker:innen"
   gruppe: gesundheit
@@ -320,7 +320,7 @@ branchen:
   - t: Auslandsprojekte
     d: "Leistungen an Unternehmen im EU-Ausland, Reverse Charge und Zusammenfassende Meldung. Bei Planungsleistungen für Grundstücke gelten eigene Regeln zum Leistungsort."
   - t: "Kammer und Sozialversicherung"
-    d: "Kammerumlagen und Beiträge zur Sozialversicherung werden laufend erfasst und steuerlich berücksichtigt."
+    d: "Kammerumlage, Ihre Pensionsversicherungsbeiträge bei der SVS (seit 2013 nach dem FSVG) und Beiträge zur Krankenvorsorge der Kammer werden laufend erfasst und steuerlich berücksichtigt."
   - t: "Einzelbüro oder ZT-Gesellschaft"
     d: "Wir rechnen durch, ob und wann eine ZT-GmbH für Sie sinnvoll ist."
   detail:
@@ -331,7 +331,7 @@ branchen:
   paketText: "Einzelbüro mit Einnahmen-Ausgaben-Rechnung: Paket EPU. ZT-Gesellschaft: Paket Bilanz. Bei angestelltem Team jeweils mit Lohn digital."
   faq:
   - q: "Wann muss ich bei Anzahlungen Umsatzsteuer abführen?"
-    a: "Als Freiberufler:in versteuern Sie grundsätzlich nach vereinnahmten Entgelten: Die Umsatzsteuer entsteht mit Ablauf des Monats, in dem die Akonto- oder Teilzahlung eingeht. Wir berücksichtigen das in Ihren Voranmeldungen."
+    a: "Als Freiberufler:in versteuern Sie grundsätzlich nach vereinnahmten Entgelten: Die Umsatzsteuer entsteht mit Ablauf des Voranmeldungszeitraums, in dem die Akonto- oder Teilzahlung eingeht. Wir berücksichtigen das in Ihren Voranmeldungen."
   - q: "Ich plane ein Projekt in Deutschland. Was ist zu beachten?"
     a: "Bei Planungsleistungen im Zusammenhang mit einem Grundstück liegt der Leistungsort grundsätzlich dort, wo das Grundstück liegt. Wir klären die Folgen vorab."
   - q: "Unterstützen Sie bei der Gründung einer ZT-GmbH?"
@@ -461,7 +461,7 @@ branchen:
     d: "Lohnverrechnung inklusive Lehrlingen, Teilzeit und Sonderzahlungen."
   detail:
   - "Seit 2019 unterscheidet das Umsatzsteuerrecht nicht mehr zwischen Wert- und Sachgutscheinen, sondern zwischen Einzweck- und Mehrzweckgutscheinen. Entscheidend ist, ob bei der Ausgabe Leistungsort und Steuersatz feststehen. In einem Salon, der nur 20-%-Leistungen und -Produkte anbietet, ist daher auch ein Gutschein über einen Geldbetrag ein Einzweckgutschein. Wichtig ist, dass die Gutscheintaste der Registrierkasse entsprechend eingestellt ist."
-  - "Seit 1.1.2026 gibt es auch für das Friseurgewerbe sowie für Kosmetik, Fußpflege und Massage bundesweit einheitliche Trinkgeldpauschalen in der Sozialversicherung. Wir berücksichtigen sie in der Lohnverrechnung."
+  - "Für Betriebe mit Friseur-Kollektivvertrag gilt seit 1.1.2026 österreichweit eine einheitliche Trinkgeldpauschale in der Sozialversicherung (AVSV 2026/0002): 70 € im Monat für Mitarbeiter:innen (2027: 85 €, 2028: 100 €) und 22 € für Lehrlinge (2028: 25 €), bei Teilzeit anteilig. Sie ersetzt die bisherigen Regelungen der Bundesländer. Lohnsteuerfrei bleiben ortsübliche Trinkgelder (§ 3 Abs 1 Z 16a EStG). Für Kosmetik-, Fußpflege- und Massagebetriebe prüfen wir die geltende Regelung im Einzelfall."
   pakete:
   - epu
   - lohn
@@ -473,6 +473,8 @@ branchen:
     a: "Ja, mit dem Paket EPU."
   - q: "Können Sie Lehrlinge abrechnen?"
     a: "Ja, inklusive Lehrlingsentschädigung nach Kollektivvertrag."
+  - q: "Wie wird Trinkgeld im Salon abgerechnet?"
+    a: "Trinkgeld ist für Ihre Mitarbeiter:innen lohnsteuerfrei. In der Sozialversicherung gilt für Friseurbetriebe seit 2026 österreichweit eine Pauschale: 70 € im Monat (2027: 85 €) für Mitarbeiter:innen und 22 € für Lehrlinge, bei Teilzeit anteilig. Liegen die tatsächlichen Trinkgelder unter der Hälfte der Pauschale, gilt sie nicht. Wir setzen die Pauschale in der Lohnverrechnung richtig an."
 - slug: it-software
   name: "IT und Software"
   gruppe: handel
@@ -573,7 +575,7 @@ branchen:
   - q: "Was gilt für Kurse über Online-Plattformen?"
     a: "Das hängt von Plattform und Kund:innen ab. Wir sehen uns Ihre Abrechnungen an."
   - q: "Kann ich mein Arbeitszimmer absetzen?"
-    a: "Ein Arbeitszimmer nur, wenn es den Mittelpunkt Ihrer Tätigkeit bildet. Sonst für 2026 noch das Arbeitsplatzpauschale von 1.200 € bzw. 300 €. Ab 2027 entfällt das Pauschale; ergonomisches Mobiliar bleibt bis 300 € im Jahr absetzbar."
+    a: "Ein Arbeitszimmer nur, wenn es den Mittelpunkt Ihrer Tätigkeit bildet. Sonst für 2026 noch das Arbeitsplatzpauschale von 1.200 € bzw. 300 €. Für Wirtschaftsjahre ab 1.1.2027 entfällt das Pauschale; ergonomisches Mobiliar bleibt bis 300 € im Jahr absetzbar."
 - slug: immobilienmakler
   name: "Immobilienmakler:innen"
   gruppe: handel
@@ -587,7 +589,7 @@ branchen:
   geprueft_am: '2026-11-18'
   topics:
   - t: "Gewerbe und Umsatzsteuer"
-    d: "Immobilienmakler:innen üben ein reglementiertes Gewerbe aus: Einkünfte aus Gewerbebetrieb, GSVG und grundsätzlich Sollbesteuerung in der Umsatzsteuer. Auf Provisionen sind 20 % Umsatzsteuer aufzuschlagen."
+    d: "Immobilienmakler:innen üben ein reglementiertes Gewerbe aus: Einkünfte aus Gewerbebetrieb und Pflichtversicherung nach dem GSVG. Auf Provisionen sind 20 % Umsatzsteuer aufzuschlagen. Ohne Buchführungspflicht versteuern Sie nach vereinnahmten Entgelten, also erst bei Zahlungseingang (§ 17 Abs 2 Z 1 UStG)."
   - t: Provisionen
     d: "Provisionen von Abgeber:innen und Erwerber:innen werden zeitlich richtig erfasst und umsatzsteuerlich korrekt behandelt."
   - t: Steuervorauszahlungen
@@ -625,25 +627,25 @@ branchen:
   faq_title: "Häufige Fragen von Unternehmensberater:innen"
   geprueft_am: '2026-11-18'
   topics:
-  - t: "Gewerbe, nicht freier Beruf"
-    d: "Unternehmensberatung ist ein reglementiertes Gewerbe: Einkünfte aus Gewerbebetrieb, Mitgliedschaft in der Wirtschaftskammer und Pflichtversicherung nach dem GSVG. In der Umsatzsteuer gilt grundsätzlich die Sollbesteuerung."
+  - t: "Gewerbe mit freiberuflichen Einkünften"
+    d: "Gewerberechtlich ist Unternehmensberatung ein reglementiertes Gewerbe: Mitgliedschaft in der Wirtschaftskammer und Pflichtversicherung nach dem GSVG. Steuerlich zählen die Einkünfte aber zu den freiberuflichen (§ 22 Z 1 lit b EStG). Die Umsatzsteuer schulden Sie daher erst bei Zahlungseingang (Istbesteuerung, § 17 Abs 1 UStG)."
   - t: Reisekosten
     d: "Für betrieblich veranlasste Inlandsreisen sind pauschal bis zu 30 € Tagesgeld je 24 Stunden (ab drei Stunden anteilig je angefangene Stunde ein Zwölftel) und 17 € Nächtigungsgeld ohne Beleg absetzbar; höhere Nächtigungskosten mit Beleg."
   - t: "Kund:innen im Ausland"
     d: "Beratungsleistungen an Unternehmen im EU-Ausland: Reverse Charge und Zusammenfassende Meldung."
   - t: Pauschalierung
-    d: "Bei kaufmännischer oder technischer Beratung können Sie statt der tatsächlichen Ausgaben 6 % der Umsätze pauschal absetzen (2026 höchstens 25.200 €). Für Kleinunternehmer:innen gibt es zusätzlich die Kleinunternehmerpauschalierung: 20 % bei Dienstleistungsbetrieben, sonst 45 %."
+    d: "Bei kaufmännischer oder technischer Beratung können Sie statt der tatsächlichen Ausgaben 6 % der Umsätze pauschal absetzen (2026 höchstens 25.200 €). Für Kleinunternehmer:innen (Umsatz bis 55.000 €) gibt es zusätzlich die Kleinunternehmerpauschalierung: Unternehmensberatung zählt laut Dienstleistungsbetriebe-Verordnung zu den Dienstleistungsbetrieben, daher 20 % der Einnahmen, höchstens 11.000 €."
   - t: "EPU oder GmbH"
     d: "Ab einem gewissen Gewinn kann eine GmbH interessant sein. Wir rechnen es für Ihre Zahlen durch."
   detail:
-  - "Anders als Freiberufler:innen versteuern Gewerbetreibende die Umsatzsteuer grundsätzlich nach vereinbarten Entgelten (Sollbesteuerung): Sie wird mit Rechnungslegung fällig, auch wenn der Kunde noch nicht bezahlt hat. Lag Ihr Umsatz in einem der beiden Vorjahre bei höchstens 110.000 €, versteuern Sie nach vereinnahmten Entgelten (§ 17 Abs 2 UStG)."
+  - "Weil Unternehmensberatung der Art nach eine Tätigkeit im Sinne des § 22 Z 1 EStG ist, gilt in der Umsatzsteuer die Istbesteuerung, unabhängig von der Umsatzhöhe (§ 17 Abs 1 UStG): Die Steuer entsteht erst mit Ablauf des Voranmeldungszeitraums, in dem das Honorar eingeht. Offene Rechnungen belasten Ihre Liquidität also nicht mit Umsatzsteuer. Auf Antrag ist auch die Sollbesteuerung möglich."
   - "Für Beratungsleistungen an Unternehmen im EU-Ausland gilt in der Regel das Empfängerortprinzip: Rechnung ohne österreichische Umsatzsteuer, mit beiden UID-Nummern und dem Hinweis auf den Übergang der Steuerschuld, dazu die Zusammenfassende Meldung."
   pakete:
   - epu
   paketText: "Paket EPU für Einzelunternehmer:innen mit Einnahmen-Ausgaben-Rechnung, Paket Bilanz für Beratungsgesellschaften."
   faq:
   - q: "Welche Pauschalierung kommt für mich in Frage?"
-    a: "Bei kaufmännischer oder technischer Beratung die Basispauschalierung mit 6 % der Umsätze als Betriebsausgaben (2026 höchstens 25.200 €). Als Kleinunternehmer:in alternativ die Kleinunternehmerpauschalierung. Wir vergleichen die Varianten mit Ihren tatsächlichen Ausgaben."
+    a: "Bei kaufmännischer oder technischer Beratung die Basispauschalierung mit 6 % der Umsätze als Betriebsausgaben (2026 höchstens 25.200 €). Als Kleinunternehmer:in alternativ die Kleinunternehmerpauschalierung mit 20 % der Einnahmen (höchstens 11.000 €), weil Unternehmensberatung als Dienstleistungsbetrieb gilt. Wir vergleichen die Varianten mit Ihren tatsächlichen Ausgaben."
   - q: "Ich arbeite für Kund:innen in Deutschland. Verrechne ich Umsatzsteuer?"
     a: "Bei Leistungen an Unternehmen in der Regel nicht; die Steuerschuld geht über (Reverse Charge). Wir prüfen Ihre Rechnungsmerkmale."
   - q: "Lohnt sich für mich eine GmbH?"
@@ -707,7 +709,7 @@ branchen:
   - t: "Team und Lehrlinge"
     d: "Lohnverrechnung nach Kollektivvertrag mit Zulagen, Überstunden und Lehrlingen."
   detail:
-  - "Photovoltaik war zwei Jahre lang ein Sonderfall: Von 1.1.2024 bis 31.3.2025 galt für Lieferung und Installation von PV-Modulen bis 35 kWp an Betreiber:innen ein Nullsteuersatz (§ 28 Abs 62 UStG). Durch das Budgetsanierungsmaßnahmengesetz 2025 endete er vorzeitig; für Verträge vor dem 7.3.2025 lief er spätestens mit Ende 2025 aus. Heute gilt für PV-Anlagen an Privatkund:innen wieder der Normalsteuersatz von 20 %."
+  - "Photovoltaik war zwei Jahre lang ein Sonderfall: Von 1.1.2024 bis 31.3.2025 galt für Lieferung und Installation von PV-Modulen bis 35 kWp an Betreiber:innen ein Nullsteuersatz (§ 28 Abs 62 und 63 UStG). Durch das Budgetsanierungsmaßnahmengesetz 2025 endete er vorzeitig; für Verträge vor dem 7.3.2025 lief er spätestens mit Ende 2025 aus. Heute gilt für PV-Anlagen an Privatkund:innen wieder der Normalsteuersatz von 20 %."
   - "Bei größeren Aufträgen sind Anzahlungen üblich. Für sie entsteht die Umsatzsteuer schon mit Ablauf des Voranmeldungszeitraums, in dem sie eingehen – unabhängig davon, wann die Anlage fertig ist. Eine saubere Anzahlungsrechnung und die Verrechnung in der Schlussrechnung vermeiden doppelte oder vergessene Umsatzsteuer."
   pakete:
   - epu
@@ -751,7 +753,7 @@ branchen:
   - q: "Wie werden Notdienst-Zuschläge abgerechnet?"
     a: "Nach Ihrem Kollektivvertrag. Steuerlich gilt 2026: SEG-Zulagen und Zuschläge für Sonntags-, Feiertags- und Nachtarbeit sind bis 400 € im Monat lohnsteuerfrei, Zuschläge für die ersten 15 Überstunden zusätzlich bis 170 €. Ab 2027 sind es nach derzeitiger Rechtslage 10 Überstunden bzw. 120 €."
   - q: "Was gilt bei Förderungen meiner Kund:innen?"
-    a: "Förderstellen verlangen meist eine Rechnung mit Leistungsadresse, Leistungszeitraum und getrennt ausgewiesenen förderfähigen Positionen. Wir prüfen Ihre Rechnungsvorlage aus steuerlicher Sicht; die Förderbedingungen selbst legt die jeweilige Förderstelle fest."
+    a: "Für den Tausch fossiler Heizungen in Ein- und Zweifamilienhäusern gibt es laut sanierungsoffensive.gv.at (Stand November 2026) die Bundesförderung „Kesseltausch 2026“: Registrierung bis zur Ausschöpfung der Mittel, spätestens 31.12.2026. Für 2027 ist eine neue Förderrunde mit Anträgen ab 4.1.2027 angekündigt. Die frühere Aktion „Raus aus Öl und Gas“ 2023/24 und der Sanierungsbonus sind beendet. Welche Angaben Ihre Rechnung enthalten muss, legt die Förderstelle fest; wir prüfen Ihre Rechnungsvorlage aus steuerlicher Sicht. Förderbedingungen ändern sich häufig, bitte prüfen Sie den aktuellen Stand direkt bei der Förderstelle."
   - q: "Wie aktuell sind meine Zahlen?"
     a: "Sie sehen laufend Auswertungen, sobald Belege und Bankdaten verarbeitet sind."
 - slug: spengler
@@ -773,9 +775,9 @@ branchen:
   - t: "Saison und Liquidität"
     d: "Wir zeigen Ihnen rechtzeitig, wie sich Saisonschwankungen auf Liquidität und Steuervorauszahlungen auswirken."
   - t: "Lohn und BUAK"
-    d: "Lohnverrechnung nach Kollektivvertrag; wo das BUAG anwendbar ist, auch die Meldungen an die BUAK."
+    d: "Spengler- und Dachdeckerbetriebe fallen unter das BUAG, ausgenommen Lüftungs- und Galanteriespengler (§ 2 BUAG). Die BUAK-Meldungen erledigen wir in der Lohnverrechnung."
   detail:
-  - "Spenglereien und Dachdeckereien arbeiten häufig für andere Bau- und Handwerksbetriebe. Dann gilt Reverse Charge nach § 19 Abs 1a UStG: Rechnung ohne Umsatzsteuer, mit UID-Nummer des Empfängers und Hinweis auf den Übergang der Steuerschuld. Ob Ihr Betrieb der BUAK unterliegt, hängt von Tätigkeit und Kollektivvertrag ab; das klären wir beim Start."
+  - "Spenglereien und Dachdeckereien arbeiten häufig für andere Bau- und Handwerksbetriebe. Dann gilt Reverse Charge nach § 19 Abs 1a UStG: Rechnung ohne Umsatzsteuer, mit UID-Nummer des Empfängers und Hinweis auf den Übergang der Steuerschuld. Dachdecker- und Spenglerbetriebe – mit Ausnahme der Lüftungs- und Galanteriespengler – fallen unter das Bauarbeiter-Urlaubs- und Abfertigungsgesetz: Urlaub und Abfertigung der Arbeiter:innen laufen dann über die BUAK."
   - "Für Tage, an denen wegen Schlechtwetters nicht gearbeitet werden kann, gibt es für Betriebe im Geltungsbereich des Bauarbeiter-Schlechtwetterentschädigungsgesetzes eine Entschädigung, die über die BUAK rückerstattet wird. Wir bilden sie in der Lohnverrechnung ab."
   pakete:
   - epu
@@ -783,7 +785,7 @@ branchen:
   paketText: "Paket EPU oder Bilanz je nach Rechtsform, mit Lohn digital. BUAK-Lohnverrechnung nach individuellem Angebot."
   faq:
   - q: "Unterliegt mein Betrieb der BUAK?"
-    a: "Das hängt von Tätigkeit und Kollektivvertrag ab. Wir klären das mit Ihnen beim Start."
+    a: "Dachdecker- und Spenglerbetriebe fallen unter das BUAG (§ 2 Abs 1 lit c BUAG), ausgenommen Lüftungs- und Galanteriespengler. Urlaub und Abfertigung Ihrer Arbeiter:innen laufen dann über die BUAK. Wir prüfen die Zuordnung beim Start."
   - q: "Wie gehe ich mit Schlechtwetter-Tagen um?"
     a: "Für bestimmte Betriebe gibt es Regelungen zur Schlechtwetterentschädigung. Wir bilden sie in der Lohnverrechnung ab."
   - q: "Kann ich Belege vom Handy hochladen?"
